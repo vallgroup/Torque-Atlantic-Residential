@@ -84,10 +84,10 @@
   @if ($valign == top) {
     vertical-align: top;
   }
-  @if ( $valign == middle ) {
+  @else if ( $valign == middle ) {
     vertical-align: middle;
   }
-  @if ( $valign == bottom ) {
+  @else if ( $valign == bottom ) {
     vertical-align: bottom;
   }
   // set margins
