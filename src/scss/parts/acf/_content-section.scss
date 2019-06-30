@@ -1,0 +1,36 @@
+.content-section {
+  position: relative;
+
+  .content-section-image-size {
+    @extend %imageSize;
+
+    @include respond-to-max(tablet) {
+      padding-bottom: 56%;
+    }
+
+    .content-section-image {
+      @extend %imageInner;
+    }
+  }
+
+  .content-wrapper {
+    @extend %text_block_next_to_image;
+
+    h3 {
+      margin: 0;
+      margin-bottom: 10px;
+    }
+
+    .content {
+      margin-bottom: 10px;
+
+      line-height: 1.5;
+    }
+  }
+
+  &.left {
+    .content-wrapper {
+      left: 0;
+    }
+  }
+}

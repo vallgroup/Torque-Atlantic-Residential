@@ -1,0 +1,45 @@
+@mixin useHeaderHeight($property) {
+  #{$property}: 100px;
+
+  @include respond-to(tablet) {
+    #{$property}: 100px;
+  }
+
+  @include respond-to(desktop) {
+    #{$property}: 100px;
+  }
+}
+
+@mixin useRemoveHeaderHeight($property) {
+    #{$property}: -100px;
+  
+    @include respond-to(tablet) {
+      #{$property}: -100px;
+    }
+  
+    @include respond-to(desktop) {
+      #{$property}: -100px;
+    }
+  }
+
+@mixin useHeaderPadding() {
+  padding: {
+    top: 5px;
+    bottom: 5px;
+  }
+  box-sizing: border-box;
+
+  @include respond-to(tablet) {
+    padding: {
+      top: 10px;
+      bottom: 10px;
+    }
+  }
+
+  @include respond-to(desktop) {
+    padding: {
+      top: 30px;
+      bottom: 30px;
+    }
+  }
+}

@@ -1,0 +1,103 @@
+// if hero position set to top of viewport, ensure menu items are lightly coloured...
+.header-light {
+  .torque-navigation-toggle {
+    &:not(.active) {
+      .pre-text {
+        color: $green-pale-100 !important;
+      }
+      .torque-burger-menu-line {
+        background-color: $green-pale-100 !important;
+      }
+    }
+  }
+}
+
+.torque-burger-menu.burger-menu-squeeze {
+  cursor: pointer;
+
+  right: $bodyPadding1 !important;
+
+  width: 32px;
+  height: 20px;
+
+  z-index: 999;
+
+  .torque-burger-menu-line {
+    position: absolute;
+    top: 9px;
+    width: 32px;
+    height: 2px;
+    background-color: $green-dark-100;
+    margin-bottom: 5px;
+    transition: all 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+
+    &:first-child {
+      top: 0;
+    }
+
+    &:last-child {
+      top: unset;
+      bottom: 0;
+      margin-bottom: 0px;
+    }
+  }
+
+  &.active {
+
+    .torque-burger-menu-line {
+      transform: rotate(45deg);
+
+      &:first-child {
+        top: 0;
+        opacity: 0;
+      }
+
+      &:last-child {
+        top: 9px;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
+
+.torque-navigation-toggle {
+
+  .pre-text {
+    cursor: pointer;
+    
+    display: none;
+    
+    font-family: $font-menu;
+    font-size: 18px;
+    text-transform: uppercase;
+    
+    position: absolute;
+    
+    margin-right: 38px;
+
+    right: $bodyPadding1;
+    top: 36.5%;
+
+    z-index: 999;
+    
+    &.menu-closed {
+      display: block;
+    }
+  }
+
+  &.active {
+    .pre-text {
+      &.menu-closed {
+        display: none;
+      }
+    }
+    .pre-text {
+      &.menu-opened {
+        display: block;
+      }
+    }
+  }
+
+}
+
+

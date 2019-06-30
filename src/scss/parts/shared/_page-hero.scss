@@ -1,0 +1,106 @@
+.page-hero {
+  position: relative;
+
+  @extend %useMainContentPositioning;
+
+  @extend %useAlignmentStyle;
+
+  .tq-slideshow {
+    @extend %imageSize;
+
+    .tq-slideshow-arrow {
+      display: none;
+    }
+
+    .tq-tracker-wrapper {
+      z-index: 10;
+    }
+  }
+
+  .hero-image-size {
+    @extend %imageSize;
+
+    .hero-image {
+      @extend %imageInner;
+    }
+  }
+
+  .hero-video-wrapper {
+    position: relative;
+    padding-top: 54.6%;
+
+    .hero-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .hero-overlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    padding: 15px $bodyPadding1;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+
+    background-color: $background-colour-overlay;
+    color: $white;
+
+    @include respond-to(tablet) {
+      padding: 100px $bodyPadding1 50px;
+    }
+
+    @include respond-to(desktop) {
+      padding: 120px $bodyPadding1 50px;
+    }
+
+    @include respond-to-custom(1440px) {
+      padding: 120px $bodyPadding1 120px;
+    }
+
+    h1 {
+      margin: 0;
+      margin-bottom: 10px;
+
+      text-transform: uppercase;
+
+      text-shadow: 0 2px 16px rgba(0, 0, 0, 0.58);
+
+      @include respond-to(desktop) {
+        font-size: 3.5vw;
+      }
+      @include respond-to-max(desktop) {
+        font-size: 4.5vw;
+      }
+      @include respond-to-max(tablet) {
+        font-size: 5.5vw;
+      }
+    }
+
+    .hero-subtitle {
+
+      @include respond-to(desktop) {
+        font-size: 2vw;
+      }
+      @include respond-to-max(desktop) {
+        font-size: 3vw;
+      }
+      @include respond-to-max(tablet) {
+        font-size: 4vw;
+      }
+    }
+  }
+}
+
+.page-hero-filler {
+  @include useHeaderHeight(padding-top);
+}

@@ -2,6 +2,19 @@
 @import "../partials/variables";
 
 body {
+    font-family: $font-primary;
+    font-size: 13px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.46;
+    letter-spacing: normal;
+    color: $green-dark-100;
+  
+    @include respond-to(tablet) {
+      font-size: 16px;
+      line-height: 1.31;
+    }
 }
 
 h1 {

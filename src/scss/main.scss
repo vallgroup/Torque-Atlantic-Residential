@@ -2,6 +2,16 @@
 
 @import 'grid';
 
+@import 'partials/extends';
+
 @import 'typography/typography';
 
+@import 'parts/elements/element-burger-menu-squeeze';
+
 @import 'parts/shared/header-templates/header-style-1';
+
+@import 'parts/shared/footer';
+@import 'parts/shared/page-hero';
+@import 'parts/shared/page-intro';
+
+@import 'animations/animations';

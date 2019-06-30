@@ -1,0 +1,155 @@
+.staff-members-module {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  padding: 40px $bodyPadding1;
+
+  @include respond-to(tablet) {
+    padding: 75px $bodyPadding1;
+  }
+
+  @include respond-to(desktop) {
+    padding: 95px $bodyPadding1;
+  }
+
+  .staff-member {
+    display: flex;
+    margin-bottom: 40px;
+    width: 100%;
+
+    @include respond-to(tablet) {
+      display: block;
+
+      margin-left: 2%;
+      margin-right: 2%;
+
+      width: 46%;
+    }
+
+    @include respond-to(desktop) {
+      margin-left: 2%;
+      margin-right: 2%;
+      width: 28%;
+    }
+
+    .image-wrapper {
+      display: block;
+      width: 100% !important;
+      height: 100% !important;
+      position: relative;
+      overflow: hidden;
+      
+      @include respond-to-max-custom(550px) {
+        max-height: 160px;
+        max-width: 40% !important;
+      }
+
+      @include respond-to-max-custom(767px) {
+        max-height: 220px;
+        max-width: 30%;
+      }
+
+      @include respond-to-max(tablet) {
+        flex: 0 0 auto;
+      }
+
+      @include respond-to(tablet) {
+        margin-bottom: 15px;
+
+        max-height: 465px;
+        max-width: 100%;
+      }
+
+      @include respond-to(desktop) {
+        margin-bottom: 25px;
+        
+        max-height: 560px;
+        max-width: 100%;
+      }
+
+      .staff-member-image,
+      .staff-member-second-image {
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+        object-position: center top;
+      }
+
+      &:hover {
+        .staff-member-image {
+          display: none;
+        }
+      }
+    }
+
+    .staff-member-content {
+      flex: 1 1 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      padding-left: 40px;
+
+      @include respond-to(tablet) {
+        padding-left: 0;
+        display: block;
+      }
+
+      h4,
+      .staff-roles,
+      .meet-broker {
+        margin-top: 0;
+        margin-bottom: 10px;
+      }
+
+      .staff-roles {
+        margin-bottom: 25px;
+      }
+
+      h4 {
+        font-size: 19px;
+        font-weight: 500;
+        color: $medium-green;
+        text-transform: uppercase;
+      }
+
+      .contact-container {
+        @include respond-to(tablet) {
+          display: flex;
+          align-items: center;
+        }
+
+        .broker-icons {
+          display: flex;
+
+          @include respond-to(tablet) {
+            margin-left: 30px;
+          }
+
+          .broker-icon {
+            margin-right: 15px;
+            width: 30px;
+            height: 30px;
+
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+
+            &.envelope {
+              background-image: url("../statics/images/envelope-grey.svg");
+            }
+
+            &.phone {
+              background-image: url("../statics/images/phone-grey.svg");
+            }
+          }
+        }
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

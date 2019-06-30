@@ -1,0 +1,34 @@
+.images-wrapper {
+  $class-slug: "gallery-col";
+
+  $i: 4;
+  @while $i < 12 {
+    .#{$class-slug}-#{$i} {
+      @include col(12 / $i);
+
+      clear: unset !important;
+
+      @include respond-to-max(tablet) {
+        @include col(1);
+        height: auto;
+      }
+    }
+
+    $i: $i + 2;
+  }
+
+  .#{$class-slug}-12 {
+    @include col(1);
+    height: auto;
+  }
+
+  img {
+    display: block;
+    object-fit: cover;
+    height: 400px;
+
+    @include respond-to(desktop) {
+      height: 500px;
+    }
+  }
+}

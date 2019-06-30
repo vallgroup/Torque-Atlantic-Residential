@@ -1,0 +1,54 @@
+.cta-section {
+  padding: 30px $bodyPadding1;
+
+  @include respond-to(tablet) {
+    padding: 65px $bodyPadding1 90px;
+
+    background-color: $dark-green;
+  }
+
+  @include respond-to(desktop) {
+    padding: 80px $bodyPadding2;
+  }
+
+  h2 {
+    margin: 0;
+    margin-bottom: 10px;
+
+    @include respond-to(tablet) {
+      color: $white;
+    }
+
+    @include respond-to(desktop) {
+      margin-bottom: 20px;
+    }
+  }
+
+  .content {
+    margin-bottom: 10px;
+
+    line-height: 1.5;
+
+    @include respond-to(tablet) {
+      color: $white;
+    }
+
+    @include respond-to(desktop) {
+      margin-bottom: 20px;
+    }
+  }
+
+  button {
+    &.white {
+      @include respond-to-max(tablet) {
+        display: none;
+      }
+    }
+
+    &:not(.white) {
+      @include respond-to(tablet) {
+        display: none;
+      }
+    }
+  }
+}

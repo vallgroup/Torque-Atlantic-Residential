@@ -1,9 +1,12 @@
-/*
+/**
+ * IMPORTANT NOTE: 
+ *  url only needs '../' and NOT '../../', because this file is imported into;
+ *  _typography.scss, and then _main.scss, therefore path is relative to _main.scss...
+ */
 @font-face {
-  font-family: Example;
-  src: url('../../statics/fonts/Example/Example.otf')
-    format('opentype');
-  font-weight: normal;
+  font-family: 'Gotham';
+  src: url('../statics/fonts/GothamBoldRegular/GothamBoldRegular.ttf')
+    format('truetype');
+  font-weight: bold;
   font-style: normal;
 }
-*/
