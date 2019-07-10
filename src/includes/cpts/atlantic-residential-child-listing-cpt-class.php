@@ -2,11 +2,11 @@
 /**
  * Register the torque cpt and it's meta boxes
  */
-class Atlantic_Residential_CPT {
+class Atlantic_Residential_Listing_CPT {
 
-  public static $LISTING_PROPERTY_TYPE_TAX_SLUG = 'atlantic_residential_listing_property_type';
+  public static $LISTING_PROPERTY_TYPE_TAX_SLUG = 'atlantic_listing_property_type';
 
-  public static $LISTING_REGION_TAX_SLUG = 'atlantic_residential_listing_region';
+  public static $LISTING_REGION_TAX_SLUG = 'atlantic_listing_region';
 
 	/**
 	 * Holds the listing cpt object
@@ -21,9 +21,9 @@ class Atlantic_Residential_CPT {
 	 * @var array
 	 */
 	public static $listing_labels = array(
-			'singular'       => 'Listing',
-			'plural'         => 'Listing',
-			'slug'           => 'listing',
+			'singular'       => 'Property',
+			'plural'         => 'Properties',
+			'slug'           => 'property',
 			'post_type_name' => 'torque_listing',
 	);
 
@@ -71,7 +71,7 @@ class Atlantic_Residential_CPT {
 			)
 		);
 
-		register_taxonomy(
+		/* register_taxonomy(
 			self::$LISTING_REGION_TAX_SLUG,
 			self::$listing_labels['post_type_name'],
 			array(
@@ -83,7 +83,7 @@ class Atlantic_Residential_CPT {
 			'show_admin_column' => true,
 			'show_in_rest' => true
 			)
-		);
+		); */
 	}
 
 	/**
@@ -95,7 +95,7 @@ class Atlantic_Residential_CPT {
 			return;
 
 		// A list of taxonomy slugs to filter by
-		$taxonomies = array( 'atlantic_residential_listing_property_type', 'atlantic_residential_listing_region' );
+		$taxonomies = array( self::$LISTING_PROPERTY_TYPE_TAX_SLUG );
 
 		foreach ( $taxonomies as $taxonomy_slug ) {
 
@@ -127,7 +127,7 @@ class Atlantic_Residential_CPT {
 
 			acf_add_local_field_group(array(
 				'key' => 'group_5c8ae912b0625',
-				'title' => 'Listing Details',
+				'title' => 'Property Details',
 				'fields' => array(
 					array(
 						'key' => 'field_5c8ae924ce1a3',
@@ -316,7 +316,7 @@ class Atlantic_Residential_CPT {
 
 			acf_add_local_field_group(array(
 				'key' => 'group_5c9bdef982949',
-				'title' => 'Listing Header',
+				'title' => 'Property Header',
 				'fields' => array(
 					array(
 						'key' => 'field_5c9bdf032847a',

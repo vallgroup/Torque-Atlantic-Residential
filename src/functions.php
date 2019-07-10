@@ -4,6 +4,10 @@ require_once( get_stylesheet_directory() . '/includes/atlantic-residential-child
 require_once( get_stylesheet_directory() . '/includes/widgets/atlantic-residential-child-widgets-class.php');
 require_once( get_stylesheet_directory() . '/includes/customizer/atlantic-residential-child-customizer-class.php');
 require_once( get_stylesheet_directory() . '/includes/acf/atlantic-residential-child-acf-class.php');
+require_once( get_stylesheet_directory() . '/includes/atlantic-residential-child-roles-class.php');
+require_once( get_stylesheet_directory() . '/includes/cpts/atlantic-residential-child-job-application-cpt-class.php');
+require_once( get_stylesheet_directory() . '/includes/cpts/atlantic-residential-child-listing-cpt-class.php');
+
 
 /**
  * Child Theme Nav Menus
@@ -37,8 +41,30 @@ if ( class_exists( 'Atlantic_Residential_Customizer' ) ) {
    new Atlantic_Residential_ACF();
  }
 
+ /**
+  * Custom Roles
+  */
+ 
+ if ( class_exists( 'Atlantic_Residential_Roles' ) ) {
+   new Atlantic_Residential_Roles();
+ }
+ 
+ /**
+  * Careers plugin settings
+  */
+ 
+ if ( class_exists( 'Torque_Careers' ) ) {
+   if ( class_exists( 'Atlantic_Residential_Job_Application_CPT' ) ) {
+     new Atlantic_Residential_Job_Application_CPT();
+   }
+ }
 
-
+ /**
+  * Listing CPT
+  */
+ if ( class_exists( 'Atlantic_Residential_Listing_CPT' ) ) {
+   new Atlantic_Residential_Listing_CPT();
+ }
 
 /**
  * Admin settings
@@ -60,6 +86,16 @@ if ( class_exists( 'Atlantic_Residential_Customizer' ) ) {
 
  }
  add_action( 'admin_menu', 'torque_remove_menus' );
+
+/**
+ * Update author slug to 'team'
+ */
+add_action('init', 'update_author_slug');
+function update_author_slug() {
+    global $wp_rewrite;
+    $author_slug = 'leadership'; // change slug name
+    $wp_rewrite->author_base = $author_slug;
+}
 
 
 

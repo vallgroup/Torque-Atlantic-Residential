@@ -15,7 +15,9 @@ $found_posts = $wp_query->found_posts;
 
     <div class="search-form-search-wrapper">
       <form role-"search" action="/" method="get" class="search-form search-form-search">
+          <input type="hidden" name="post_type" value="torque_listing" />
           <input type="text" name="s" id="search" value="<?php the_search_query(); ?>" placeholder="Your Search Term" class="search-input search-input-search"/>
+          <button type="submit" class="solid search-icon">Property Search</button>
       </form>
     </div>
 

@@ -1,24 +1,21 @@
-<div
-  class="cta-section">
+<div class="cta-section-container">
 
-  <h2><?php echo $heading; ?></h2>
+  <div class="cta-section align-background-graphic-<?php echo $align_background_graphic; ?>">
 
-  <?php if ($content) { ?>
-    <div class="content"><?php echo $content; ?></div>
-  <?php } ?>
+    <h2><?php echo $heading; ?></h2>
 
-  <?php if ($cta) {
-    // having one for mobile and one for tablet/desktop was the cleanest way to reuse styles?>
-    <div class="cta-wrapper" >
-      <a href="<?php echo $cta['url']; ?>" target="<?php echo $cta['target']; ?>">
-        <button><?php echo $cta['title']; ?></button>
-      </a>
-    </div>
-    <div class="cta-wrapper" >
-      <a href="<?php echo $cta['url']; ?>" target="<?php echo $cta['target']; ?>">
-        <button class="white"><?php echo $cta['title']; ?></button>
-      </a>
-    </div>
-  <?php } ?>
+    <?php if ($content) { ?>
+      <div class="content"><?php echo $content; ?></div>
+    <?php } ?>
+
+    <?php if ($cta) { ?>
+      <div class="cta-wrapper">
+        <a href="<?php echo $cta['url']; ?>" target="<?php echo $cta['target']; ?>">
+          <button class="light"><?php echo $cta['title']; ?></button>
+        </a>
+      </div>
+    <?php } ?>
+
+  </div>
 
 </div>

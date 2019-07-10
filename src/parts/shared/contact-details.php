@@ -5,6 +5,13 @@ $phone = get_field('phone', 'options');
 $fax = get_field('fax', 'options');
 $email = get_field('email', 'options');
 
+
+if (
+  $address  ||
+  $phone    ||
+  $fax      ||
+  $email
+) {
 ?>
 
 <div class="contact-details">
@@ -34,3 +41,5 @@ $email = get_field('email', 'options');
 <?php } ?>
 
 </div>
+
+<?php } ?>

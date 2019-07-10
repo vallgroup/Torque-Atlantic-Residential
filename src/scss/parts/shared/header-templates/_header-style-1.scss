@@ -67,12 +67,16 @@ header#header-style-1 {
     .torque-menu-items-stacked {
       background-color: $green-pale-100;
 
+      @include respond-to-max(tablet) {
+        padding: 5% 0;
+      }
+
       .torque-menu-item-wrapper {
         margin: 0 $bodyPadding1 0 $bodyPadding1;
         text-align: right;
 
         .torque-menu-item {
-          color: $green-dark-100;
+          color: $grey-blue-100;
           font-family: $font-menu;
           font-weight: bold;
           font-size: 2.5em;
@@ -85,7 +89,7 @@ header#header-style-1 {
           }
 
           &:hover {
-            color: $green-dark-80;
+            color: $grey-blue-80;
           }
         }
       }

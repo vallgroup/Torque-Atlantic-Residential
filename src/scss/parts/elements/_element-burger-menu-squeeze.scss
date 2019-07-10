@@ -27,7 +27,7 @@
     top: 9px;
     width: 32px;
     height: 2px;
-    background-color: $green-dark-100;
+    background-color: $grey-blue-100;
     margin-bottom: 5px;
     transition: all 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19);
 
@@ -70,6 +70,7 @@
     font-family: $font-menu;
     font-size: 18px;
     text-transform: uppercase;
+    color: $grey-blue-100;
     
     position: absolute;
     

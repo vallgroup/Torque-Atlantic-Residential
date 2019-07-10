@@ -1,8 +1,8 @@
 %text_block_next_to_image {
   padding: 35px $bodyPadding1 20px;
 
-  background-color: $green-pale-100;
-  color: $white;
+  background-color: $white;
+  color: inherit;
 
   @include respond-to(tablet) {
     position: absolute;
@@ -15,9 +15,7 @@
 
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-
-    background-color: $green-pale-80;
+    justify-content: center;
   }
 
   @include respond-to(desktop) {
@@ -37,7 +35,22 @@
   }
 
   @include respond-to(desktop) {
-    padding-bottom: 50%;
+    padding-bottom: 48%;
+  }
+}
+
+%imageSizeHalf {
+  position: relative;
+  padding-bottom: 40%;
+  width: 100%;
+  height: 0;
+
+  @include respond-to(tablet) {
+    padding-bottom: 28%;
+  }
+
+  @include respond-to(desktop) {
+    padding-bottom: 24%;
   }
 }
 
@@ -53,86 +66,54 @@
   background-position: center;
 }
 
-%useSideGraphic {
+%videoSize {
   position: relative;
+  padding-top: 86%;
 
-  &::before {
-    content: "";
+  @include respond-to(tablet) {
+    padding-top: 58%;
+  }
 
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 5vw;
-    max-width: 30px;
-
-    //background-image: url("../statics/images/side-graphic.svg");
-    background-size: cover;
-    background-position-y: top;
-    background-position-x: left;
-    background-repeat: no-repeat;
+  @include respond-to(desktop) {
+    padding-top: 54%;
   }
 }
 
-%useBottomGraphic {
+%videoSizeHalf {
   position: relative;
+  padding-top: 43%;
 
-  &::after {
-    content: "";
+  @include respond-to(tablet) {
+    padding-top: 29%;
+  }
 
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 50%;
-    width: 100%;
-
-    //background-image: url("../statics/images/bottom-graphic.svg");
-    background-size: contain;
-    background-position-x: left;
-    background-position-y: bottom;
-    background-repeat: no-repeat;
+  @include respond-to(desktop) {
+    padding-top: 27%;
   }
 }
 
-%useTermWhite {
-  color: $white !important;
-
-  &::before {
-    //background-image: url("../statics/images/tag-icon-white.svg") !important;
-  }
+%useBackgroundGraphicLeft {
+  background-image: url("../statics/images/svg/cta-background-left.svg");
+  background-size: contain;
+  background-position-x: left;
+  background-position-y: bottom;
+  background-repeat: no-repeat;
 }
 
-%useTermGreen {
-  color: $green-pale-100;
-
-  &::before {
-    //background-image: url("../statics/images/tag-icon-green.svg");
-  }
+%useBackgroundGraphicRight {
+  background-image: url("../statics/images/svg/cta-background-right.svg");
+  background-size: contain;
+  background-position-x: left;
+  background-position-y: bottom;
+  background-repeat: no-repeat;
 }
 
-%useTermStyle {
-  display: flex;
-  align-items: center;
-
-  font-size: 12px;
-  letter-spacing: -0.4px;
-  color: $grey-medium;
-
-  &::before {
-    content: "";
-
-    padding-right: 5px;
-    height: 15px;
-    width: 15px;
-
-    //background-image: url("../statics/images/tag-icon.svg");
-    background-size: contain;
-    background-repeat: no-repeat;
-  }
-
-  &.tag-green {
-    @extend %useTermGreen;
-  }
+%useBackgroundQuotationMarks_GreenPale {
+  background-image: url("../statics/images/svg/quotation-marks_green-pale.svg");
+  background-size: contain;
+  background-position-x: left;
+  background-position-y: bottom;
+  background-repeat: no-repeat;
 }
 
 %useLoadMoreButtonStyle {
@@ -156,6 +137,36 @@
   }
 }
 
+%useButtonLight {
+    color: $white;
+    border-color: $white;
+}
+
+%useButtonSolid {
+  color: $white;
+  background-color: $green-medium-100;
+  border-color: $green-medium-100;
+
+  padding: 1.5px 30px;
+
+  &:hover {
+    color: $white;
+    background-color: $green-medium-100;
+    border-color: $green-medium-100;
+    opacity: 0.8;
+  }
+}
+
+%useButtonSearchIcon {
+  &:before {
+    font-family: $font-icon;
+    content: '\f002';
+    color: $white;
+    margin-left: -10px;
+    margin-right: 15px;
+  }
+}
+
 %useAlignmentStyle {
   // intro alignment
   &.align-left {
@@ -171,51 +182,51 @@
 
 %useColorComboStyle {
   // intro colour combos
-  &.color-combo-color1 {
-    background-color: $green-dark-100;
+  &.color-combo-color1, .color-combo-color1 * {
+    background-color: $grey-blue-100;
     color: $white;
   }
-  &.color-combo-color2 {
-    background-color: $green-dark-100;
+  &.color-combo-color2, .color-combo-color2 * {
+    background-color: $grey-blue-100;
     color: $green-medium-100;
   }
-  &.color-combo-color3 {
-    background-color: $green-dark-100;
+  &.color-combo-color3, .color-combo-color3 * {
+    background-color: $grey-blue-100;
     color: $green-pale-100;
   }
-  &.color-combo-color4 {
+  &.color-combo-color4, .color-combo-color4 h2 {
     background-color: $green-medium-100;
     color: $white;
   }
-  &.color-combo-color5 {
+  &.color-combo-color5, .color-combo-color5 * {
     background-color: $green-medium-100;
-    color: $green-dark-100;
+    color: $grey-blue-100;
   }
-  &.color-combo-color6 {
+  &.color-combo-color6, .color-combo-color6 * {
     background-color: $green-medium-100;
     color: $green-pale-100;
   }
-  &.color-combo-color7 {
+  &.color-combo-color7, .color-combo-color7 * {
     background-color: $green-pale-100;
     color: $white;
   }
-  &.color-combo-color8 {
+  &.color-combo-color8, .color-combo-color8 * {
     background-color: $green-pale-100;
-    color: $green-dark-100;
+    color: $grey-blue-100;
   }
-  &.color-combo-color9 {
+  &.color-combo-color9, .color-combo-color9 * {
     background-color: $green-pale-100;
     color: $green-medium-100;
   }
-  &.color-combo-color10 {
+  &.color-combo-color10, .color-combo-color10 * {
     background-color: $white;
-    color: $green-dark-100;
+    color: $grey-blue-100;
   }
-  &.color-combo-color11 {
+  &.color-combo-color11, .color-combo-color11 * {
     background-color: $white;
     color: $green-medium-100;
   }
-  &.color-combo-color12 {
+  &.color-combo-color12, .color-combo-color12 * {
     background-color: $white;
     color: $green-pale-100;
   }
@@ -227,5 +238,16 @@
     }
     &.content-position-after {
         position: relative;
+    }
+}
+
+%useCentredIntroParagraphs {
+    max-width: 780px;
+    margin: 0 auto;
+}
+
+%useSectionBottomPadding {
+    &.bottom-padding-no {
+        padding-bottom: 5px;
     }
 }

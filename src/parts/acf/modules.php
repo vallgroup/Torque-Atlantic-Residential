@@ -8,25 +8,42 @@ if ( have_rows( $modules ) ):
 
     switch ( get_row_layout() ) {
 
-      case 'content_section' :
+      case 'content_section_one' :
 
         $align = get_sub_field( 'align' );
         $image = get_sub_field('image');
         $heading = get_sub_field( 'heading' );
         $content = get_sub_field( 'content' );
         $cta = get_sub_field('cta');
+        $top_bottom_padding = get_sub_field('top_bottom_padding') == 'yes' ? 'top-bottom-padding' : '';
 
-        include locate_template('/parts/acf/modules/content-section.php');
+        include locate_template('/parts/acf/modules/content-section_one.php');
 
         break;
 
-      case 'images' :
+      case 'content_section_two' :
+  
+        $align = get_sub_field( 'align' );
+        $color_combo = get_sub_field('color_combo');
+        $heading = get_sub_field( 'heading' );
+        $content = get_sub_field( 'content' );
+        $bottom_padding = get_sub_field( 'bottom_padding' );
 
-        $image_1 = get_sub_field('image_1');
-        $image_2_start = get_sub_field('image_2_start');
-        $image_2 = get_sub_field('image_2');
+        include locate_template('/parts/acf/modules/content-section_two.php');
 
-        include locate_template('/parts/acf/modules/images.php');
+        break;
+
+      case 'content_section_three' :
+  
+        $align = get_sub_field( 'align' );
+        $background_color = get_sub_field('background_color');
+        $image = get_sub_field('image');
+        $quote = get_sub_field( 'quote' );
+        $content = get_sub_field( 'content' );
+        $cta = get_sub_field('cta');
+        $button_light = $background_color == 'green' ? 'light' : '';
+
+        include locate_template('/parts/acf/modules/content-section_three.php');
 
         break;
 
@@ -35,8 +52,25 @@ if ( have_rows( $modules ) ):
         $heading = get_sub_field( 'heading' );
         $content = get_sub_field( 'content' );
         $cta = get_sub_field('cta');
+        $align_background_graphic = get_sub_field('align_background_graphic');
 
         include locate_template('/parts/acf/modules/cta-section.php');
+
+        break;
+
+      case 'image_gallery' :
+
+        $images = get_sub_field('images');
+
+        include locate_template('/parts/acf/modules/image_gallery.php');
+
+        break;
+
+      case 'video' :
+
+        $video = get_sub_field('video_src');
+
+        include locate_template('/parts/acf/modules/video.php');
 
         break;
 
@@ -45,16 +79,6 @@ if ( have_rows( $modules ) ):
         $slideshow_id = get_sub_field('slideshow_id');
 
         echo do_shortcode('[torque_slideshow id="'.$slideshow_id.'" type="post" template="atlantic-residential"]');
-
-        break;
-
-      case 'region_quick_search' :
-
-        if ( class_exists( 'Atlantic_Residential_Listing_CPT' ) ) {
-          $taxonomy = Atlantic_Residential_Listing_CPT::$LISTING_REGION_TAX_SLUG;
-
-          include locate_template('/parts/acf/modules/quick-search.php');
-        }
 
         break;
 

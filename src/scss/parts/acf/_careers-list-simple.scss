@@ -1,0 +1,47 @@
+.careers-list-simple-wrapper {
+
+    background-color: $green-medium-100;
+
+    text-align: center;
+
+    padding: 25px $bodyPadding1;
+  
+    @include respond-to(tablet) {
+      padding: 40px $bodyPadding1;
+    }
+  
+    @include respond-to(desktop) {
+      padding: 60px $bodyPadding2;
+    }
+
+    h3 {
+        color: $white;
+
+        margin: 0;
+        margin-bottom: 15px;
+
+        @include respond-to(tablet) {
+            margin-bottom: 30px;
+        }
+    }
+
+    ul.loop-career {
+
+        li {
+            margin: 15px auto;
+
+            a {
+                text-transform: uppercase;
+                color: $white;
+            }
+        }
+    }
+
+    button {
+        margin-top: 5px;
+
+        &:after {
+            background-color: $green-medium-100;
+        }
+    }
+}

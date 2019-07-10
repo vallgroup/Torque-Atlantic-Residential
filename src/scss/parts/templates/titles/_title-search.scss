@@ -1,0 +1,63 @@
+#header-search {
+  @include useHeaderHeight(margin-top);
+
+  padding: 0 $bodyPadding1 20px;
+
+  background-color: $white;
+
+  .content-wrapper {
+    margin: 0 auto;
+    max-width: 775px;
+
+    h2 {
+      margin-top: 15px;
+
+      color: $green-medium-100;
+      text-transform: uppercase;
+
+      text-align: center;
+
+      @include respond-to(desktop) {
+        margin-bottom: 25px;
+      }
+    }
+
+    .search-form-search-wrapper {
+      text-align: center;
+      display: block;
+      width: 90%;
+      margin: 0 auto 25px;
+
+      form {
+        display: inline-block;
+        width: 100%;
+
+        input#search {
+          border: 1px solid $grey-dark-40;
+          padding: 8px 10px;
+    
+          background-color: transparent;
+          color: $grey-dark-100;
+          font-size: 20px;
+          outline: none;
+  
+          width: 60%;
+          float: left;
+          box-sizing: border-box;
+      
+    
+          &::placeholder {
+            color: $grey-dark-40;
+          }
+        }
+  
+        button {
+          float: left;
+          width: 40%;
+          padding: 4.5px 30px;
+        }
+
+      }
+    }
+  }
+}

@@ -1,4 +1,6 @@
 .content-section {
+  background-color: $white;
+
   position: relative;
 
   .content-section-image-size {
@@ -26,11 +28,40 @@
 
       line-height: 1.5;
     }
+
+    button {
+      &:after {
+        background: $white;
+      }
+    }
   }
 
-  &.left {
+  &.align-left {
     .content-wrapper {
       left: 0;
+    }
+  }
+
+  &.top-bottom-padding {
+    padding: 25px 0;
+  }
+}
+
+@include respond-to(tablet) {
+  .content-section.align-left {
+    .content-section-image-size {
+      .content-section-image {
+        margin-left: 42.5%;
+        width: 57.5%;
+      }
+    }
+  }
+
+  .content-section.align-right {
+    .content-section-image-size {
+      .content-section-image {
+        width: 57.5%;
+      }
     }
   }
 }

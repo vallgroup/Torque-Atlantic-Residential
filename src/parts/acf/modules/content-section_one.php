@@ -1,5 +1,5 @@
 <div
-  class="content-section <?php echo $align; ?>">
+  class="content-section align-<?php echo $align; ?> <?php echo $top_bottom_padding; ?>">
 
   <div class="content-section-image-size">
     <div class="content-section-image" style="background-image: url(<?php echo $image; ?>);" ></div>
@@ -15,7 +15,7 @@
     <?php if ($cta) { ?>
       <div class="cta-wrapper" >
         <a href="<?php echo $cta['url']; ?>" target="<?php echo $cta['target']; ?>">
-          <button class="white"><?php echo $cta['title']; ?></button>
+          <button class=""><?php echo $cta['title']; ?></button>
         </a>
       </div>
     <?php } ?>

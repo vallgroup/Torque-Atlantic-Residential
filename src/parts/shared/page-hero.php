@@ -3,6 +3,7 @@
 $type = get_field('hero_type');
 
 $positioning = get_field('hero_positioning');
+$height = get_field('hero_height');
 $alignment = get_field('hero_alignment');
 
 $image = get_field('hero_image');
@@ -15,7 +16,7 @@ $overlay_subtitle= get_field('hero_overlay_subtitle');
 
 if (($type === 'image' && $image) || ($type === 'image_slideshow' && $slideshow) || ($type === 'video' && $video)) { ?>
 
-<div class="page-hero type-<?php echo $type; ?> content-position-<?php echo $positioning; ?> align-<?php echo $alignment; ?>">
+<div class="page-hero type-<?php echo $type; ?> content-position-<?php echo $positioning; ?> align-<?php echo $alignment; ?> height-<?php echo $height; ?>">
 
   <?php if ($type === 'image' && $image) { ?>
     <div class="hero-image-size">
@@ -38,7 +39,7 @@ if (($type === 'image' && $image) || ($type === 'image_slideshow' && $slideshow)
     <?php
   } ?>
 
-  <?php if ($overlay_title || $overlay_subtitle) { ?>
+  <?php if ( ($overlay_title || $overlay_subtitle) && $alignment != "none") { ?>
     <div class="hero-overlay" >
       <?php if ($overlay_title) { ?>
         <h1><?php echo $overlay_title; ?></h1>

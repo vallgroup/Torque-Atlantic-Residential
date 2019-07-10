@@ -21,6 +21,8 @@
     @include respond-to(tablet) {
       display: block;
 
+      min-height: 345px;
+
       margin-left: 2%;
       margin-right: 2%;
 
@@ -28,9 +30,11 @@
     }
 
     @include respond-to(desktop) {
-      margin-left: 2%;
-      margin-right: 2%;
-      width: 28%;
+      min-height: 315px;
+
+      margin-left: 1%;
+      margin-right: 1%;
+      width: 31%;
     }
 
     .image-wrapper {
@@ -68,88 +72,128 @@
         max-width: 100%;
       }
 
-      .staff-member-image,
-      .staff-member-second-image {
+      &:hover {
+        .staff-member-content {
+          opacity: 1;
+        }
+      }
+
+      .staff-member-image {
         width: 100%;
         height: 100%;
 
         object-fit: cover;
         object-position: center top;
       }
+    }
+      
+    .staff-member-content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin: 0;
+      width: 100%;
+      height: 100%;
 
-      &:hover {
-        .staff-member-image {
+      background: $background-colour-overlay;
+      opacity: 0;
+      transition: 0.2s;
+
+      text-align: center;
+
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-content: flex-end;
+      
+      @include respond-to-max(tablet) {
+        h4 {
+          font-size: 25px !important;
+        }
+        .staff-roles {
+          font-size: 18px !important;
+        }
+        .meet-broker {
+          font-size: 15px !important;
+        }
+      }
+
+      &.desktop {
+        @include respond-to(desktop) {
+          display: flex;
+        }
+        @include respond-to-max(desktop) {
           display: none;
         }
       }
-    }
 
-    .staff-member-content {
-      flex: 1 1 auto;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      padding-left: 40px;
+      &.mobile {
+        @include respond-to(desktop) {
+          display: none;
+        }
+        @include respond-to-max(desktop) {
+          display: flex;
+          justify-content: center;
+          align-content: center;
+          position: relative;
+          height: auto;
 
-      @include respond-to(tablet) {
-        padding-left: 0;
-        display: block;
+          background: transparent;
+          opacity: 1;
+
+          h4, .staff-roles {
+            margin-bottom: 5px;
+            color: $grey-dark-100;
+          }
+          .meet-broker {
+            margin-top: 20px;
+            margin-bottom: 0;
+          }
+        }
+      }
+      @include respond-to-max-custom(767px) {
+        text-align: left;
+
+        h4,
+        .staff-roles,
+        .meet-broker {
+          margin-left: 8% !important;
+        }
+
       }
 
       h4,
       .staff-roles,
       .meet-broker {
-        margin-top: 0;
-        margin-bottom: 10px;
-      }
-
-      .staff-roles {
-        margin-bottom: 25px;
+        margin: 0 auto auto;
+        width: 100%;
       }
 
       h4 {
-        font-size: 19px;
-        font-weight: 500;
-        color: $medium-green;
+        font-size: 30px;
+        font-weight: 400;
+        color: $white;
+
+        margin-bottom: 1.5%; 
+      }
+
+      .staff-roles {
+        font-size: 22px;
+        font-weight: 400;
+        color: $white;
+
+        margin-bottom: 10%; 
+      }
+
+      .meet-broker {
+        font-size: 17px;
+        font-weight: 400;
+        color: $green-pale-100;
         text-transform: uppercase;
+        text-decoration: underline;
+
+        margin-bottom: 15%;
       }
-
-      .contact-container {
-        @include respond-to(tablet) {
-          display: flex;
-          align-items: center;
-        }
-
-        .broker-icons {
-          display: flex;
-
-          @include respond-to(tablet) {
-            margin-left: 30px;
-          }
-
-          .broker-icon {
-            margin-right: 15px;
-            width: 30px;
-            height: 30px;
-
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-
-            &.envelope {
-              background-image: url("../statics/images/envelope-grey.svg");
-            }
-
-            &.phone {
-              background-image: url("../statics/images/phone-grey.svg");
-            }
-          }
-        }
-      }
-    }
-
-    &:last-child {
-      margin-bottom: 0;
     }
   }
 }

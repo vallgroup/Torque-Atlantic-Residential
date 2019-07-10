@@ -1,0 +1,128 @@
+.careers-form {
+  padding: 30px $bodyPadding1;
+
+  color: $green-medium-100;
+
+  @include respond-to(tablet) {
+    padding: 60px $bodyPadding1;
+  }
+
+  @include respond-to(desktop) {
+    padding: 80px $bodyPadding1;
+  }
+
+  h3 {
+    margin: 0 auto 35px;
+    max-width: 780px;
+    text-align: center;
+
+    color: $grey-dark-100;
+  }
+
+  .form-message {
+    margin: 0 auto 20px;
+    max-width: 750px;
+
+    font-weight: bold;
+
+    &.error {
+      color: $red-error-100;
+    }
+  }
+
+  form {
+    margin: 0 auto;
+    max-width: 780px;
+
+    .input-wrapper {
+      display: inline-block;
+
+      width: 100%;
+      margin-bottom: 5px;
+
+      &.half-width {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        
+        @include respond-to(desktop) {
+          float: left;
+          width: 49%;
+  
+          &.first-col {
+            margin-right: 1%;
+          }
+          &.second-col {
+            margin-left: 1%;
+          }
+        }
+      }
+
+      &.second-section-start {
+        margin-top: 35px;
+      }
+    }
+
+    label {
+      width: auto;
+      
+      font-size: 0.9em;
+      font-weight: bold;
+      
+      text-transform: uppercase;
+    }
+
+    input,
+    textarea
+     {
+      margin-top: 5px;
+      margin-bottom: 15px;
+      padding: 6.5px 10px;
+
+      width: 100%;
+      box-sizing: border-box;
+
+      background-color: $green-pale-30;
+      color: $grey-dark-100;
+      border: 1px solid $green-less-pale-100;
+      outline: none;
+
+      font-size: 16px;
+      font-family: $font_primary;
+
+      &::placeholder {
+        color: $grey-dark-40;
+      }
+    }
+
+    textarea {
+      height: 150px;
+    }
+
+    .file-picker {
+      label {
+        display: inline-block;
+        padding: 15px;
+
+        font-size: 16px;
+        
+        &.filename {
+          border: none;
+          font-weight: 600;
+        }
+      }
+
+      input {
+        display: none;
+      }
+    }
+
+    button[type="submit"] {
+      margin-top: 15px;
+
+      &:after {
+        background: $white;
+      }
+    }
+  }
+}

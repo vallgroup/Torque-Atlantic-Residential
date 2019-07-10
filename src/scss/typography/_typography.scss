@@ -9,7 +9,7 @@ body {
     font-stretch: normal;
     line-height: 1.46;
     letter-spacing: normal;
-    color: $green-dark-100;
+    color: $grey-dark-100;
   
     @include respond-to(tablet) {
       font-size: 16px;
@@ -21,13 +21,109 @@ h1 {
 }
 
 h2 {
+  font-family: $font_primary;
+  font-size: 27px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.21;
+  letter-spacing: normal;
+  /* color: $grey-blue-100; */
+
+  @include respond-to(tablet) {
+    font-size: 36px;
+  }
 }
 
 h3 {
+  font-family: $font_primary;
+  font-size: 24px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.21;
+  letter-spacing: normal;
+  /* color: $grey-blue-100; */
+
+  @include respond-to(tablet) {
+    font-size: 27px;
+    line-height: 1.26;
+  }
+
+  @include respond-to(desktop) {
+    font-size: 36px;
+  }
 }
 
 h4 {
 }
 
 a {
+}
+
+button {
+  border: 2px solid $green-pale-100;
+  padding: 3px 20px;
+  box-sizing: border-box;
+
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  font-size: 16px;
+  line-height: 1.75;
+  letter-spacing: normal;
+  text-align: center;
+  text-transform: uppercase;
+
+  background-color: transparent;
+  color: $green-pale-100;
+
+  transition: all 0.3s ease;
+
+  @include respond-to(tablet) {
+    padding: 8px 30px;
+  }
+
+  &.light {
+    @extend %useButtonLight;
+  }
+
+  &.solid {
+    @extend %useButtonSolid;
+  }
+
+  &.search-icon {
+    @extend %useButtonSearchIcon;
+  }
+
+  &:hover {
+    background: $white-10;
+  }
+
+  &:after {
+    // NOTE: Required to add background to this element, based on where it is used:
+    // For example: background: $green-pale-100;
+    content: '';
+    width: 5px;
+    margin-right: -5px;
+    height: 14px;
+    display: inline-block;
+    right: -19px;
+    top: 1.5px;
+    position: relative;
+    opacity: 1;
+    transition: 0.2s;
+
+    @include respond-to(tablet) {
+      height: 20px;
+      top: 4px;
+      right: -29px;
+    }
+  }
+
+  &:hover:after {
+    height: 0;
+    top: -20px;
+    opacity: 0;
+  }
 }

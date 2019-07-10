@@ -1,0 +1,43 @@
+.content-section-two {
+  padding: 25px $bodyPadding1;
+
+  @include respond-to(tablet) {
+    padding: 75px $bodyPadding1 50px;
+  }
+
+  @include respond-to(desktop) {
+    padding: 75px $bodyPadding2;
+  }
+
+  @extend %useAlignmentStyle;
+
+  @extend %useColorComboStyle;
+
+  @extend %useSectionBottomPadding;
+
+  &.align-center {
+    .content-section-two-content {
+      @extend %useCentredIntroParagraphs;
+    }
+  }
+
+  h2 {
+    margin: 0;
+    margin-bottom: 15px;
+
+    /* text-transform: uppercase; */
+
+    @include respond-to(tablet) {
+      margin-bottom: 30px;
+    }
+  }
+
+  .content-section-two-content {
+    line-height: 1.75;
+  }
+
+  &.type-none,
+  &.type- {
+    padding: 0;
+  }
+}

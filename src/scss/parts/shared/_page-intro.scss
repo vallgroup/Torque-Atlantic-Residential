@@ -2,16 +2,22 @@
   padding: 25px $bodyPadding1;
 
   @include respond-to(tablet) {
-    padding: 75px $bodyPadding1 50px;
+    padding: 55px $bodyPadding1;
   }
 
   @include respond-to(desktop) {
-    padding: 75px $bodyPadding2;
+    padding: 90px $bodyPadding2;
   }
 
   @extend %useAlignmentStyle;
 
   @extend %useColorComboStyle;
+
+  &.align-center {
+    .page-intro-intro {
+      @extend %useCentredIntroParagraphs;
+    }
+  }
 
   h2 {
     margin: 0;

@@ -21,7 +21,7 @@ $copyright = get_field('copyright', 'options');
   </div>
 
 <div class="footer-block footer-social-icons">
-  <h3 class="footer-block-title">Connect</h3>
+  <div class="footer-block-title">Connect</div>
     <?php get_template_part( 'parts/shared/social-icons' ); ?>
 </div>
 

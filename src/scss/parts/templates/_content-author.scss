@@ -1,0 +1,10 @@
+.staff-content-section {
+    text-align: center;
+    margin-bottom: 80px;
+    
+    button {
+        &:after {
+            background: $white;
+        }
+    }
+}

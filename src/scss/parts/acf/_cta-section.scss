@@ -1,53 +1,51 @@
-.cta-section {
-  padding: 30px $bodyPadding1;
+.cta-section-container {
 
-  @include respond-to(tablet) {
-    padding: 65px $bodyPadding1 90px;
+  background-color: $green-pale-100;
+  
+  .cta-section {
+    padding: 50px $bodyPadding1;
 
-    background-color: $dark-green;
-  }
+    text-align: center;
 
-  @include respond-to(desktop) {
-    padding: 80px $bodyPadding2;
-  }
-
-  h2 {
-    margin: 0;
-    margin-bottom: 10px;
+    &.align-background-graphic-right {
+      @extend %useBackgroundGraphicRight;
+    }
+    &.align-background-graphic-left {
+      @extend %useBackgroundGraphicLeft;
+    }
 
     @include respond-to(tablet) {
-      color: $white;
+      padding: 85px $bodyPadding1 90px;
     }
 
     @include respond-to(desktop) {
-      margin-bottom: 20px;
-    }
-  }
-
-  .content {
-    margin-bottom: 10px;
-
-    line-height: 1.5;
-
-    @include respond-to(tablet) {
-      color: $white;
+      padding: 100px $bodyPadding2;
     }
 
-    @include respond-to(desktop) {
-      margin-bottom: 20px;
-    }
-  }
+    h2 {
+      margin: 0;
+      margin-bottom: 10px;
 
-  button {
-    &.white {
-      @include respond-to-max(tablet) {
-        display: none;
+      font-weight: 600;
+
+      @include respond-to(desktop) {
+        margin-bottom: 20px;
       }
     }
 
-    &:not(.white) {
-      @include respond-to(tablet) {
-        display: none;
+    .content {
+      margin-bottom: 10px;
+
+      line-height: 1.5;
+
+      @include respond-to(desktop) {
+        margin-bottom: 20px;
+      }
+    }
+
+    button {
+      &:after {
+        background: $green-less-pale-100;
       }
     }
   }

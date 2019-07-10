@@ -1,17 +1,36 @@
-@import 'partials/variables';
+@import "partials/variables";
 
-@import 'grid';
+@import "grid";
 
-@import 'partials/extends';
+@import "partials/extends";
 
-@import 'typography/typography';
+@import "typography/typography";
 
-@import 'parts/elements/element-burger-menu-squeeze';
+@import "animations/animations";
 
-@import 'parts/shared/header-templates/header-style-1';
+@import "parts/acf/careers-list-simple";
+@import "parts/acf/content-section";
+@import "parts/acf/content-section-two";
+@import "parts/acf/content-section-three";
+@import "parts/acf/cta-section";
+@import "parts/acf/image-gallery";
+@import "parts/acf/video";
+@import "parts/acf/staff-members";
 
-@import 'parts/shared/footer';
-@import 'parts/shared/page-hero';
-@import 'parts/shared/page-intro';
+@import "parts/elements/element-burger-menu-squeeze";
 
-@import 'animations/animations';
+@import "parts/forms/form-careers";
+
+@import "parts/shared/header-templates/header-style-1";
+
+@import "parts/shared/footer";
+@import "parts/shared/page-hero";
+@import "parts/shared/page-intro";
+@import "parts/shared/contact-details";
+
+@import "parts/templates/titles/title-author";
+@import "parts/templates/titles/title-search";
+
+@import "parts/templates/content-author";
+@import "parts/templates/content-contact";
+@import "parts/templates/search-loop";

@@ -4,6 +4,7 @@ $white-80: rgba(255, 255, 255, 0.8);
 $white-60: rgba(255, 255, 255, 0.6);
 $white-40: rgba(255, 255, 255, 0.4);
 $white-20: rgba(255, 255, 255, 0.2);
+$white-10: rgba(255, 255, 255, 0.1);
 $white-0: rgba(255, 255, 255, 0);
 
 $black: #000;
@@ -12,6 +13,13 @@ $black-60: rgba(0, 0, 0, 0.6);
 $black-40: rgba(0, 0, 0, 0.4);
 $black-20: rgba(0, 0, 0, 0.2);
 $black-0: rgba(0, 0, 0, 0);
+
+$grey-dark-100: #4b4b4b;
+$grey-dark-80: rgba(75, 75, 75, 0.8);
+$grey-dark-60: rgba(75, 75, 75, 0.6);
+$grey-dark-40: rgba(75, 75, 75, 0.4);
+$grey-dark-20: rgba(75, 75, 75, 0.2);
+$grey-dark-0: rgba(75, 75, 75, 0);
 
 $grey-blue-100: #323e48;
 $grey-blue-80: rgba(50, 62, 72, 0.8);
@@ -29,8 +37,16 @@ $green-pale-100: #b1e0da;
 $green-pale-80: rgba(177, 224, 218, 0.8);
 $green-pale-60: rgba(177, 224, 218, 0.6);
 $green-pale-40: rgba(177, 224, 218, 0.4);
+$green-pale-30: rgba(177, 224, 218, 0.3);
 $green-pale-20: rgba(177, 224, 218, 0.2);
 $green-pale-0: rgba(177, 224, 218, 0);
+
+$green-less-pale-100: #91d3ca;
+$green-less-pale-80: rgba(145, 211, 202, 0.8);
+$green-less-pale-60: rgba(145, 211, 202, 0.6);
+$green-less-pale-40: rgba(145, 211, 202, 0.4);
+$green-less-pale-20: rgba(145, 211, 202, 0.2);
+$green-less-pale-0: rgba(145, 211, 202, 0);
 
 $green-medium-100: #035c67;
 $green-medium-80: rgba(3, 92, 103, 0.8);
@@ -39,12 +55,19 @@ $green-medium-40: rgba(3, 92, 103, 0.4);
 $green-medium-20: rgba(3, 92, 103, 0.2);
 $green-medium-0: rgba(3, 92, 103, 0);
 
-$green-dark-100: #323e48;
+/* $green-dark-100: #323e48;
 $green-dark-80: rgba(50, 62, 72, 0.8);
 $green-dark-60: rgba(50, 62, 72, 0.6);
 $green-dark-40: rgba(50, 62, 72, 0.4);
 $green-dark-20: rgba(50, 62, 72, 0.2);
-$green-dark-0: rgba(50, 62, 72, 0);
+$green-dark-0: rgba(50, 62, 72, 0); */
+
+$red-error-100: #cb4c4c;
+$red-error-80: rgba(203, 76, 76, 0.8);
+$red-error-60: rgba(203, 76, 76, 0.6);
+$red-error-40: rgba(203, 76, 76, 0.4);
+$red-error-20: rgba(203, 76, 76, 0.2);
+$red-error-0: rgba(203, 76, 76, 0);
 
 $background-colour-overlay: rgba(62, 78, 76, 0.4);
 $background-colour-menu-: $green-pale-100;
@@ -52,6 +75,7 @@ $background-colour-menu-: $green-pale-100;
 // fonts
 $font-primary: "Montserrat", sans-serif;
 $font-menu: "Gotham";
+$font-icon: "FontAwesome";
 
 // breakpoints
 $MobileMaxWidth: 767px;
