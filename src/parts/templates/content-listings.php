@@ -1,18 +1,39 @@
 <?php
+/**
+ * Used to display all Properties of a given type, based on page slug/url
+ */
 
-if ( class_exists( 'Interra_Listing_CPT' ) ) {
-  $shortcode = '[torque_filtered_loop ';
-  $shortcode .= 'post_type="'.Interra_Listing_CPT::$listing_labels['post_type_name'].'" ';
-  $shortcode .= 'posts_per_page="12" ';
-  $shortcode .= 'filters_types="tabs_acf,dropdown_tax,dropdown_tax" ';
-  $shortcode .= 'filters_args="field_5c8ae924ce1a3,'.Interra_Listing_CPT::$LISTING_PROPERTY_TYPE_TAX_SLUG.','.Interra_Listing_CPT::$LISTING_REGION_TAX_SLUG.'"';
-  $shortcode .= ']';
+global $post;
+$post_slug = $post->post_name;
 
-  echo do_shortcode($shortcode);
-} else {
-  echo 'Listing CPT not found, contact site admin';
+if ( class_exists( 'Torque_Load_More_Loop' ) ) {
+  
+  $property_post_loop = new Torque_Load_More_Loop(
+    'torque_listing',
+    10,
+    array(
+      'post_type' 		=> 'torque_listing',
+      'post_status'		=> 'publish',
+      'tax_query' => array(
+          array (
+              'taxonomy' => 'atlantic_listing_property_type',
+              'field' => 'slug',
+              'terms' => $post_slug,
+          )
+      ),
+    ),
+    'parts/shared/loop-listing.php'
+  );
+
+  Torque_Load_More::get_inst()->register_loop( $property_post_loop );
+
+  if ( $property_post_loop->has_first_page() ) { ?>
+  <div class="loop-listings-wrapper">
+    <?php $property_post_loop->the_first_page(); ?>
+  </div>
+  <?php } else {
+    echo 'Property category not found. Please ensure your page title and slug is identical to the Property Type category name and slug.';
+  }
+
 }
-
-
-
 ?>

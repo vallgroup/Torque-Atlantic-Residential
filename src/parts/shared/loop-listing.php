@@ -24,13 +24,7 @@
     </div>
 
     <?php echo '<a href="' . get_the_permalink() . '">'; ?>
-      <button>View listing</button>
+      <button>Learn More</button>
     <?php echo '</a>'; ?>
-
-    <div class="post-terms-wrapper">
-      <?php
-      include locate_template('parts/shared/terms-listing.php');
-      ?>
-    </div>
   </div>
 </div>

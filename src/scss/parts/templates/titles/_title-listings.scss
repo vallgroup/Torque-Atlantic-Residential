@@ -1,0 +1,62 @@
+.listings-title-wrapper {
+    float: right;
+    width: 58%;
+
+    padding: 60px $bodyPadding1 0 0;
+    box-sizing: border-box;
+
+    .search-form-search-wrapper {
+        text-align: center;
+        display: block;
+        width: 100%;
+        margin: 45px auto 25px;
+
+        form.searchform {
+            /* display: inline-block;
+            width: 100%; */
+
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            justify-content: flex-start;
+            align-items: flex-start;
+
+            &.closed {
+                input#search {
+                    width: 0;
+                    border: 0;
+                    padding-left: 0;
+                    padding-right: 0;
+                    transition: 0.6s;
+
+                    flex-grow: 0;
+                }
+            }
+
+            input#search {
+                border: 1px solid $grey-dark-40;
+                padding: 8px 10px;
+        
+                background-color: transparent;
+                color: $grey-dark-100;
+                font-size: 20px;
+                outline: none;
+                box-sizing: border-box;
+                
+                transition: 0.6s;
+
+                flex-grow: 2;
+        
+                &::placeholder {
+                color: $grey-dark-40;
+                }
+            }
+
+            button {
+                min-width: 200px;
+                padding: 4.5px 25px;
+            }
+
+        }
+    }
+}

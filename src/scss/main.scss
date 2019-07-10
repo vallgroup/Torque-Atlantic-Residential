@@ -27,10 +27,14 @@
 @import "parts/shared/page-hero";
 @import "parts/shared/page-intro";
 @import "parts/shared/contact-details";
+@import "parts/shared/loop-listing";
 
 @import "parts/templates/titles/title-author";
 @import "parts/templates/titles/title-search";
+@import "parts/templates/titles/title-listings";
+@import "parts/templates/titles/title-torque_listing";
 
 @import "parts/templates/content-author";
 @import "parts/templates/content-contact";
 @import "parts/templates/search-loop";
+@import "parts/templates/content-torque_listing";

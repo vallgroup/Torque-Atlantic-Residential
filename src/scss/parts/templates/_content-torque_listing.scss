@@ -1,0 +1,65 @@
+.torque-listing-content {
+  display: flex;
+  flex-wrap: wrap;
+
+  h4 {
+    margin-top: 0;
+
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: -0.3px;
+    color: $green-medium-100;
+    text-transform: uppercase;
+
+    @include respond-to(tablet) {
+      font-size: 20px;
+    }
+  }
+
+  .torque-listing-content-details {
+    padding: 0 $bodyPadding1 25px;
+    width: 100%;
+    box-sizing: border-box;
+
+    @include respond-to(tablet) {
+      width: 66%;
+
+      padding: 70px $bodyPadding1;
+    }
+
+    @include respond-to(desktop) {
+      width: 60%;
+    }
+
+    .the-content,
+    .highlights {
+      margin-bottom: 20px;
+
+      @include respond-to(tablet) {
+        margin-bottom: 80px;
+      }
+    }
+
+    .key-detail {
+      display: flex;
+      padding: 20px 0;
+
+      .key-detail-name {
+        width: 60%;
+
+        font-weight: bold;
+        letter-spacing: -0.3px;
+        color: $grey-dark-100;
+        text-transform: uppercase;
+      }
+
+      &:first-child {
+        padding-top: 0;
+      }
+
+      &:not(:first-child) {
+        border-top: solid 1px $grey-dark-80;
+      }
+    }
+  }
+}

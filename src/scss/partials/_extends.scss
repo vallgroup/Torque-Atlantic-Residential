@@ -251,3 +251,47 @@
         padding-bottom: 5px;
     }
 }
+
+%useTermWhite {
+  color: $white !important;
+
+  &::before {
+    //background-image: url("../statics/images/tag-icon-white.svg") !important;
+  }
+}
+
+%useTermGreen {
+  color: $green-medium-100;
+
+  &::before {
+    //background-image: url("../statics/images/tag-icon-green.svg");
+  }
+}
+
+%useTermStyle {
+  display: flex;
+  align-items: center;
+
+  font-size: 12px;
+  letter-spacing: -0.4px;
+  line-height: 1.5;
+  color: $grey-dark-60;
+
+  text-transform: uppercase;
+
+  &::before {
+    content: "";
+
+    padding-right: 5px;
+    height: 15px;
+    width: 15px;
+
+    //background-image: url("../statics/images/tag-icon.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  &.tag-green {
+    @extend %useTermGreen;
+  }
+}

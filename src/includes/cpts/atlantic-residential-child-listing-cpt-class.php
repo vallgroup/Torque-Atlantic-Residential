@@ -6,8 +6,8 @@ class Atlantic_Residential_Listing_CPT {
 
   public static $LISTING_PROPERTY_TYPE_TAX_SLUG = 'atlantic_listing_property_type';
 
-  public static $LISTING_REGION_TAX_SLUG = 'atlantic_listing_region';
-
+  //public static $LISTING_REGION_TAX_SLUG = 'atlantic_listing_region';
+  
 	/**
 	 * Holds the listing cpt object
 	 *
@@ -70,20 +70,19 @@ class Atlantic_Residential_Listing_CPT {
 			'show_in_rest' => true
 			)
 		);
+	}
 
-		/* register_taxonomy(
-			self::$LISTING_REGION_TAX_SLUG,
-			self::$listing_labels['post_type_name'],
-			array(
-			'label'        => 'Neighborhoods',
-			'labels'       => array(
-				'singular_name'   => 'Neighborhood'
-			),
-			'hierarchical' => true,
-			'show_admin_column' => true,
-			'show_in_rest' => true
-			)
-		); */
+	public static function get_listing_taxonomy_id( $page_id, $taxonomy_slug ) {
+		$property_types = get_the_terms( $page_id, self::$LISTING_PROPERTY_TYPE_TAX_SLUG );
+		$tax_id = false;
+		if ( $property_types && ! is_wp_error( $property_types ) ) {
+			foreach ( $property_types as $property_type ) {
+				if ( strtolower( $property_type->slug ) == $taxonomy_slug ) {
+					$tax_id = $property_type->term_id;
+				}
+			}
+		}
+		return $tax_id;
 	}
 
 	/**
