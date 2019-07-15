@@ -2,6 +2,8 @@ $zIndexMenuContainer: 998;
 $zIndexMenuOverlay: 997;
 
 header#header-style-1 {
+  z-index: $zIndexMenuContainer;
+
   .torque-header-content-wrapper {
     // logo container
     .torque-header-logo-wrapper {
@@ -94,11 +96,6 @@ header#header-style-1 {
         }
       }
     }
-  }
-
-  // if hero position set to top of viewport, ensure menu items are lightly coloured...
-  &.header-light {
-    z-index: $zIndexMenuContainer;
   }
 }
 

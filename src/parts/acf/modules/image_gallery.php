@@ -1,6 +1,4 @@
-<?php 
-
-if( $images ): ?>
+<?php if( $images ): ?>
 <div class="image-gallery-section-container">
     <div class="image-wrapper">
     <?php foreach( $images as $image ): ?>

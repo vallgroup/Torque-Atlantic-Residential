@@ -46,11 +46,11 @@
   height: 0;
 
   @include respond-to(tablet) {
-    padding-bottom: 28%;
+    padding-bottom: 30%;
   }
 
   @include respond-to(desktop) {
-    padding-bottom: 24%;
+    padding-bottom: 28%;
   }
 }
 
@@ -81,14 +81,14 @@
 
 %videoSizeHalf {
   position: relative;
-  padding-top: 43%;
+  padding-top: 40%;
 
   @include respond-to(tablet) {
-    padding-top: 29%;
+    padding-top: 30%;
   }
 
   @include respond-to(desktop) {
-    padding-top: 27%;
+    padding-top: 28%;
   }
 }
 

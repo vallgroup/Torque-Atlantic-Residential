@@ -1,64 +1,97 @@
-.torque-listing-content {
+.listing-content-wrapper {
   display: flex;
   flex-wrap: wrap;
 
-  h4 {
-    margin-top: 0;
-
-    font-size: 13px;
-    font-weight: bold;
-    letter-spacing: -0.3px;
-    color: $green-medium-100;
-    text-transform: uppercase;
-
-    @include respond-to(tablet) {
-      font-size: 20px;
-    }
-  }
-
-  .torque-listing-content-details {
+  .listing-content-details {
     padding: 0 $bodyPadding1 25px;
     width: 100%;
+    margin: 0 auto;
     box-sizing: border-box;
 
     @include respond-to(tablet) {
       width: 66%;
-
-      padding: 70px $bodyPadding1;
     }
 
     @include respond-to(desktop) {
-      width: 60%;
+      width: 62%;
     }
 
-    .the-content,
-    .highlights {
+    .the-content {
       margin-bottom: 20px;
+      text-align: center;
+    }
+
+    ul.key-details-wrapper {
+      text-align: center;
+
+      list-style: none;
+
+      width: 100%;
+      padding: 25px 0;
+      margin: 0 auto;
+
+      li.key-detail {
+        padding: 2px 0;
+
+        .key-detail-name {
+          font-weight: bold;
+        }
+
+        .key-detail-value {
+          margin-left: 8px;
+        }
+      }
+    }
+
+    .cta-wrapper {
+      text-align: center;
+
+      button {
+        margin: 0 auto;
+
+        &:after {
+          background-color: $white;
+        }
+      }
+    }
+
+    .image-gallery-section-container {
+      width: 100%;
+      max-width: 100%;
+
+      background-color: $white;
+
+      padding: 25px 0;
 
       @include respond-to(tablet) {
-        margin-bottom: 80px;
-      }
-    }
-
-    .key-detail {
-      display: flex;
-      padding: 20px 0;
-
-      .key-detail-name {
-        width: 60%;
-
-        font-weight: bold;
-        letter-spacing: -0.3px;
-        color: $grey-dark-100;
-        text-transform: uppercase;
+        padding: 55px 0 50px;
       }
 
-      &:first-child {
-        padding-top: 0;
+      @include respond-to(desktop) {
+        padding: 75px 0;
       }
 
-      &:not(:first-child) {
-        border-top: solid 1px $grey-dark-80;
+      .image-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+
+        .image-item {
+          width: 20%;
+          max-width: 100%;
+          padding: 0.5%;
+
+          @include respond-to-max(tablet) {
+            width: 40%;
+            padding: 0.5%;
+          }
+
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
       }
     }
   }
