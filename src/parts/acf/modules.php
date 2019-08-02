@@ -12,10 +12,12 @@ if ( have_rows( $modules ) ):
 
         $align = get_sub_field( 'align' );
         $image = get_sub_field('image');
+        $image_background_size = get_sub_field('image_background_size');
         $heading = get_sub_field( 'heading' );
         $content = get_sub_field( 'content' );
         $cta = get_sub_field('cta');
         $top_bottom_padding = get_sub_field('top_bottom_padding') == 'yes' ? 'top-bottom-padding' : '';
+        $reduced_height = get_sub_field('reduced_height') == 'yes' ? 'reduced-height' : '';
 
         include locate_template('/parts/acf/modules/content-section_one.php');
 
