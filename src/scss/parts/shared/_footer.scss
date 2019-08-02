@@ -107,15 +107,30 @@ footer {
           margin: 0 0.4rem 0.4rem;
 
           a {
-            background: $white;
-            border-radius: 25%;
-            color: $grey-blue-100;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            color: $white;
             display: inline-block;
-            height: 42px;
-            line-height: 42px;
+            height: 32px;
+            line-height: 32px;
             text-align: center;
             transition: 0.2s;
-            width: 42px;
+            width: 32px;
+            margin-right: 8px;
+
+            &.social-icon-twitter {
+              background-image: url("../statics/images/social-icons/twitter-logo@2x.png");
+            }
+            &.social-icon-linkedin {
+              background-image: url("../statics/images/social-icons/linkedin-logo-1@2x.png");
+            }
+            &.social-icon-instagram {
+              background-image: url("../statics/images/social-icons/instagram-logo@2x.png");
+            }
+            &.social-icon-facebook {
+              background-image: url("../statics/images/social-icons/facebook-logo@2x.png");
+            }
 
             span {
               &.hidden {
