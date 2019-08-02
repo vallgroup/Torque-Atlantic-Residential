@@ -3,8 +3,10 @@
 require_once( get_stylesheet_directory() . '/includes/atlantic-residential-child-nav-menus-class.php');
 require_once( get_stylesheet_directory() . '/includes/widgets/atlantic-residential-child-widgets-class.php');
 require_once( get_stylesheet_directory() . '/includes/customizer/atlantic-residential-child-customizer-class.php');
-require_once( get_stylesheet_directory() . '/includes/acf/atlantic-residential-child-acf-class.php');
 require_once( get_stylesheet_directory() . '/includes/atlantic-residential-child-roles-class.php');
+/* ACF Includes */
+require_once( get_stylesheet_directory() . '/includes/acf/atlantic-residential-child-acf-class.php');
+/* CPT Includes */
 require_once( get_stylesheet_directory() . '/includes/cpts/atlantic-residential-child-job-application-cpt-class.php');
 require_once( get_stylesheet_directory() . '/includes/cpts/atlantic-residential-child-listing-cpt-class.php');
 
@@ -97,9 +99,6 @@ function update_author_slug() {
     $wp_rewrite->author_base = $author_slug;
 }
 
-
-
-
 /**
  * Enqueues
  */
@@ -134,6 +133,17 @@ function torque_enqueue_child_scripts() {
         wp_get_theme()->get('Version'),
         true       // put it in the footer
     );
+}
+
+
+/**
+ * Customise the Jetpack 'Successful Submission' message
+ */
+add_filter( 'grunion_contact_form_success_message', 'jetpackcom_contact_confirmation' );
+function jetpackcom_contact_confirmation() {
+  // Add new confirmation message here:
+  $conf = __( '<div class="contact-form-success-message">Thank you for your message!</div>', 'plugin-textdomain' );
+  return $conf;
 }
 
 ?>
