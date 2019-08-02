@@ -31,7 +31,7 @@ if (isset($_POST['tq-careers-form'])) {
 
     // form is validated - can save the application post
 
-    $application_id = Atlantic_Residential_Job_Application_CPT::save_application( $_POST['tq-name'], $_POST );
+    $application_id = Atlantic_Residential_Job_Application_CPT::save_application( $_POST['tq-form-stage'], $_POST['tq-name'], $_POST );
 
     if ( ! $application_id ) {
       throw new Exception();
@@ -52,12 +52,12 @@ if (isset($_POST['tq-careers-form'])) {
 
     $message = array(
       'success' => true,
-      'message' => 'Thank you for your application. Your application ID is '.$application_id
+      'message' => 'Thank you for your application. Your application ID is '.$application_id . '. We\'ll be in touch shortly.'
     );
 
     // send admin email notification
     $notification_email = get_field( 'notification_email' );
-    $email_result = Atlantic_Residential_Job_Application_CPT::send_admin_notification( $application_id, $notification_email, $_POST );
+    $email_result = Atlantic_Residential_Job_Application_CPT::send_admin_notification( $_POST['tq-form-stage'], $application_id, $notification_email, $_POST );
 
     // Check email was sent correctly...
     if ( ! $email_result ) {
@@ -66,10 +66,13 @@ if (isset($_POST['tq-careers-form'])) {
     }
 
   } catch (Exception $e) {
+    // send admin email notification
+    $notification_email = get_field( 'notification_email' );
+    $admin_email = ( $notification_email != '' ? $notification_email : get_option( 'admin_email' ) );
 
     $message = array(
       'success' => false,
-      'message' => $e->getMessage() !== '' ? $e->getMessage() : 'Something went wrong'
+      'message' => $e->getMessage() !== '' ? $e->getMessage() : 'Something went wrong. Please try refreshing the page and re-sending the application. If you continue to run into issues please contact us directly via: <a href="mailto:' . $admin_email .'">' . $admin_email . '</a>. Sorry for any inconvenience this causes.'
     );
   }
 }

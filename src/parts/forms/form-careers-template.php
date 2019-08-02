@@ -20,6 +20,13 @@
     ?>
     <input type="hidden" name="tq-careers-form" />
 
+    <?php
+    // this hidden input is important for us to know
+    // which application stage this form belongs to
+    // eg: stage 1 or stage 2....
+    ?>
+    <input type="hidden" name="tq-form-stage" value="1" />
+
     <div class="input-wrapper">
       <label for="tq-name">Name</label>
       <input type="text" name="tq-name" id="tq-name" placeholder="Name"/>
@@ -56,10 +63,11 @@
     </div>
 
     <div class="input-wrapper">
-      <div class="file-picker">
+      <div class="file-picker-container">
         <label for="tq-resume" >Resume Upload</label>
-        <input type="file" accept=".pdf" name="tq-resume" id="tq-resume" />
-        <label for="tq-resume" class="filename">Upload</label>
+        <input type="file" accept=".pdf" value="" name="tq-resume" id="tq-resume" />
+        <div class="file-input-text placeholder">File name</div>
+        <label for="tq-resume" class="filename standin-upload-btn">Upload</label>
       </div>
     </div>
 
