@@ -34,6 +34,16 @@
     line-height: 1.75;
   }
 
+  .cta-wrapper {
+    margin-top: 30px;
+
+    button {
+      &:after {
+        background: $green-medium-100;
+      }
+    }
+  }
+
   &.type-none,
   &.type- {
     padding: 0;

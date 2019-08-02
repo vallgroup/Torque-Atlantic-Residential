@@ -21,7 +21,13 @@
     .content-wrapper {
       @extend %text_block_next_to_image;
 
-      @extend %useBackgroundQuotationMarks_GreenPale;
+      .bg-quotation-mark-top {
+        @extend %useBackgroundQuotationMarks_Top_GreenPale;
+      }
+
+      .bg-quotation-mark-bottom {
+        @extend %useBackgroundQuotationMarks_Bottom_GreenPale;
+      }
   
       h3 {
         font-size: 2.5em;
@@ -64,6 +70,14 @@
     
     .content-wrapper {
       background: $green-less-pale-100;
+
+      .bg-quotation-mark-top {
+        @extend %useBackgroundQuotationMarks_Top_White;
+      }
+
+      .bg-quotation-mark-bottom {
+        @extend %useBackgroundQuotationMarks_Bottom_White;
+      }
     }
     .cta-wrapper {
       button {

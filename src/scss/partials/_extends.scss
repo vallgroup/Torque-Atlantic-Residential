@@ -41,16 +41,16 @@
 
 %imageSizeHalf {
   position: relative;
-  padding-bottom: 40%;
+  padding-bottom: 65%;
   width: 100%;
   height: 0;
 
   @include respond-to(tablet) {
-    padding-bottom: 30%;
+    padding-bottom: 45%;
   }
 
   @include respond-to(desktop) {
-    padding-bottom: 28%;
+    padding-bottom: 35%;
   }
 }
 
@@ -108,12 +108,60 @@
   background-repeat: no-repeat;
 }
 
-%useBackgroundQuotationMarks_GreenPale {
-  background-image: url("../statics/images/svg/quotation-marks_green-pale.svg");
+%useBackgroundQuotationMarks_Top_GreenPale {
+
+  background-image: url("../statics/images/upper-quotes@2x.png");
   background-size: contain;
   background-position-x: left;
+  background-position-y: top;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 33%;
+}
+%useBackgroundQuotationMarks_Bottom_GreenPale {
+  background-image: url("../statics/images/lower-quotes@2x.png");
+  background-size: contain;
+  background-position-x: right;
   background-position-y: bottom;
   background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  max-width: 33%;
+}
+
+%useBackgroundQuotationMarks_Top_White {
+
+  background-image: url("../statics/images/upper-quotes-2@2x.png");
+  background-size: contain;
+  background-position-x: left;
+  background-position-y: top;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 33%;
+}
+%useBackgroundQuotationMarks_Bottom_White {
+  background-image: url("../statics/images/lower-quotes-2@2x.png");
+  background-size: contain;
+  background-position-x: right;
+  background-position-y: bottom;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  max-width: 33%;
 }
 
 %useLoadMoreButtonStyle {
@@ -230,6 +278,18 @@
     background-color: $white;
     color: $green-pale-100;
   }
+  &.color-combo-color13, .color-combo-color13 * {
+    background-color: $grey-very-very-light;
+    color: $grey-blue-100;
+  }
+  &.color-combo-color14, .color-combo-color14 * {
+    background-color: $grey-very-very-light;
+    color: $green-medium-100;
+  }
+  &.color-combo-color15, .color-combo-color15 * {
+    background-color: $grey-very-very-light;
+    color: $green-pale-100;
+  }
 }
 
 %useMainContentPositioning {
@@ -293,5 +353,27 @@
 
   &.tag-green {
     @extend %useTermGreen;
+  }
+}
+
+%formFieldsGreen {
+  margin-top: 5px;
+  margin-bottom: 15px;
+  padding: 6.5px 10px;
+
+  width: 100%;
+  box-sizing: border-box;
+
+  background-color: $green-pale-30;
+  color: $grey-dark-100;
+  border: 1px solid $green-less-pale-100;
+  outline: none;
+
+  font-size: 16px;
+  font-family: $font_primary;
+
+  &::placeholder {
+    color: $grey-dark-40;
+    font-style: italic;
   }
 }

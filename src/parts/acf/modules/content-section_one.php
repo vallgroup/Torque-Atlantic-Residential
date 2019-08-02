@@ -1,8 +1,8 @@
 <div
   class="content-section align-<?php echo $align; ?> <?php echo $top_bottom_padding; ?>">
 
-  <div class="content-section-image-size">
-    <div class="content-section-image" style="background-image: url(<?php echo $image; ?>);" ></div>
+  <div class="content-section-image-size <?php echo $reduced_height; ?>">
+    <div class="content-section-image background-image-<?php echo $image_background_size ?>" style="background-image: url(<?php echo $image; ?>);" ></div>
   </div>
 
   <div class="content-wrapper" >

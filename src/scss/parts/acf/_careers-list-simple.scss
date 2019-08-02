@@ -28,11 +28,13 @@
     ul.loop-career {
 
         li {
-            margin: 15px auto;
+            margin: 25px auto;
 
             a {
-                text-transform: uppercase;
+                font-size: 1.1em;
                 color: $white;
+                text-transform: uppercase;
+                letter-spacing: 0.15px;
             }
         }
     }

@@ -7,11 +7,28 @@
     @extend %imageSize;
 
     @include respond-to-max(tablet) {
-      padding-bottom: 56%;
+      /* adding-bottom: 56%; */
+    }
+
+    &.reduced-height {
+      @extend %imageSizeHalf;
     }
 
     .content-section-image {
       @extend %imageInner;
+
+      &.background-image-cover {
+        background-size: cover;
+      }
+      &.background-image-contain {
+        background-size: contain;
+      }
+      &.background-image-auto {
+        background-size: auto;
+        @include respond-to-max(tablet) {
+          background-size: contain !important;
+        }
+      }
     }
   }
 

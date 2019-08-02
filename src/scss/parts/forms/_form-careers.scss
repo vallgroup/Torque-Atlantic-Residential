@@ -73,47 +73,45 @@
     }
 
     input,
-    textarea
-     {
-      margin-top: 5px;
-      margin-bottom: 15px;
-      padding: 6.5px 10px;
-
-      width: 100%;
-      box-sizing: border-box;
-
-      background-color: $green-pale-30;
-      color: $grey-dark-100;
-      border: 1px solid $green-less-pale-100;
-      outline: none;
-
-      font-size: 16px;
-      font-family: $font_primary;
-
-      &::placeholder {
-        color: $grey-dark-40;
-      }
+    textarea {
+      @extend %formFieldsGreen;
     }
 
     textarea {
       height: 150px;
     }
 
-    .file-picker {
-      label {
-        display: inline-block;
-        padding: 15px;
+    .file-picker-container {
+      position: relative;
 
-        font-size: 16px;
-        
-        &.filename {
-          border: none;
-          font-weight: 600;
+      label:not(.standin-upload-btn) {
+        width: auto;
+        font-size: 0.9em;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+
+      .file-input-text {
+        @extend %formFieldsGreen;
+
+        &.placeholder {
+          color: $grey-dark-40;
+          font-style: italic;
         }
       }
 
-      input {
+      input[type="file"] {
         display: none;
+      }
+
+      label.standin-upload-btn {
+        background: $green-medium-100;
+        color: $white;
+        padding: 8.5px 30px;
+        position: absolute;
+        top: 25px;
+        right: 0;
+        cursor: pointer;
       }
     }
 

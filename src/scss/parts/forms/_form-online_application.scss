@@ -1,0 +1,180 @@
+.online-application-form {
+  padding: 30px 0;
+
+  color: $green-medium-100;
+
+  @include respond-to(tablet) {
+    padding: 60px 0;
+  }
+
+  @include respond-to(desktop) {
+    padding: 80px 0;
+  }
+
+  h3 {
+    margin: 0 auto 35px;
+    max-width: 780px;
+    text-align: center;
+
+    color: $grey-dark-100;
+  }
+
+  h4 {
+    margin: 0 auto 15px;
+    max-width: 780px;
+    text-align: center;
+
+    color: $grey-dark-100;
+  }
+
+  p {
+    margin: 0 auto 15px;
+    max-width: 780px;
+    text-align: center;
+
+    color: $grey-dark-100;
+  }
+
+  .form-message {
+    margin: 0 auto 20px;
+    max-width: 750px;
+
+    font-weight: bold;
+
+    &.error {
+      color: $red-error-100;
+    }
+  }
+
+  form {
+    max-width: 100%;
+    width: 100%;
+
+    .input-wrapper {
+      display: inline-block;
+
+      width: 100%;
+      margin-bottom: 5px;
+
+      &.half-width {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        
+        @include respond-to(desktop) {
+          float: left;
+          width: 49%;
+  
+          &.first-col {
+            margin-right: 1%;
+          }
+          &.second-col {
+            margin-left: 1%;
+          }
+        }
+      }
+
+      &.second-section-start {
+        margin-top: 35px;
+      }
+    }
+
+    label {
+      width: auto;
+      
+      font-size: 0.9em;
+      font-weight: bold;
+      
+      text-transform: uppercase;
+
+      &.hidden-label {
+        display: none !important;
+      }
+    }
+
+    input,
+    textarea {
+      @extend %formFieldsGreen;
+    }
+
+    textarea {
+      height: 150px;
+    }
+
+    input[type="date"] {
+      height: 33px;
+    }
+    input[type="radio"] {
+      width: auto;
+      transform: scale(1.05);
+    }
+
+    .radio-item-wrapper {
+      float: left;
+      margin-right: 6%;
+
+      font-size: 0.9em;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    button[type="submit"] {
+      margin-top: 15px;
+
+      &:after {
+        background: $white;
+      }
+    }
+
+    .online-application-sections {
+      width: 100%;
+
+      &.section-one {
+        background-color: $green-less-pale-20;
+      }
+      &.section-two {
+        
+      }
+      &.section-three {
+        background-color: $green-less-pale-20;
+      }
+      &.section-four {
+        
+      }
+      &.section-five {
+        background-color: $green-less-pale-20;
+      }
+      &.section-six {
+        
+      }
+      &.section-seven {
+        background-color: $green-less-pale-20;
+      }
+      &.section-eight {
+        
+      }
+
+      .section-inner-container {
+        padding: 80px 0 60px;
+        margin: 0 auto;
+        max-width: 780px;
+
+        p {
+          text-align: left;
+          margin: 10px auto 8px;
+        }
+      }
+
+      .section-advance-container {
+        padding: 20px 0 40px;
+        margin: 0 auto;
+        max-width: 780px;
+
+        font-size: 0.9em;
+        font-weight: bold;
+        text-align: right;
+        text-transform: uppercase;
+      }
+    }
+  }
+}

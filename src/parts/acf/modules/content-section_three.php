@@ -1,11 +1,13 @@
 <div class="content-section-three align-<?php echo $align; ?> background-<?php echo $background_color; ?>">
 
-  <div class="content-container"> 
+  <div class="content-container">
     <div class="content-section-image-size">
       <div class="content-section-image" style="background-image: url(<?php echo $image; ?>);" ></div>
     </div>
 
     <div class="content-wrapper" >
+      <div class="bg-quotation-mark-top"></div>
+      <div class="bg-quotation-mark-bottom"></div>
       <h3><?php echo $quote; ?></h3>
     </div>
   </div>
