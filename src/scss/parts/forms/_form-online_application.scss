@@ -12,19 +12,28 @@
   }
 
   h3 {
+    display: inline-block;
+
     margin: 0 auto 35px;
     max-width: 780px;
     text-align: center;
 
     color: $grey-dark-100;
+
+    width: 100%;
   }
 
   h4 {
-    margin: 0 auto 15px;
+    display: inline-block;
+
+    margin: 10px auto 35px;
     max-width: 780px;
     text-align: center;
 
+    font-size: 1.2em;
     color: $grey-dark-100;
+
+    width: 100%;
   }
 
   p {
@@ -49,82 +58,6 @@
   form {
     max-width: 100%;
     width: 100%;
-
-    .input-wrapper {
-      display: inline-block;
-
-      width: 100%;
-      margin-bottom: 5px;
-
-      &.half-width {
-        width: 100%;
-        margin-left: 0;
-        margin-right: 0;
-        
-        @include respond-to(desktop) {
-          float: left;
-          width: 49%;
-  
-          &.first-col {
-            margin-right: 1%;
-          }
-          &.second-col {
-            margin-left: 1%;
-          }
-        }
-      }
-
-      &.second-section-start {
-        margin-top: 35px;
-      }
-    }
-
-    label {
-      width: auto;
-      
-      font-size: 0.9em;
-      font-weight: bold;
-      
-      text-transform: uppercase;
-
-      &.hidden-label {
-        display: none !important;
-      }
-    }
-
-    input,
-    textarea {
-      @extend %formFieldsGreen;
-    }
-
-    textarea {
-      height: 150px;
-    }
-
-    input[type="date"] {
-      height: 33px;
-    }
-    input[type="radio"] {
-      width: auto;
-      transform: scale(1.05);
-    }
-
-    .radio-item-wrapper {
-      float: left;
-      margin-right: 6%;
-
-      font-size: 0.9em;
-      font-weight: bold;
-      text-transform: uppercase;
-    }
-
-    button[type="submit"] {
-      margin-top: 15px;
-
-      &:after {
-        background: $white;
-      }
-    }
 
     .online-application-sections {
       width: 100%;
@@ -161,7 +94,99 @@
 
         p {
           text-align: left;
-          margin: 10px auto 8px;
+          margin: 0 auto 8px;
+
+          &.section-intro {
+            text-align: center;
+            margin-top: -25px;        
+            margin-bottom: 35px;        
+          }
+        }
+      }
+
+      .input-wrapper {
+        display: inline-block;
+  
+        width: 100%;
+        margin-bottom: 7px;
+  
+        &.half-width {
+          width: 100%;
+          margin-left: 0;
+          margin-right: 0;
+          
+          @include respond-to(desktop) {
+            float: left;
+            width: 49%;
+    
+            &.first-col {
+              margin-right: 1%;
+            }
+            &.second-col {
+              margin-left: 1%;
+            }
+          }
+        }
+  
+        &.second-section-start {
+          margin-top: 35px;
+        }
+
+        &.radio-input-wrapper {
+          margin-bottom: 12px;
+        }
+  
+        label {
+          width: auto;
+          
+          font-size: 0.9em;
+          font-weight: bold;
+          
+          text-transform: uppercase;
+    
+          &.hidden-label {
+            display: none !important;
+          }
+        }
+    
+        input,
+        textarea {
+          @extend %formFieldsGreen;
+        }
+    
+        textarea {
+          height: 150px;
+        }
+    
+        input[type="date"] {
+          height: 33px;
+        }
+        input[type="radio"] {
+          width: auto;
+          transform: scale(1.05);
+        }
+    
+        .radio-item-wrapper {
+          float: left;
+          margin-right: 6%;
+    
+          font-size: 0.9em;
+          font-weight: bold;
+          text-transform: uppercase;
+        }
+    
+        button[type="submit"] {
+          margin-top: 15px;
+    
+          &:after {
+            background: $white;
+          }
+        }
+
+        .input-note {
+          font-size: 0.88em;
+          color: $grey-dark;
+          margin-top: -8px;
         }
       }
 
