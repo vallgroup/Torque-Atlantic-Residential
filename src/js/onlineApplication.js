@@ -14,6 +14,11 @@
             }
         });
 
+        // Make all radio text 'clickable'
+        $('.radio-item-wrapper').click(function(){
+            $(this).find('input[type="radio"]').prop("checked", true);
+        });
+
         // S2
         $('input[name="tq-s2-salary"]').focusout(function() {
             if ( !$(this).val().includes('$') ) {
@@ -40,27 +45,6 @@
                 $('input[name="tq-s3-grad-major"]').val('');
             }
         });
-
-        /* // S4
-        $('input[name="tq-s4-rate-start"], input[name="tq-s4-rate-end"]').focusout(function() {
-            if ( !$(this).val().includes('$') ) {
-                $(this).val('$' + $(this).val());
-            }
-        });
-
-        // S5
-        $('input[name="tq-s5-rate-start"], input[name="tq-s5-rate-end"]').focusout(function() {
-            if ( !$(this).val().includes('$') ) {
-                $(this).val('$' + $(this).val());
-            }
-        });
-
-        // S6
-        $('input[name="tq-s6-rate-start"], input[name="tq-s6-rate-end"]').focusout(function() {
-            if ( !$(this).val().includes('$') ) {
-                $(this).val('$' + $(this).val());
-            }
-        }); */
 
     });
 
