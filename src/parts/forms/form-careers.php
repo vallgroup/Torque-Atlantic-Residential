@@ -31,7 +31,7 @@ if (isset($_POST['tq-careers-form'])) {
 
     // form is validated - can save the application post
 
-    $application_id = Atlantic_Residential_Job_Application_CPT::save_application( $_POST['tq-form-stage'], $_POST['tq-name'], $_POST );
+    $application_id = Atlantic_Residential_Job_Application_CPT::save_application( $_POST['tq-form-stage'], $_POST );
 
     if ( ! $application_id ) {
       throw new Exception();
