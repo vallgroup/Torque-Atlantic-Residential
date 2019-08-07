@@ -254,8 +254,8 @@
         </div>
 
         <div class="input-wrapper radio-input-wrapper">
-          <label for="tq-s3-university" class="hidden-label">Highest Degree Earned (Select ONE)</label>
-          <p>Highest Degree Earned (Select ONE)</p>
+          <label for="tq-s3-university" class="hidden-label">Highest Degree Earned</label>
+          <p>Highest Degree Earned</p>
           <div class="radio-item-wrapper">
             <input type="radio" name="tq-s3-highest-degree" value="associate" <?php echo isset($_POST['tq-s3-highest-degree']) ? ( $_POST['tq-s3-highest-degree'] == 'associate' ? 'checked' : '' )  : '' ; ?>/> Associate
           </div>
