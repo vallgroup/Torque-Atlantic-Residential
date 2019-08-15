@@ -1,6 +1,11 @@
 <?php
 
 if (isset($_POST['tq-online-application-form'])) {
+
+  // Retrieve notification email. Must be done here, before the 'try' statement, as it could be used in multiple places.
+  $notification_email = get_field( 'notification_email' );
+  $admin_email = ( $notification_email != '' ? $notification_email : get_option( 'admin_email' ) );
+
   // form was submitted
   try {
     
@@ -74,20 +79,14 @@ if (isset($_POST['tq-online-application-form'])) {
     );
 
     // send admin email notification
-    $notification_email = get_field( 'notification_email' );
-    $email_result = Atlantic_Residential_Job_Application_CPT::send_admin_notification( $_POST['tq-form-stage'], $application_id, $notification_email, $_POST );
+    $email_result = Atlantic_Residential_Job_Application_CPT::send_admin_notification( $_POST['tq-form-stage'], $application_id, $admin_email, $_POST );
 
     // Check email was sent correctly...
     if ( ! $email_result ) {
-      $admin_email = ( $notification_email != '' ? $notification_email : get_option( 'admin_email' ) );
       throw new Exception('Your Online Application has been successfully submitted, but the admin notification has failed to send. Your Application ID is '.$application_id . '. Please contact us directly, quoting your Application ID, via: <a href="mailto:' . $admin_email .'">' . $admin_email . '</a>. Sorry for any inconvenience this causes.' );
     }
 
   } catch (Exception $e) {
-    // send admin email notification
-    $notification_email = get_field( 'notification_email' );
-    $admin_email = ( $notification_email != '' ? $notification_email : get_option( 'admin_email' ) );
-
     $message = array(
       'success' => false,
       'message' => $e->getMessage() !== '' ? $e->getMessage() : 'Something went wrong. Please try refreshing the page and re-sending the Online Application. If you continue to run into issues please contact us directly via: <a href="mailto:' . $admin_email .'">' . $admin_email . '</a>. Sorry for any inconvenience this causes.'
