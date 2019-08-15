@@ -1,6 +1,11 @@
 <?php
 
 if (isset($_POST['tq-careers-form'])) {
+
+  // Retrieve notification email. Must be done here, before the 'try' statement, as it could be used in multiple places.
+  $notification_email = get_field( 'notification_email' );
+  $admin_email = ( $notification_email != '' ? $notification_email : get_option( 'admin_email' ) );
+
   // form was submitted
   try {
     if (
@@ -45,7 +50,7 @@ if (isset($_POST['tq-careers-form'])) {
     $media_id = media_handle_upload( 'tq-resume', $application_id );
 
     if ( ! $media_id || is_wp_error($media_id) ) {
-      throw new Exception('Failed uploading resume');
+      throw new Exception('Thank you for your application, however, unfortunately, your resume failed to upload. Please email it to us directly via: <a href="mailto:' . $admin_email .'">' . $admin_email . '</a>. Sorry for any inconvenience this causes.');
     }
 
     Atlantic_Residential_Job_Application_CPT::attach_resume($media_id, $application_id);
@@ -56,20 +61,14 @@ if (isset($_POST['tq-careers-form'])) {
     );
 
     // send admin email notification
-    $notification_email = get_field( 'notification_email' );
-    $email_result = Atlantic_Residential_Job_Application_CPT::send_admin_notification( $_POST['tq-form-stage'], $application_id, $notification_email, $_POST );
+    $email_result = Atlantic_Residential_Job_Application_CPT::send_admin_notification( $_POST['tq-form-stage'], $application_id, $admin_email, $_POST );
 
     // Check email was sent correctly...
     if ( ! $email_result ) {
-      $admin_email = ( $notification_email != '' ? $notification_email : get_option( 'admin_email' ) );
       throw new Exception('Your application has been successfully submitted, but the admin notification has failed to send. Please contact us directly via: <a href="mailto:' . $admin_email .'">' . $admin_email . '</a>. Sorry for any inconvenience this causes.' );
     }
 
   } catch (Exception $e) {
-    // send admin email notification
-    $notification_email = get_field( 'notification_email' );
-    $admin_email = ( $notification_email != '' ? $notification_email : get_option( 'admin_email' ) );
-
     $message = array(
       'success' => false,
       'message' => $e->getMessage() !== '' ? $e->getMessage() : 'Something went wrong. Please try refreshing the page and re-sending the application. If you continue to run into issues please contact us directly via: <a href="mailto:' . $admin_email .'">' . $admin_email . '</a>. Sorry for any inconvenience this causes.'
