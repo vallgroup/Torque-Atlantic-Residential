@@ -1,0 +1,192 @@
+/* autoprefixer grid: no-autoplace */
+
+.gallery-module {
+  .gallery-grid-root {
+    .grid-image {
+      position: relative;
+      width: auto;
+      height: auto;
+      margin: 0vw 0;
+      padding-top: 54.6%;
+      overflow: hidden;
+
+
+      @include respond-to-max(tablet) {
+        margin-bottom: 20px
+      }
+
+      @supports (display: grid) {
+        width: 100%;
+      }
+
+      .grid-image-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .caption-overlay {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 30px;
+
+        background-color: $grey-blue-60;
+        color: $white;
+
+        transition: all 0.3s ease;
+        opacity: 0;
+
+        @include respond-to-max(desktop) {
+          position: absolute;
+          bottom: 0;
+          top: unset;
+
+          align-items: flex-end;
+          padding: 15px 30px;
+
+          background-color: $grey-blue-100;
+
+          opacity: 1;
+        }
+      }
+
+      &:hover {
+        .caption-overlay {
+          opacity: 1;
+        }
+      }
+    }
+
+    /*
+      Tablet only (not inherited by desktop)
+     */
+
+    @include respond-to(tablet) {
+      // padding must respond to tablet
+      .grid-image {
+        padding-top: 0;
+      }
+
+      @include respond-to-max(desktop) {
+        margin: 0 -1vw;
+        display: flex;
+        flex-wrap: wrap;
+
+        .grid-image {
+          margin: 1vw;
+          width: auto;
+          height: 400px;
+
+          .grid-image-container {
+            position: relative;
+          }
+
+          @for $i from 1 through 12 {
+            $width: (($i / 12) * 100) * 1%;
+
+            &.grid-width-#{$i} {
+              flex: 1 0 $width;
+              width: $width;
+            }
+          }
+        }
+      }
+    }
+
+    /*
+      Desktop
+     */
+    @include respond-to(desktop) {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+
+      @supports (display: grid) {
+        grid-row-gap: 25px;
+        grid-column-gap: 25px;
+      }
+
+      @for $i from 1 through 2 {
+        &.grid-rows-#{$i} {
+          grid-template-rows: repeat($i, 400px);
+        }
+      }
+
+      .grid-image {
+        
+        margin-right: 25px;
+        
+        @include respond-to-max(tablet) {
+          margin-bottom: 25px;
+        }
+        
+        @for $i from 0 through 11 {
+          // possible col start value
+          $start: $i + 1;
+          // note: column line index starts at 1
+          @for $width from 0 through 12 {
+            // possible width values
+            @if $i + $width <= 12 {
+              // optimise css size - no point having start + width > 12 as itll never occur
+              &.grid-column-#{$i}-#{$width} {
+                grid-column-start: $start; //
+                grid-column-end: $start + $width;
+              }
+            }
+          }
+        }
+
+        @for $i from 0 through 1 {
+          $start: $i + 1;
+
+          @for $height from 1 through 2 {
+            &.grid-row-#{$i}-#{$height} {
+              grid-row-start: $start;
+              grid-row-end: $start + $height;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // adjacent galleries should still have gap
+  & + .gallery-module {
+    // @include respond-to(tablet) {
+    //   margin-top: 1vw;
+    //   margin-bottom: 1vw;
+    // }
+
+    @include respond-to(desktop) {
+      margin-top: 25px;
+      margin-bottom: 25px;
+    }
+  }
+
+  // last row should have gap at bottom...
+  // &:last-of-type {
+  //   @include respond-to(tablet) {
+  //     margin-bottom: 1vw;
+  //   }
+
+  //   @include respond-to(desktop) {
+  //     margin-bottom: 25px;
+  //   }
+  // }
+}
