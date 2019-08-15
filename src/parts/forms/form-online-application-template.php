@@ -605,7 +605,7 @@
           </div>
         </div>
 
-        <div class="input-wrapper radio-input-wrapper">
+        <div class="input-wrapper radio-input-wrapper second-section-start">
           <label for="tq-s8-terms-two" class="hidden-label">Terms Two</label>
           <p>I agree to submit to legally permissible drug and/or alcohol testing and a background check upon request by Atlantic Residential. I recognize that the results of these tests may be used to determine my employment or continued employment. I understand and expressly agree that if employed, storage areas provided for me (locker, desk, computer, etc.) are open to investigation by Atlantic Residential without prior notice to me.</p>
           <div class="radio-item-wrapper">
@@ -613,7 +613,7 @@
           </div>
         </div>
 
-        <div class="input-wrapper radio-input-wrapper">
+        <div class="input-wrapper radio-input-wrapper second-section-start">
           <label for="tq-s8-terms-three" class="hidden-label">Terms Three</label>
           <p>If I am employed by Atlantic Residential, I understand my employment is ‘at-will’ and
           can be terminated, with or without cause and with or without notice, at any time at the option of Atlantic Residential or myself. I understand that, other than the President of Atlantic Residential, no manager, supervisor or representative of Atlantic Residential has authority to enter into any agreement for employment for any specific period of time, or to make any agreement contrary to the foregoing. Only the President of Atlantic Residential has the authority to make any agreement contrary to the foregoing and then only in writing. I further expressly agree that, with respect to the ‘at-will’ employment relationship, this constitutes the full, complete and final expression of the parties’ intent concerning the nature of any employment relationship between myself and Atlantic Residential.</p>
@@ -622,7 +622,7 @@
           </div>
         </div>
 
-        <div class="input-wrapper radio-input-wrapper">
+        <div class="input-wrapper radio-input-wrapper second-section-start">
           <label for="tq-s8-digital-signature" class="hidden-label">Digital Signature</label>
           <p>My signature below certifies that I have read and understand the foregoing and to the best of my knowledge and belief, the information on this form is true and correct.</p>
           <p>My signature below also certifies that I agree to be bound by the terms and conditions stated in this application. This application contains all the understandings and agreements between me and Atlantic Residential concerning the nature of my employment, if any, by Atlantic Residential and supersedes all prior and/or contemporaneous practices, oral or written agreements, understandings, statements, representations and promises, express or implied, between me and Atlantic Residential. I understand and agree that, except as noted above, no person who is either an agent or employee of Atlantic Residential may modify, delete, vary or contradict, whether orally or in writing, the terms and conditions set forth herein.</p>
@@ -638,7 +638,7 @@
           <?php echo do_shortcode('[torque_recaptcha]'); ?>
         </div>
 
-        <div class="input-wrapper" >
+        <div class="input-wrapper submit-btn" >
           <button type="submit" class="white">Submit</button>
         </div>
       </div>
