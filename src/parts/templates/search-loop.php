@@ -1,11 +1,21 @@
 <div class="search-loop">
-  <div class="search-result-image-wrapper">
+  <div class="search-result-content-wrapper hide-on-desktop">
+    <a class="" href=<?php echo the_permalink(); ?>>
+      <h3><?php echo the_title(); ?></h3>
+    </a>
+  </div>
+  <div class="search-result-image-wrapper hide-on-desktop">
+    <a href=<?php echo the_permalink(); ?>>
+      <?php echo the_post_thumbnail( 'medium' ); ?>
+    </a>
+  </div>
+  <div class="search-result-image-wrapper hide-on-tablet">
     <a href=<?php echo the_permalink(); ?>>
       <?php echo the_post_thumbnail( 'thumbnail' ); ?>
     </a>
   </div>
   <div class="search-result-content-wrapper">
-    <a href=<?php echo the_permalink(); ?>>
+    <a class="hide-on-tablet" href=<?php echo the_permalink(); ?>>
       <h3><?php echo the_title(); ?></h3>
     </a>
     <div class="excerpt" ><?php echo the_excerpt(); ?></div>
