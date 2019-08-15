@@ -3,7 +3,6 @@
 $content = get_the_content();
 $key_details = get_field( 'key_details' );
 $cta = get_field( 'cta' );
-$images = get_field('gallery');
 
 ?>
 
@@ -68,20 +67,9 @@ $images = get_field('gallery');
 
   </div>
 
-  <?php /* Gallery Section */ ?>
+</div>
 
-  <?php if ($images): ?>
-  <div class="image-gallery-section-container">
-      <div class="image-wrapper">
-      <?php foreach( $images as $image ): ?>
-          <div class="image-item">
-              <img src="<?php echo $image['sizes']['large']; ?>" alt="<?php echo $image['alt']; ?>" />
-          </div>
-      <?php endforeach; ?>
-      </div>
-  </div>
-  <?php endif; ?>
-
-
-
+<?php /* Extra Modules Section -- Re-uses the ACF modules template/switch */ ?>
+<div class="listing-extra-modules-wrapper">
+  <?php get_template_part('/parts/acf/modules'); ?>
 </div>
