@@ -3,18 +3,25 @@
 require_once( get_stylesheet_directory() . '/includes/atlantic-residential-child-nav-menus-class.php');
 require_once( get_stylesheet_directory() . '/includes/widgets/atlantic-residential-child-widgets-class.php');
 require_once( get_stylesheet_directory() . '/includes/customizer/atlantic-residential-child-customizer-class.php');
-require_once( get_stylesheet_directory() . '/includes/atlantic-residential-child-roles-class.php');
 /* ACF Includes */
 require_once( get_stylesheet_directory() . '/includes/acf/atlantic-residential-child-acf-class.php');
 /* CPT Includes */
 require_once( get_stylesheet_directory() . '/includes/cpts/atlantic-residential-child-job-application-cpt-class.php');
 require_once( get_stylesheet_directory() . '/includes/cpts/atlantic-residential-child-listing-cpt-class.php');
+/* Roles CPT */
+require_once( get_stylesheet_directory() . '/includes/atlantic-residential-child-roles-class.php');
 
+
+/**
+* Custom Roles
+*/
+if ( class_exists( 'Atlantic_Residential_Roles' ) ) {
+  new Atlantic_Residential_Roles();
+}
 
 /**
  * Child Theme Nav Menus
  */
-
  if ( class_exists( 'Atlantic_Residential_Nav_Menus' ) ) {
    new Atlantic_Residential_Nav_Menus();
  }
@@ -22,7 +29,6 @@ require_once( get_stylesheet_directory() . '/includes/cpts/atlantic-residential-
 /**
  * Child Theme Widgets
  */
-
 if ( class_exists( 'Atlantic_Residential_Widgets' ) ) {
   new Atlantic_Residential_Widgets();
 }
@@ -30,7 +36,6 @@ if ( class_exists( 'Atlantic_Residential_Widgets' ) ) {
 /**
  * Child Theme Customizer
  */
-
 if ( class_exists( 'Atlantic_Residential_Customizer' ) ) {
   new Atlantic_Residential_Customizer();
 }
@@ -38,35 +43,25 @@ if ( class_exists( 'Atlantic_Residential_Customizer' ) ) {
 /**
  * Child Theme ACF
  */
+if ( class_exists( 'Atlantic_Residential_ACF' ) ) {
+  new Atlantic_Residential_ACF();
+}
 
- if ( class_exists( 'Atlantic_Residential_ACF' ) ) {
-   new Atlantic_Residential_ACF();
- }
+/**
+* Listing CPT
+*/
+if ( class_exists( 'Atlantic_Residential_Listing_CPT' ) ) {
+  new Atlantic_Residential_Listing_CPT();
+}
 
- /**
-  * Custom Roles
-  */
- 
- if ( class_exists( 'Atlantic_Residential_Roles' ) ) {
-   new Atlantic_Residential_Roles();
- }
- 
- /**
-  * Careers plugin settings
-  */
- 
- if ( class_exists( 'Torque_Careers' ) ) {
-   if ( class_exists( 'Atlantic_Residential_Job_Application_CPT' ) ) {
-     new Atlantic_Residential_Job_Application_CPT();
-   }
- }
-
- /**
-  * Listing CPT
-  */
- if ( class_exists( 'Atlantic_Residential_Listing_CPT' ) ) {
-   new Atlantic_Residential_Listing_CPT();
- }
+/**
+* Careers plugin settings
+*/
+if ( class_exists( 'Torque_Careers' ) ) {
+  if ( class_exists( 'Atlantic_Residential_Job_Application_CPT' ) ) {
+    new Atlantic_Residential_Job_Application_CPT();
+  }
+}
 
 /**
  * Admin settings
@@ -142,8 +137,32 @@ function torque_enqueue_child_scripts() {
 add_filter( 'grunion_contact_form_success_message', 'jetpackcom_contact_confirmation' );
 function jetpackcom_contact_confirmation() {
   // Add new confirmation message here:
-  $conf = __( '<div class="contact-form-success-message">Thank you for your message!</div>', 'plugin-textdomain' );
+  $conf = __( '<div class="contact-form-success-message">Thank you! Our team will respond as soon as possible.</div>', 'plugin-textdomain' );
   return $conf;
 }
+
+
+/**
+ * Map Settings
+ */
+if ( class_exists( 'Torque_Map_CPT' ) ) {
+  add_filter( Torque_Map_CPT::$POIS_ALLOWED_FILTER , function() { return 4; });
+}
+if ( class_exists( 'Torque_Map_Controller' ) ) {
+  add_filter( Torque_Map_Controller::$DISPLAY_POIS_FILTER , function() { return true; });
+  add_filter( Torque_Map_Controller::$POIS_LOCATION , function() { return 'top'; });
+}
+
+
+/**
+ * Alter search posts per page
+ */
+/* function limit_search_results_per_page($query) {
+  if ( $query->is_search ) {
+      $query->set( 'posts_per_page', '10' );
+  }
+  return $query;
+}
+add_filter( 'pre_get_posts','limit_search_results_per_page' ); */
 
 ?>
