@@ -1,6 +1,7 @@
 <?php
 
 $intro = get_field('page_intro');
+$map_id = get_field('map_id');
 
 ?>
 
@@ -16,14 +17,16 @@ $intro = get_field('page_intro');
 
 </div>
 
-<?php echo the_content(); ?>
+<div class="contact-content-container">
+  <?php echo the_content(); ?>
+</div>
 
 <?php
 
 $address = get_field('address', 'options');
 
-if ($address) { ?>
+if ($map_id) { ?>
 <div class="contact-section-map">
-  map goes here....
+  <?php echo do_shortcode('[torque_map map_id="' . $map_id . '"]'); ?>
 </div>
 <?php } ?>
