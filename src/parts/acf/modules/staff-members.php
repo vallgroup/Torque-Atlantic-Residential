@@ -18,19 +18,16 @@ if ( ! empty( $sorted_users ) ) { ?>
       ?>
 
       <div class="staff-member" >
-        <div class="image-wrapper">
-          <img class="staff-member-image" src="<?php echo $thumbnail; ?>" />
-          <a href="<?php echo $permalink; ?>" class="staff-member-content desktop">
-            <h4><?php echo $title; ?></h4>
-            <?php include locate_template( 'parts/shared/author-roles.php' ); ?>
-            <div class="meet-broker" >Learn More</div>
-          </a>
-        </div>
-        <div class="staff-member-content mobile">
-          <h4><?php echo $title; ?></h4>
-          <?php include locate_template( 'parts/shared/author-roles.php' ); ?>
-          <a href="<?php echo $permalink; ?>" class="meet-broker" >Learn More</a>
-        </div>
+        <a href="<?php echo $permalink; ?>"> 
+          <div class="image-wrapper">
+            <img class="staff-member-image" src="<?php echo $thumbnail; ?>" />
+            <div class="staff-member-content">
+              <h4><?php echo $title; ?></h4>
+              <?php include locate_template( 'parts/shared/author-roles.php' ); ?>
+              <div class="meet-broker" >Learn More</div>
+            </div>
+          </div>
+        </a>
       </div>
 
     <?php } ?>
