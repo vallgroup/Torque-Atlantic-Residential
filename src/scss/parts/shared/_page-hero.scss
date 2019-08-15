@@ -86,10 +86,10 @@
       text-shadow: 0 2px 16px rgba(0, 0, 0, 0.58);
 
       @include respond-to(desktop) {
-        font-size: 3.5vw;
+        font-size: 4.5vw;
       }
       @include respond-to-max(desktop) {
-        font-size: 4.5vw;
+        font-size: 5vw;
       }
       @include respond-to-max(tablet) {
         font-size: 5.5vw;

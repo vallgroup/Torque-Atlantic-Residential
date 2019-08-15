@@ -1,6 +1,8 @@
 /* autoprefixer grid: no-autoplace */
 
 .gallery-module {
+  overflow: hidden;
+  
   .gallery-grid-root {
     .grid-image {
       position: relative;
