@@ -45,6 +45,7 @@
 
     .cta-wrapper {
       text-align: center;
+      margin: 40px auto 30px;
 
       button {
         margin: 0 auto;
@@ -54,45 +55,11 @@
         }
       }
     }
+  }
+}
 
-    .image-gallery-section-container {
-      width: 100%;
-      max-width: 100%;
-
-      background-color: $white;
-
-      padding: 25px 0;
-
-      @include respond-to(tablet) {
-        padding: 55px 0 50px;
-      }
-
-      @include respond-to(desktop) {
-        padding: 75px 0;
-      }
-
-      .image-wrapper {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: center;
-
-        .image-item {
-          width: 20%;
-          max-width: 100%;
-          padding: 0.5%;
-
-          @include respond-to-max(tablet) {
-            width: 40%;
-            padding: 0.5%;
-          }
-
-          img {
-            width: 100%;
-            height: 100%;
-          }
-        }
-      }
-    }
+.listing-extra-modules-wrapper {
+  .cta-section-container {
+    margin-top: 5vw;
   }
 }

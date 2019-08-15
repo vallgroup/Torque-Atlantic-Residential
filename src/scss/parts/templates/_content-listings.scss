@@ -1,0 +1,27 @@
+.properties-gallery-grid-wrapper {
+
+    @include respond-to(desktop) {
+        margin-top: -300px;
+    }
+
+    .grid-image {
+        .caption-overlay {
+            font-size: 1.1em;
+            
+            flex-direction: column;
+        }
+
+        .city, .state {
+            display: inline-block;
+        }
+
+        .cta {
+            margin-top: 20px;
+            color: $green-pale-100;
+
+            @include respond-to-max(desktop) {
+                display: none;
+            }
+        }
+    }
+}

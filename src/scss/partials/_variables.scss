@@ -1,3 +1,18 @@
+// fonts
+$font-primary: "Montserrat", sans-serif;
+$font-menu: "Gotham";
+$font-icon: "FontAwesome";
+
+// breakpoints
+$MobileSmallMaxWidth: 440px;
+$MobileMaxWidth: 767px;
+$TabletMaxWidth: 1023px;
+
+// padding
+$bodyPadding0: 4vw;
+$bodyPadding1: 9vw;
+$bodyPadding2: 16vw;
+
 // colours
 $white: #fff;
 $white-80: rgba(255, 255, 255, 0.8);
@@ -72,16 +87,3 @@ $red-error-0: rgba(203, 76, 76, 0);
 
 $background-colour-overlay: rgba(62, 78, 76, 0.4);
 $background-colour-menu-: $green-pale-100;
-
-// fonts
-$font-primary: "Montserrat", sans-serif;
-$font-menu: "Gotham";
-$font-icon: "FontAwesome";
-
-// breakpoints
-$MobileMaxWidth: 767px;
-$TabletMaxWidth: 1023px;
-
-// padding
-$bodyPadding1: 9vw;
-$bodyPadding2: 16vw;

@@ -134,7 +134,7 @@
           line-height: 1.1;
         }
 
-        @include respond-to-max-custom(425px) {
+        @include respond-to-max(mobile) {
           font-size: 14px;
           width: 50%;
         }

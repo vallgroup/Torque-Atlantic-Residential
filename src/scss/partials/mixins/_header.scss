@@ -1,5 +1,5 @@
 @mixin useHeaderHeight($property) {
-  #{$property}: 100px;
+  #{$property}: 50px;
 
   @include respond-to(tablet) {
     #{$property}: 100px;
@@ -11,10 +11,10 @@
 }
 
 @mixin useRemoveHeaderHeight($property) {
-    #{$property}: -100px;
+    #{$property}: 0px;
   
     @include respond-to(tablet) {
-      #{$property}: -100px;
+      #{$property}: 0px;
     }
   
     @include respond-to(desktop) {

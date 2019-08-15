@@ -5,7 +5,7 @@ footer {
   flex-wrap: wrap;
   justify-content: center;
 
-  padding: 35px $bodyPadding2 10px;
+  padding: 35px $bodyPadding0 10px;
   box-sizing: border-box;
 
   background-color: $grey-blue-100;
@@ -27,6 +27,10 @@ footer {
     font-weight: 300;
     text-align: center;
 
+    @include respond-to-max(mobile) {
+      // flex: 1 1 50%;
+    }
+
     @include respond-to(tablet) {
       margin-bottom: 50px;
       flex: 1 1 33%;
@@ -40,6 +44,11 @@ footer {
 
     &.footer-logo {
       box-sizing: border-box;
+
+      @include respond-to-max(mobile) {
+        // flex: 1 1 50%;
+        width: 35%;
+      }
 
       @include respond-to(tablet) {
         padding-right: 50px;
@@ -66,83 +75,112 @@ footer {
       }
     }
 
+    &.footer-contact-details {
+
+      @include respond-to-max(mobile) {
+        display: none;
+      }
+
+      .contact-details {
+        line-height: 1.5;
+        margin-top: 0;
+  
+        .address {
+          margin-bottom: 15px;
+        }
+      }
+
+    }
+
+    &.footer-menu {
+
+      @include respond-to-max(desktop) {
+        display: none;
+      }
+      .torque-menu-items-stacked .torque-menu-item-wrapper {
+        padding: 8px 0;
+  
+        font-weight: 400;
+        color: $green-pale-100;
+  
+        text-transform: uppercase;
+        text-decoration: underline;
+      }
+    }
+
+    &.footer-social-icons {
+
+      @include respond-to-max(mobile) {
+        // flex: 1 1 50%;
+        width: 65%;
+      }
+      .social-media {
+        margin-top: 18px;
+  
+        ul {
+          margin: 0;
+          padding: 0;
+          list-style: none;
+  
+          li {
+            display: inline-block;
+            font-size: 1.5rem;
+            margin: 0 0.4rem 0.4rem;
+
+            @include respond-to-max(mobile) {
+              margin: 0 0.2rem 0.2rem;
+            }
+  
+            a {
+              background-position: center center;
+              background-repeat: no-repeat;
+              background-size: contain;
+              color: $white;
+              display: inline-block;
+              height: 32px;
+              line-height: 32px;
+              text-align: center;
+              transition: 0.2s;
+              width: 32px;
+              margin-right: 8px;
+  
+              &.social-icon-twitter {
+                background-image: url("../statics/images/social-icons/twitter-logo@2x.png");
+              }
+              &.social-icon-linkedin {
+                background-image: url("../statics/images/social-icons/linkedin-logo-1@2x.png");
+              }
+              &.social-icon-instagram {
+                background-image: url("../statics/images/social-icons/instagram-logo@2x.png");
+              }
+              &.social-icon-facebook {
+                background-image: url("../statics/images/social-icons/facebook-logo@2x.png");
+              }
+  
+              span {
+                &.hidden {
+                  display: none;
+                }
+              }
+  
+              &:hover {
+                opacity: 0.8;
+              }
+            }
+          }
+        }
+      }
+    }
+
     .footer-block-title {
       font-size: inherit;
       font-weight: 400;
       margin-top: 5px;
       text-transform: uppercase;
       color: $green-pale-100;
-    }
 
-    .contact-details {
-      line-height: 1.5;
-      margin-top: 0;
-
-      .address {
-        margin-bottom: 15px;
-      }
-    }
-
-    .torque-menu-items-stacked .torque-menu-item-wrapper {
-      padding: 8px 0;
-
-      font-weight: 400;
-      color: $green-pale-100;
-
-      text-transform: uppercase;
-      text-decoration: underline;
-    }
-
-    .social-media {
-      margin-top: 18px;
-
-      ul {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-
-        li {
-          display: inline-block;
-          font-size: 1.5rem;
-          margin: 0 0.4rem 0.4rem;
-
-          a {
-            background-position: center center;
-            background-repeat: no-repeat;
-            background-size: contain;
-            color: $white;
-            display: inline-block;
-            height: 32px;
-            line-height: 32px;
-            text-align: center;
-            transition: 0.2s;
-            width: 32px;
-            margin-right: 8px;
-
-            &.social-icon-twitter {
-              background-image: url("../statics/images/social-icons/twitter-logo@2x.png");
-            }
-            &.social-icon-linkedin {
-              background-image: url("../statics/images/social-icons/linkedin-logo-1@2x.png");
-            }
-            &.social-icon-instagram {
-              background-image: url("../statics/images/social-icons/instagram-logo@2x.png");
-            }
-            &.social-icon-facebook {
-              background-image: url("../statics/images/social-icons/facebook-logo@2x.png");
-            }
-
-            span {
-              &.hidden {
-                display: none;
-              }
-            }
-
-            &:hover {
-              opacity: 0.8;
-            }
-          }
-        }
+      @include respond-to-max(mobile) {
+        display: none;
       }
     }
   }
@@ -154,14 +192,16 @@ footer {
 
     font-size: 12px;
     font-weight: 300;
-    text-align: center;
+    text-align: left;
 
     padding-top: 10px;
 
     border-top: 1px solid $green-pale-80;
 
-    @include respond-to(tablet) {
-      text-align: left;
+    @include respond-to-max(mobile) {
+      span {
+        display: block;
+      }
     }
   }
 

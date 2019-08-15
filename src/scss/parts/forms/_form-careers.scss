@@ -61,6 +61,12 @@
       &.second-section-start {
         margin-top: 35px;
       }
+
+      &.submit-btn {
+        @include respond-to-max(tablet) {
+          text-align: center;
+        }
+      }
     }
 
     label {
@@ -112,6 +118,11 @@
         top: 25px;
         right: 0;
         cursor: pointer;
+
+        @include respond-to-max(tablet) {
+          padding: 10.5px 30px;
+          top: 23px;
+        }
       }
     }
 

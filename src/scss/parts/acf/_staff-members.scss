@@ -15,19 +15,19 @@
 
   .staff-member {
     display: flex;
-    margin-bottom: 40px;
-    width: 100%;
+    margin-bottom: 0;
+    // width: 100%;
 
-    @include respond-to(tablet) {
-      display: block;
+    // @include respond-to(tablet) {
+      // display: block;
 
-      min-height: 345px;
+      // min-height: 345px;
 
       margin-left: 2%;
       margin-right: 2%;
 
       width: 46%;
-    }
+    // }
 
     @include respond-to(desktop) {
       min-height: 315px;
@@ -44,30 +44,27 @@
       position: relative;
       overflow: hidden;
       
-      @include respond-to-max-custom(550px) {
-        max-height: 160px;
-        max-width: 40% !important;
+      margin-bottom: 25px;
+
+      @include respond-to-max-custom(480px) {
+        padding-bottom: 85px;
       }
 
-      @include respond-to-max-custom(767px) {
-        max-height: 220px;
-        max-width: 30%;
+      @include respond-to-custom(481px) {
+        padding-bottom: 65px;
       }
 
-      @include respond-to-max(tablet) {
-        flex: 0 0 auto;
+      @include respond-to-custom(560px) {
+        padding-bottom: 45px;
       }
 
       @include respond-to(tablet) {
-        margin-bottom: 15px;
-
         max-height: 465px;
         max-width: 100%;
+        padding-bottom: 0;
       }
 
       @include respond-to(desktop) {
-        margin-bottom: 25px;
-        
         max-height: 560px;
         max-width: 100%;
       }
@@ -106,60 +103,13 @@
       justify-content: center;
       align-content: flex-end;
       
-      @include respond-to-max(tablet) {
-        h4 {
-          font-size: 25px !important;
-        }
-        .staff-roles {
-          font-size: 18px !important;
-        }
-        .meet-broker {
-          font-size: 15px !important;
-        }
-      }
-
-      &.desktop {
-        @include respond-to(desktop) {
-          display: flex;
-        }
-        @include respond-to-max(desktop) {
-          display: none;
-        }
-      }
-
-      &.mobile {
-        @include respond-to(desktop) {
-          display: none;
-        }
-        @include respond-to-max(desktop) {
-          display: flex;
-          justify-content: center;
-          align-content: center;
-          position: relative;
-          height: auto;
-
-          background: transparent;
-          opacity: 1;
-
-          h4, .staff-roles {
-            margin-bottom: 5px;
-            color: $grey-dark-100;
-          }
-          .meet-broker {
-            margin-top: 20px;
-            margin-bottom: 0;
-          }
-        }
-      }
-      @include respond-to-max-custom(767px) {
-        text-align: left;
-
-        h4,
-        .staff-roles,
-        .meet-broker {
-          margin-left: 8% !important;
-        }
-
+      @include respond-to-max(desktop) {
+        background: $grey-blue-100;
+        opacity: 1;
+        top: unset;
+        height: auto;
+        bottom: 0;
+        padding: 10px 0;
       }
 
       h4,
@@ -175,6 +125,19 @@
         color: $white;
 
         margin-bottom: 1.5%; 
+
+        @include respond-to-max(desktop) {
+          font-size: 25px !important;
+          color: $white;
+        }
+
+        @include respond-to-max(tablet) {
+          font-size: 22px !important;
+        }
+
+        @include respond-to-max-custom(480px) {
+          font-size: 18px !important;
+        }
       }
 
       .staff-roles {
@@ -183,6 +146,15 @@
         color: $white;
 
         margin-bottom: 10%; 
+
+        @include respond-to-max(desktop) {
+          font-size: 18px !important;
+          margin-bottom: 1%; 
+          color: $white;
+        }
+        @include respond-to-max(tablet) {
+          font-size: 16px !important;
+        }
       }
 
       .meet-broker {
@@ -193,6 +165,14 @@
         text-decoration: underline;
 
         margin-bottom: 22%;
+
+        @include respond-to-max(desktop) {
+          font-size: 15px !important;
+          margin-bottom: 0;
+        }
+        @include respond-to-max(tablet) {
+          font-size: 14px !important;
+        }
       }
     }
   }

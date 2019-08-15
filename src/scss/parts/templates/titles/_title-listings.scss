@@ -1,15 +1,51 @@
 .listings-title-wrapper {
-    float: right;
-    width: 58%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
 
-    padding: 60px $bodyPadding1 0 0;
+    padding: 60px $bodyPadding1;
     box-sizing: border-box;
+
+    @include respond-to-max(desktop) {
+        text-align: center;
+    }
+
+    @include respond-to(desktop) {
+        margin-left: auto;
+        margin-right: 0;
+        width: 58%;
+
+        padding: 60px $bodyPadding1 0 0;
+    }
+
+    h5 {
+        font-size: 18px;
+        text-transform: uppercase;
+        margin: 0;
+        font-weight: 400;
+
+        @include respond-to-max(mobile) {
+            font-size: 16px;
+            color: $green-medium-100;
+        }
+    }
+
+    h1 {
+        font-size: 38px;
+        text-transform: uppercase;
+        font-weight: 400;
+        margin: 15px 0;
+
+        @include respond-to-max(mobile) {
+            font-size: 28px;
+        }
+    }
 
     .search-form-search-wrapper {
         text-align: center;
         display: block;
         width: 100%;
-        margin: 45px auto 25px;
+        margin: 40px auto 25px;
 
         form.searchform {
             /* display: inline-block;
@@ -21,6 +57,11 @@
             justify-content: flex-start;
             align-items: flex-start;
 
+            @include respond-to-max(tablet) {
+                display: inline-block;
+            }
+
+
             &.closed {
                 input#search {
                     width: 0;
@@ -28,7 +69,7 @@
                     padding-left: 0;
                     padding-right: 0;
                     transition: 0.6s;
-
+                    
                     flex-grow: 0;
                 }
             }
@@ -46,6 +87,10 @@
                 transition: 0.6s;
 
                 flex-grow: 2;
+
+                @include respond-to-max(tablet) {
+                    min-width: 100%;
+                }
         
                 &::placeholder {
                 color: $grey-dark-40;
@@ -55,6 +100,11 @@
             button {
                 min-width: 200px;
                 padding: 4.5px 25px;
+
+                @include respond-to-max(tablet) {
+                    margin-top: 15px;
+                    min-width: 100%;
+                }
             }
 
         }

@@ -1,3 +1,58 @@
+.contact-content-container {
+  padding: 40px $bodyPadding2;
+
+  form {
+    padding: 80px $bodyPadding1 60px;
+    margin: 0 auto;
+    max-width: 780px;
+
+    .grunion-field-wrap {
+      display: inline-block;
+
+      width: 100%;
+      margin-bottom: 7px;
+
+      label {
+        width: auto;
+
+        font-size: 0.9em;
+        font-weight: bold;
+
+        text-transform: uppercase;
+
+        span {
+            display: none;
+        }
+      }
+
+      input,
+      textarea {
+        @extend %formFieldsGreen;
+      }
+
+      textarea {
+        height: 150px;
+      }
+    }
+    .contact-submit{
+      button[type="submit"] {
+        margin-top: 15px;
+  
+        &:after {
+          background: $white;
+        }
+      }
+    }
+  }
+  .contact-form-success-message {
+    padding: 80px $bodyPadding1 60px;
+    margin: 0 auto;
+    max-width: 780px;
+    text-align: center;
+  }
+}
+
 .contact-section-map {
-    width: 100%;   
+  margin-top: 45px;
+  width: 100%;
 }

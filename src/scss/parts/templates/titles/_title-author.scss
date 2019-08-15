@@ -12,10 +12,8 @@
   .staff-image-container {
     width: 100%;
     height: auto;
-
-    @include respond-to(tablet) {
-      max-width: 50%;
-    }
+    text-align: center;
+    margin-bottom: 25px;
 
     @include respond-to(desktop) {
       max-width: 40%;
@@ -24,21 +22,15 @@
     }
 
     .featured-image {
-      max-width: 100% !important;
+      max-width: 400px !important;
       width: 100% !important;
       height: 100% !important;
   
       object-fit: cover;
       object-position: center top;
-  
-      @include respond-to-max(tablet) {
-        max-height: 710px;
-        height: auto;
-        object-position: center 10%;
-        margin-top:10px;
-        padding-bottom:10px;
-      }
-  
+
+      transition: all 0.2s ease 0s;
+
       @include respond-to(tablet) {
         max-height: 400px;
       }
@@ -51,23 +43,19 @@
   }
 
   .staff-detail {
-    padding-left: 10%;
-
     position: relative;
 
-    @include respond-to-max(tablet) {
+    @include respond-to-max(desktop) {
       width: 100%;
       padding: 0;
+      text-align: center;
     }
-    @include respond-to(tablet) {
-      flex: 1 1 50%;
-      box-sizing: border-box;
-    }
-
     @include respond-to(desktop) {
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
+      flex: 1 1 55%;
+      padding-left: 5%;
     }
   }
 
@@ -78,8 +66,14 @@
   .staff-roles {
     display: flex;
     flex-wrap: wrap;
-
+    justify-content: center;
+    
     margin-bottom: 10px;
+    
+    @include respond-to(desktop) {
+      justify-content: flex-start;
+    }
+
 
     .staff-role {
       margin-right: 15px;
@@ -91,7 +85,6 @@
 
       @include respond-to(tablet) {
         margin-bottom: 5px;
-
         font-size: 17px;
       }
 
@@ -108,17 +101,17 @@
       margin-top: auto;
 
     }
-    @include respond-to-max(tablet) {
+    @include respond-to-max(desktop) {
       margin-top: 35px;
     }
 
     .nav-link {
       color: $green-pale-100;
-      font-size: 22px;
+      font-size: 20px;
       text-transform: uppercase;
       text-decoration: underline;
 
-      @include respond-to-max(tablet) {
+      @include respond-to-max(desktop) {
         font-size: 17px;
       }
 

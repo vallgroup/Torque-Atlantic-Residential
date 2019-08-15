@@ -4,7 +4,39 @@ $zIndexMenuOverlay: 997;
 header#header-style-1 {
   z-index: $zIndexMenuContainer;
 
+  @include respond-to-max(desktop) {
+    background: $white;
+    height: 85px;
+  }
+
+  &.header-light {
+    .logo-container {
+      &.logo-dark {
+        display: none;
+
+        // Tablet and smaller header has a white background, so always show the dark logo
+        @include respond-to-max(desktop) {
+          display: initial;
+        }
+      }
+      &.logo-white {
+        @include respond-to-max(desktop) {
+          display: none;
+        }
+      }
+    }
+  }
+  &.header-dark {
+    .logo-container {
+      &.logo-white {
+        display: none;
+      }
+    }
+  }
+
   .torque-header-content-wrapper {
+    padding: 5px 0;
+    
     // logo container
     .torque-header-logo-wrapper {
       padding-left: $bodyPadding1;
@@ -74,7 +106,7 @@ header#header-style-1 {
       }
 
       .torque-menu-item-wrapper {
-        margin: 0 $bodyPadding1 0 $bodyPadding1;
+        margin: 0 $bodyPadding1;
         text-align: right;
 
         .torque-menu-item {
@@ -82,7 +114,7 @@ header#header-style-1 {
           font-family: $font-menu;
           font-weight: bold;
           font-size: 2.5em;
-          padding: 14px 0;
+          padding: 10px 0;
           transition: 0.2s;
 
           @include respond-to-max(tablet) {

@@ -3,6 +3,11 @@
 
   padding: 25px 0 0;
 
+  @include respond-to-max(tablet) {
+    padding-top: 0;
+    margin-top: -5px; // hack to hide white-space below video just in-case this content block follows a video block...
+  }
+
   .content-container {
     position: relative;
 
@@ -39,9 +44,14 @@
 
   .cta-wrapper {
     position: relative;
-    width: 100%;
-    margin-left: 7vw;
-    padding: 50px 0 100px;
+    width: auto;
+    padding: 50px 0 90px;
+    text-align: center;
+
+    @include respond-to(tablet) {
+      text-align: left;
+      margin-left: 7vw;
+    }
 
     .content {
       font-size: 1.5em;
@@ -61,7 +71,11 @@
       left: 0;
     }
     .cta-wrapper {
-      margin-left: 50%;
+
+      @include respond-to(tablet) {
+        text-align: left;
+        margin-left: 50%;
+      }
     }
   }
 

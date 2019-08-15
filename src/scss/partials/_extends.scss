@@ -1,8 +1,34 @@
+%hideOnDesktop {
+  @include respond-to(desktop) {
+    display: none !important;
+  }
+}
+%hideOnTablet {
+  @include respond-to-max(desktop) {
+    display: none !important;
+  }
+}
+%hideOnmobile {
+  @include respond-to-max(tablet) {
+    display: none !important;
+  }
+}
+
 %text_block_next_to_image {
   padding: 35px $bodyPadding1 20px;
 
   background-color: $white;
   color: inherit;
+
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  min-height: 150px;
+
+  position: relative;
 
   @include respond-to(tablet) {
     position: absolute;
@@ -12,6 +38,8 @@
     height: 100%;
     width: 50%;
     box-sizing: border-box;
+
+    text-align: left;
 
     display: flex;
     flex-direction: column;
@@ -81,7 +109,7 @@
 
 %videoSizeHalf {
   position: relative;
-  padding-top: 40%;
+  padding-top: 45%;
 
   @include respond-to(tablet) {
     padding-top: 30%;
@@ -120,7 +148,11 @@
   position: absolute;
   top: 0;
   left: 0;
-  max-width: 33%;
+  max-width: 30%;
+
+  @include respond-to-max(tablet) {
+    max-height: 50%;
+  }
 }
 %useBackgroundQuotationMarks_Bottom_GreenPale {
   background-image: url("../statics/images/lower-quotes@2x.png");
@@ -133,7 +165,13 @@
   position: absolute;
   top: 0;
   right: 0;
-  max-width: 33%;
+  max-width: 30%;
+
+  @include respond-to-max(tablet) {
+    max-height: 50%;
+    top: unset;
+    bottom: 0;
+  }
 }
 
 %useBackgroundQuotationMarks_Top_White {
@@ -148,7 +186,11 @@
   position: absolute;
   top: 0;
   left: 0;
-  max-width: 33%;
+  max-width: 30%;
+
+  @include respond-to-max(tablet) {
+    max-height: 50%;
+  }
 }
 %useBackgroundQuotationMarks_Bottom_White {
   background-image: url("../statics/images/lower-quotes-2@2x.png");
@@ -161,7 +203,13 @@
   position: absolute;
   top: 0;
   right: 0;
-  max-width: 33%;
+  max-width: 30%;
+
+  @include respond-to-max(tablet) {
+    max-height: 50%;
+    top: unset;
+    bottom: 0;
+  }
 }
 
 %useLoadMoreButtonStyle {

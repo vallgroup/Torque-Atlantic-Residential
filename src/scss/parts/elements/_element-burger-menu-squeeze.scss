@@ -3,10 +3,18 @@
   .torque-navigation-toggle {
     &:not(.active) {
       .pre-text {
-        color: $green-pale-100 !important;
+        color: $white !important;
+
+        @include respond-to-max(desktop) {
+          color:  $grey-dark-100 !important;
+        }
       }
       .torque-burger-menu-line {
-        background-color: $green-pale-100 !important;
+        background-color: $white !important;
+
+        @include respond-to-max(desktop) {
+          background-color:  $grey-dark-100 !important;
+        }
       }
     }
   }
@@ -27,7 +35,7 @@
     top: 9px;
     width: 32px;
     height: 2px;
-    background-color: $grey-blue-100;
+    background-color: $grey-dark-100;
     margin-bottom: 5px;
     transition: all 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19);
 
@@ -77,12 +85,15 @@
     margin-right: 38px;
 
     right: $bodyPadding1;
-    top: 36.5%;
+    top: 40.5%;
 
     z-index: 999;
     
     &.menu-closed {
       display: block;
+      @include respond-to-max(tablet) {
+        display: none !important;
+      }
     }
   }
 
@@ -95,6 +106,9 @@
     .pre-text {
       &.menu-opened {
         display: block;
+        @include respond-to-max(tablet) {
+          display: none !important;
+        }
       }
     }
   }

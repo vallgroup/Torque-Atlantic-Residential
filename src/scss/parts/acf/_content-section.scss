@@ -7,7 +7,7 @@
     @extend %imageSize;
 
     @include respond-to-max(tablet) {
-      /* adding-bottom: 56%; */
+      padding-bottom: 56%;
     }
 
     &.reduced-height {
@@ -44,6 +44,16 @@
       margin-bottom: 10px;
 
       line-height: 1.5;
+    
+      ul {
+        margin-left: -22px;
+
+        @include respond-to-max(tablet) {
+          text-align: left;
+          max-width: 250px;
+          margin: 0 auto !important;
+        }
+      }
     }
 
     button {
@@ -61,6 +71,10 @@
 
   &.top-bottom-padding {
     padding: 25px 0;
+
+    @include respond-to-max(tablet) {
+      padding: 0 0 25px;
+    }
   }
 }
 
