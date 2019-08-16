@@ -48,7 +48,7 @@ if ( ! empty( $sortedUsers ) ) {
         <?php if ($prev_staff_id) { ?>
             <a href="<?php echo get_author_posts_url($prev_staff_id); ?>" class="nav-link nav-link-prev">Previous</a>
         <?php } else { ?>
-            <span class="nav-link nav-link-previous end-of-the-line">Previous</span>
+            <span class="nav-link nav-link-prev end-of-the-line">Previous</span>
         <?php }
         if ($next_staff_id) { ?>
             <a href="<?php echo get_author_posts_url($next_staff_id); ?>" class="nav-link nav-link-next">Next</a>
