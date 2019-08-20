@@ -205,8 +205,12 @@
 
         font-size: 0.9em;
         font-weight: bold;
-        text-align: right;
+        text-align: center;
         text-transform: uppercase;
+
+        @include respond-to(tablet) {
+          text-align: right;
+        }
 
         a {
           display: inline-block;

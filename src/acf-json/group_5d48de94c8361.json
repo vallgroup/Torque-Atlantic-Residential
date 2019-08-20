@@ -1,0 +1,124 @@
+{
+    "key": "group_5d48de94c8361",
+    "title": "Online Application Data | Pre-Employment Certification",
+    "fields": [
+        {
+            "key": "field_5d48deaaecd5d",
+            "label": "Agreement One",
+            "name": "s8_agreement_one",
+            "type": "text",
+            "instructions": "Atlantic Residential is an Equal Opportunity Employer. Applicants for all openings are welcome and will be considered without regard to race, color, religion, national origin, sex, age, sexual orientation, physical or mental disability, or any other basis protected by state, federal or local law. It is the intent of the association to comply with all applicable federal, state and local legislation concerning equal opportunity in employment. Proof of citizenship or authorization for employment in the USA is required before final selection. Atlantic Residential is committed to protecting the health and safety of our employees. I also understand that this application is only valid for the position applied for at present and that Atlantic Residential is not obligated to retain or consider this application for future openings.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5d48df197f894",
+            "label": "Agreement Two",
+            "name": "s8_agreement_two",
+            "type": "text",
+            "instructions": "I agree to submit to legally permissible drug and\/or alcohol testing and a background check upon request by Atlantic Residential. I recognize that the results of these tests may be used to determine my employment or continued employment. I understand and expressly agree that if employed, storage areas provided for me (locker, desk, computer, etc.) are open to investigation by Atlantic Residential without prior notice to me.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5d48df577fa9c",
+            "label": "Agreement Three",
+            "name": "s8_agreement_three",
+            "type": "text",
+            "instructions": "If I am employed by Atlantic Residential, I understand my employment is ‘at-will’ and can be terminated, with or without cause and with or without notice, at any time at the option of Atlantic Residential or myself. I understand that, other than the President of Atlantic Residential, no manager, supervisor or representative of Atlantic Residential has authority to enter into any agreement for employment for any specific period of time, or to make any agreement contrary to the foregoing. Only the President of Atlantic Residential has the authority to make any agreement contrary to the foregoing and then only in writing. I further expressly agree that, with respect to the ‘at-will’ employment relationship, this constitutes the full, complete and final expression of the parties’ intent concerning the nature of any employment relationship between myself and Atlantic Residential.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5d48df6e7fa9d",
+            "label": "Digital Signature",
+            "name": "s8_digital_signature",
+            "type": "text",
+            "instructions": "My signature below certifies that I have read and understand the foregoing and to the best of my knowledge and belief, the information on this form is true and correct.\r\n\r\nMy signature below also certifies that I agree to be bound by the terms and conditions stated in this application. This application contains all the understandings and agreements between me and Atlantic Residential concerning the nature of my employment, if any, by Atlantic Residential and supersedes all prior and\/or contemporaneous practices, oral or written agreements, understandings, statements, representations and promises, express or implied, between me and Atlantic Residential. I understand and agree that, except as noted above, no person who is either an agent or employee of Atlantic Residential may modify, delete, vary or contradict, whether orally or in writing, the terms and conditions set forth herein.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5d48df847fa9e",
+            "label": "Date Submitted",
+            "name": "s8_date_submitted",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "torque_job_app"
+            },
+            {
+                "param": "post_taxonomy",
+                "operator": "==",
+                "value": "atlantic_job_app_stage:stage-2"
+            }
+        ]
+    ],
+    "menu_order": 8,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1565647112
+}

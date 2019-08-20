@@ -18,10 +18,11 @@ body {
 }
 
 h1 {
+  font-family: $font-heading-1;
 }
 
 h2 {
-  font-family: $font_primary;
+  font-family: $font-heading-1;
   font-size: 27px;
   font-weight: 500;
   font-style: normal;
@@ -36,7 +37,7 @@ h2 {
 }
 
 h3 {
-  font-family: $font_primary;
+  font-family: $font-heading-2;
   font-size: 24px;
   font-weight: 500;
   font-style: normal;
@@ -66,11 +67,12 @@ button {
   padding: 5px 35px;
   box-sizing: border-box;
 
+  font-family: inherit;
   font-weight: 300;
   font-style: normal;
   font-stretch: normal;
   font-size: 16px;
-  line-height: 1.75;
+  line-height: 1.9;
   letter-spacing: normal;
   text-align: center;
   text-transform: uppercase;
@@ -116,7 +118,7 @@ button {
 
     @include respond-to(tablet) {
       height: 20px;
-      top: 4px;
+      top: 5px;
       right: -48px;
     }
   }

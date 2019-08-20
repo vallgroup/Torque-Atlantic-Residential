@@ -1,7 +1,7 @@
 <div class="content-section-two align-<?php echo $align; ?> color-combo-<?php echo $color_combo; ?> bottom-padding-<?php echo $bottom_padding; ?>">
 
 <?php if ($heading) { ?>
-  <h2><?php echo $heading; ?></h2>
+  <h3><?php echo $heading; ?></h3>
 <?php } ?>
 
 <?php if ($content) { ?>

@@ -6,11 +6,7 @@
   padding: 40px $bodyPadding1;
 
   @include respond-to(tablet) {
-    padding: 75px $bodyPadding1;
-  }
-
-  @include respond-to(desktop) {
-    padding: 95px $bodyPadding1;
+    padding: 55px $bodyPadding1;
   }
 
   .staff-member {

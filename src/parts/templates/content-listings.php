@@ -11,6 +11,21 @@
 </div>
 
 
+<div class="properties-info-wrapper">
+
+  <?php 
+  $heading = get_field( 'info_heading' );
+  $content = get_field( 'info_content' );
+  $left_list = have_rows('left_list');
+  $right_list = have_rows('right_list');
+  if ($heading) {
+    include locate_template('/parts/acf/modules/info-section.php'); 
+  } 
+  ?>
+
+</div>
+
+
 <div class="properties-cta-grid-wrapper">
 
   <?php 

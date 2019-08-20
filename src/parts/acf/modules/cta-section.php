@@ -2,7 +2,7 @@
 
   <div class="cta-section align-background-graphic-<?php echo $align_background_graphic; ?>">
 
-    <h2><?php echo $heading; ?></h2>
+    <h3><?php echo $heading; ?></h3>
 
     <?php if ($content) { ?>
       <div class="content"><?php echo $content; ?></div>

@@ -1,0 +1,182 @@
+{
+    "key": "group_5c955c2570f80",
+    "title": "Page Intro",
+    "fields": [
+        {
+            "key": "field_5c955c931df7b",
+            "label": "Text Alignment",
+            "name": "page_intro_alignment",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "none": "None",
+                "left": "Left Aligned",
+                "center": "Center Aligned",
+                "right": "Right Aligned"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": [
+                "center"
+            ],
+            "layout": "horizontal",
+            "return_format": "value",
+            "save_other_choice": 0,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5c945c456df9e",
+            "label": "Color Combination (Background\/Text)",
+            "name": "page_intro_color",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "color1": "Blue-gray\/White",
+                "color2": "Blue-gray\/Medium Green",
+                "color3": "Blue-gray\/Light Green",
+                "color4": "Medium Green\/White",
+                "color5": "Medium Green\/Blue-gray",
+                "color6": "Medium Green\/Light Green",
+                "color7": "Light Green\/White",
+                "color8": "Light Green\/Blue-gray",
+                "color9": "Light Green\/Medium Green",
+                "color10": "White\/Blue-gray",
+                "color11": "White\/Medium Green",
+                "color12": "White\/Light Green"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": [
+                "color4"
+            ],
+            "layout": "horizontal",
+            "return_format": "value",
+            "save_other_choice": 0,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5c955c421df79",
+            "label": "Heading",
+            "name": "page_heading",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5c955c931df7b",
+                        "operator": "!=",
+                        "value": "none"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5c955c581df7a",
+            "label": "Intro",
+            "name": "page_intro",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5c955c931df7b",
+                        "operator": "!=",
+                        "value": "none"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 4,
+            "new_lines": "br"
+        },
+        {
+            "key": "field_5d41c394f36e1",
+            "label": "CTA",
+            "name": "cta",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            },
+            {
+                "param": "post_template",
+                "operator": "==",
+                "value": "default"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            },
+            {
+                "param": "post_template",
+                "operator": "==",
+                "value": "careers.php"
+            }
+        ]
+    ],
+    "menu_order": 2,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1565647075
+}

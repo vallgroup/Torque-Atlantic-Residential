@@ -7,8 +7,15 @@
     .grid-image {
         .caption-overlay {
             font-size: 1.1em;
-            
             flex-direction: column;
+            
+            @include respond-to(tablet) {
+                font-size: 1.2em;
+            }
+
+            @include respond-to(desktop) {
+                font-size: 1.4em;
+            }
         }
 
         .city, .state {
@@ -16,6 +23,9 @@
         }
 
         .cta {
+            font-size: 0.85em;
+            text-decoration: underline;
+
             margin-top: 20px;
             color: $green-pale-100;
 
