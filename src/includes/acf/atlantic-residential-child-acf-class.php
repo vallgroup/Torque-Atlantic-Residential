@@ -28,6 +28,9 @@ class Atlantic_Residential_ACF
   public function add_fields_to_search($fields)
   {
     // $fields[] = 'custom_field_name';
+    $fields[] = 'city';
+    $fields[] = 'state';
+    $fields[] = 'street_address';
     return $fields;
   }
 

@@ -4,7 +4,7 @@
     const single_listing_team_headshot = $(".broker .broker-image-container");
     const team_grid_headshot = $(".staff-member .image-wrapper");
     const single_team_headshot = $(".staff-image-container .featured-image");
-    const height_to_width_ratio = 1.25;
+    const height_to_width_ratio = 1.31;
 
     // On load ensure image ratio is correct
     resetImageRatio(single_listing_team_headshot, height_to_width_ratio);

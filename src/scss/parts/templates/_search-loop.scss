@@ -9,17 +9,12 @@
   }
 
   .search-loop {
-    margin-bottom: 5px;
-    padding-bottom: 11px;
+    margin-bottom: 25px;
+    padding-bottom: 30px;
     border-bottom: 1px solid $grey-dark-40;
 
     display: inline-block;
     width: 100%;
-
-    @include respond-to-max(desktop) {
-      margin-bottom: 20px;
-      padding-bottom: 20px;
-    }
 
     .search-result-image-wrapper {
       float: left;
@@ -27,7 +22,7 @@
       overflow: hidden;
 
       @include respond-to(desktop) {
-        height: 160px;
+        height: 178px;
 
         a {
           position: relative;
@@ -90,14 +85,20 @@
           margin-top: 0;
           margin-bottom: 10px;
 
-          color: $grey-blue-100;
+          color: $green-medium-100;
           font-size: 26px;
           font-weight: 600;
 
-          text-decoration: underline;
+          transition: color 0.3s ease-in-out;
+
+          text-decoration: none;
 
           @include respond-to(desktop) {
             font-size: 30px;
+          }
+
+          &:hover {
+            color: $green-pale-100;
           }
         }
 

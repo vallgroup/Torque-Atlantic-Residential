@@ -88,6 +88,12 @@ footer {
         .address {
           margin-bottom: 15px;
         }
+  
+        .email {
+          a {
+            color: $green-pale-100;
+          }
+        }
       }
 
     }
@@ -190,7 +196,7 @@ footer {
 
     width: 100%;
 
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 300;
     text-align: left;
 

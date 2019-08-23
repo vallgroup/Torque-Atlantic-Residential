@@ -26,6 +26,8 @@
     .content-wrapper {
       @extend %text_block_next_to_image;
 
+      background: $white;
+
       .bg-quotation-mark-top {
         @extend %useBackgroundQuotationMarks_Top_GreenPale;
       }
@@ -48,6 +50,7 @@
     width: auto;
     padding: 50px 0 90px;
     text-align: center;
+    background: $white;
 
     @include respond-to(tablet) {
       text-align: left;
@@ -95,6 +98,8 @@
       }
     }
     .cta-wrapper {
+      background: $green-less-pale-100;
+      
       button {
         &:after {
           background: $green-less-pale-100;
