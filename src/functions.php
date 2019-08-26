@@ -165,4 +165,22 @@ if ( class_exists( 'Torque_Map_Controller' ) ) {
 }
 add_filter( 'pre_get_posts','limit_search_results_per_page' ); */
 
+
+add_action('admin_footer', function(){ ?>
+  <script>
+    // Hide the default image and bio fields in user profile
+    jQuery('h2:contains("About the user"), tr.user-description-wrap, tr.user-profile-picture').hide();
+    
+    if ( jQuery('textarea#description').text() != '' && jQuery('textarea[name="acf[field_5d640f368ef86]"]').text() == '' ) {
+      // if no info in the new bio field, and the old bio field isn't empty, copy the text across
+      jQuery('textarea[name="acf[field_5d640f368ef86]"]').text( jQuery('textarea#description').text() );
+      jQuery('textarea#description').text('');
+    } else if ( jQuery('textarea[name="acf[field_5d640f368ef86]"]').text() != '' ) {
+      // if the new bio field has data, copy it across to the old field (in case this field is displayed anywhere; searches, etc...)
+      // NB: requires page to be reloaded and saved...
+      jQuery('textarea#description').text( jQuery('textarea[name="acf[field_5d640f368ef86]"]').text() );
+    }
+  </script>
+<?php });
+
 ?>

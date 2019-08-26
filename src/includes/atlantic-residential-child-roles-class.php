@@ -116,6 +116,25 @@ class Atlantic_Residential_Roles {
       			'prepend' => '',
       			'append' => '',
       		),
+			array(
+				'key' => 'field_5d640f368ef86',
+				'label' => 'Staff Bio',
+				'name' => 'staff_bio',
+				'type' => 'wysiwyg',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'default_value' => '',
+				'media_upload' => 0,
+				'tabs' => 'all',
+				'toolbar' => 'full',
+				'delay' => 0,
+			),
       	),
       	'location' => array(
       		array(

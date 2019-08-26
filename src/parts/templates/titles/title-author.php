@@ -1,7 +1,8 @@
 <?php
 
 $title = $user->display_name;
-$description = $user->description;
+// $description = $user->description;
+$description = get_field( 'staff_bio', 'user_'.$user->ID );
 $description = wpautop( $description, false );
 $thumbnail = get_field( 'featured_image', 'user_'.$user->ID );
 if (!$thumbnail) $thumbnail = get_avatar_url( $user->ID, array( 'size' => 1000 ) );
