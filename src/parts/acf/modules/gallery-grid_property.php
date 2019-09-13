@@ -1,6 +1,6 @@
 <?php
 /**
- * Used to render all properties from a given category, in a pre-defined masonry grid layout
+ * Used to render all images from a given category, in a pre-defined masonry grid layout
  */
 
 // Define the grid sections, based on pre-defined designs provided by client
@@ -141,10 +141,10 @@ foreach( $gallery_images as $image ) {
 
   // Increment vars where required...
 
-  // Increment total rendered properties counter
+  // Increment total rendered images counter
   $total_images_rendered++;
 
-  // if we've hit the max allowable items per current section, so increment the grid section counter and reset the property counter
+  // if we've hit the max allowable items per current section, so increment the grid section counter and reset the image counter
   if ( $gallery_image_index >= (intval($grid_sections[$grid_section_index]['num_items']) - 1) ) {
     $grid_section_index++;
     $gallery_image_index = 0;
@@ -153,7 +153,7 @@ foreach( $gallery_images as $image ) {
     </div>
   </div>
   <?php 
-  // check if we're rendered all available properties... 
+  // check if we're rendered all available images... 
   } elseif ( $total_images_rendered >= $total_num_images ) { 
     // if so, close the row container div!
     // END THE GRID ROW ?>
