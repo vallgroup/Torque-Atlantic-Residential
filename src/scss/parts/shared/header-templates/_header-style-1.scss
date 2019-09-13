@@ -69,6 +69,10 @@ header#header-style-1 {
       display: inline-block;
     }
 
+    &.active {
+      max-height: 150vh;
+    }
+
     svg {
       @include respond-to-max(tablet) {
         min-height: 70px;
