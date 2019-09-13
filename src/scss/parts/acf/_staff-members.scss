@@ -7,6 +7,9 @@
 
   @include respond-to(tablet) {
     padding: 55px $bodyPadding1;
+    
+    max-width: 862px;
+    margin: 0 auto;
   }
 
   .staff-member {
@@ -24,14 +27,6 @@
       margin-left: 1%;
       margin-right: 1%;
       width: 31%;
-    }
-
-    @include respond-to(desktop) {
-      min-height: 278px;
-
-      margin-left: 1%;
-      margin-right: 1%;
-      width: 23%;
     }
 
     a {
