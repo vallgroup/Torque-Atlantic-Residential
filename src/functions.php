@@ -155,6 +155,13 @@ if ( class_exists( 'Torque_Map_Controller' ) ) {
 
 
 /**
+ * Add new image size for property title area & gallery
+ */
+add_image_size( 'property_header', 1920, null, false );
+add_image_size( 'property_gallery', 1500, 1500, false );
+
+
+/**
  * Alter search posts per page
  */
 /* function limit_search_results_per_page($query) {
