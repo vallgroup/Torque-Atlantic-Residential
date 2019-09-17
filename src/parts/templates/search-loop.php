@@ -9,13 +9,13 @@
       <?php echo the_post_thumbnail( 'medium' ); ?>
     </a>
   </div>
-  <div class="search-result-image-wrapper hide-on-tablet">
+  <div class="search-result-image-wrapper hide-on-tablet hide-on-mobile">
     <a href=<?php echo the_permalink(); ?>>
-      <?php echo the_post_thumbnail( 'thumbnail' ); ?>
+      <?php echo the_post_thumbnail( 'medium' ); ?>
     </a>
   </div>
   <div class="search-result-content-wrapper">
-    <a class="hide-on-tablet" href=<?php echo the_permalink(); ?>>
+    <a class="hide-on-tablet hide-on-mobile" href=<?php echo the_permalink(); ?>>
       <h3><?php echo the_title(); ?></h3>
     </a>
     <div class="excerpt" ><?php echo the_excerpt(); ?></div>

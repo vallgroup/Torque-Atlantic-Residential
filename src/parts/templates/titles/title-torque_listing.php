@@ -1,6 +1,6 @@
 <?php
 
-$image_src = get_the_post_thumbnail_url( null, 'large');
+$image_src = get_the_post_thumbnail_url( null, 'property_header');
 $logo_src = get_field( 'logo' );
 $title = get_the_title();
 
@@ -20,7 +20,7 @@ $title = get_the_title();
   </div>
 </div>
 
-<div class="listing-title-wrapper hide-on-tablet" >
+<div class="listing-title-wrapper hide-on-tablet hide-on-mobile" >
   <?php if ($logo_src) { ?>
     <img class="property-logo" src="<?php echo $logo_src; ?>"/>
   <? } else { ?>
