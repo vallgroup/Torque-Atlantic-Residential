@@ -130,14 +130,14 @@ $grid_sections = array(
         'row_end'       => '1',
       ),
       array(
-        'column_start'  => '0',
-        'column_end'    => '4',
+        'column_start'  => '4',
+        'column_end'    => '8',
         'row_start'     => '1',
         'row_end'       => '2',
       ),
       array(
-        'column_start'  => '4',
-        'column_end'    => '8',
+        'column_start'  => '8',
+        'column_end'    => '12',
         'row_start'     => '1',
         'row_end'       => '2',
       ),
@@ -147,16 +147,6 @@ $grid_sections = array(
 
 // Count grid sections. Used to loop back to the first grid section if we reach the maximum number of grid sections.
 $grid_sections_count = count($grid_sections);
-
-// Count num property spaces available in each grid section
-// $potential_num_of_items = 0;
-// $index = 1;
-// foreach ($grid_sections as $grid_section) {
-//   $potential_num_of_items += $grid_section['num_items'];
-//   echo 'Grid Section ' . $index . ': ' . $grid_section['num_items'] . ' items <br>';
-//   $index++;
-// }
-// echo '$potential_num_of_items: ' . $potential_num_of_items . '<br>';
 
 // Retreive the properties/posts, based on the page slug (communities or developments, at this stage)
 global $post;
@@ -177,7 +167,6 @@ $properties = new WP_Query( $args );
 
 // Count total number of properties in DB
 $total_num_properties = $properties->found_posts;
-// echo '$total_num_properties: ' . $total_num_properties . '<br>';
 
 
 // Loop through each post, and display in corresponding grid item (based on rows and items defined above)
