@@ -4,11 +4,11 @@
   }
 }
 %hideOnTablet {
-  @include respond-to-max(desktop) {
+  @media only screen and (max-width: $TabletMaxWidth) and (min-width: $MobileMaxWidth + 1px) {
     display: none !important;
   }
 }
-%hideOnmobile {
+%hideOnMobile {
   @include respond-to-max(tablet) {
     display: none !important;
   }
@@ -137,7 +137,6 @@
 }
 
 %useBackgroundQuotationMarks_Top_GreenPale {
-
   background-image: url("../statics/images/upper-quotes@2x.png");
   background-size: contain;
   background-position-x: left;
@@ -175,7 +174,6 @@
 }
 
 %useBackgroundQuotationMarks_Top_White {
-
   background-image: url("../statics/images/upper-quotes-2@2x.png");
   background-size: contain;
   background-position-x: left;
@@ -234,8 +232,8 @@
 }
 
 %useButtonLight {
-    color: $white;
-    border-color: $white;
+  color: $white;
+  border-color: $white;
 }
 
 %useButtonSolid {
@@ -256,7 +254,7 @@
 %useButtonSearchIcon {
   &:before {
     font-family: $font-icon;
-    content: '\f002';
+    content: "\f002";
     color: $white;
     margin-left: -10px;
     margin-right: 15px;
@@ -278,102 +276,109 @@
 
 %useColorComboStyle {
   // intro colour combos
-  &.color-combo-color1, .color-combo-color1 * {
+  &.color-combo-color1,
+  .color-combo-color1 * {
     background-color: $grey-blue-100;
     color: $white;
   }
-  &.color-combo-color2, .color-combo-color2 * {
+  &.color-combo-color2,
+  .color-combo-color2 * {
     background-color: $grey-blue-100;
     color: $green-medium-100;
   }
-  &.color-combo-color3, .color-combo-color3 * {
+  &.color-combo-color3,
+  .color-combo-color3 * {
     background-color: $grey-blue-100;
     color: $green-pale-100;
   }
-  &.color-combo-color4, .color-combo-color4 h2 {
+  &.color-combo-color4,
+  .color-combo-color4 h2 {
     background-color: $green-medium-100;
     color: $white;
   }
-  &.color-combo-color5, .color-combo-color5 * {
+  &.color-combo-color5,
+  .color-combo-color5 * {
     background-color: $green-medium-100;
     color: $grey-blue-100;
   }
-  &.color-combo-color6, .color-combo-color6 * {
+  &.color-combo-color6,
+  .color-combo-color6 * {
     background-color: $green-medium-100;
     color: $green-pale-100;
   }
-  &.color-combo-color7, .color-combo-color7 * {
+  &.color-combo-color7,
+  .color-combo-color7 * {
     background-color: $green-pale-100;
     color: $white;
   }
-  &.color-combo-color8, .color-combo-color8 * {
+  &.color-combo-color8,
+  .color-combo-color8 * {
     background-color: $green-pale-100;
     color: $grey-blue-100;
   }
-  &.color-combo-color9, .color-combo-color9 * {
+  &.color-combo-color9,
+  .color-combo-color9 * {
     background-color: $green-pale-100;
     color: $green-medium-100;
   }
-  &.color-combo-color10, .color-combo-color10 * {
+  &.color-combo-color10,
+  .color-combo-color10 * {
     background-color: $white;
     color: $grey-blue-100;
   }
-  &.color-combo-color11, .color-combo-color11 * {
+  &.color-combo-color11,
+  .color-combo-color11 * {
     background-color: $white;
     color: $green-medium-100;
   }
-  &.color-combo-color12, .color-combo-color12 * {
+  &.color-combo-color12,
+  .color-combo-color12 * {
     background-color: $white;
     color: $green-pale-100;
   }
-  &.color-combo-color13, .color-combo-color13 * {
+  &.color-combo-color13,
+  .color-combo-color13 * {
     background-color: $grey-very-very-light;
     color: $grey-blue-100;
   }
-  &.color-combo-color14, .color-combo-color14 * {
+  &.color-combo-color14,
+  .color-combo-color14 * {
     background-color: $grey-very-very-light;
     color: $green-medium-100;
   }
-  &.color-combo-color15, .color-combo-color15 * {
+  &.color-combo-color15,
+  .color-combo-color15 * {
     background-color: $grey-very-very-light;
     color: $green-pale-100;
   }
 }
 
 %useMainContentPositioning {
-    &.content-position-top {
-        @include useRemoveHeaderHeight(margin-top);
-    }
-    &.content-position-after {
-        position: relative;
-    }
+  &.content-position-top {
+    @include useRemoveHeaderHeight(margin-top);
+  }
+  &.content-position-after {
+    position: relative;
+  }
 }
 
 %useCentredIntroParagraphs {
-    max-width: 780px;
-    margin: 0 auto;
+  max-width: 780px;
+  margin: 0 auto;
 }
 
 %useSectionBottomPadding {
-    &.bottom-padding-no {
-        padding-bottom: 5px;
-    }
+  &.bottom-padding-no {
+    padding-bottom: 5px;
+  }
 }
 
 %useTermWhite {
   color: $white !important;
-
-  &::before {
-    //background-image: url("../statics/images/tag-icon-white.svg") !important;
-  }
 }
 
 %useTermGreen {
   color: $green-medium-100;
-
-  &::before {
-    //background-image: url("../statics/images/tag-icon-green.svg");
-  }
 }
 
 %useTermStyle {
@@ -423,5 +428,85 @@
   &::placeholder {
     color: $grey-dark-40;
     font-style: italic;
+  }
+}
+
+%contentSectionImageCaption {
+  position: absolute;
+  left: -105%;
+  text-align: right;
+  color: $white;
+  top: 5%;
+  width: 100%;
+  text-transform: uppercase;
+
+  @include respond-to-max(tablet) {
+    left: 0;
+    right: 0;
+    text-align: right;
+    color: #fff;
+    top: -60px;
+    width: 100%;
+    padding: 10px 20px;
+    background-color: $grey-blue-100;
+    box-sizing: border-box;
+  }
+}
+%contentSectionImageCaptionAlignLeft {
+  position: absolute;
+  left: unset;
+  right: -105%;
+  text-align: left;
+  color: $white;
+  top: 5%;
+  width: 100%;
+  text-transform: uppercase;
+
+  @include respond-to-max(tablet) {
+    left: 0;
+    right: 0;
+    text-align: right;
+    color: #fff;
+    top: -60px;
+    width: 100%;
+    padding: 10px 20px;
+    background-color: $grey-blue-100;
+    box-sizing: border-box;
+  }
+
+  &.hide-on-desktop {
+    @extend %hideOnDesktop;
+  }
+  &.hide-on-tablet {
+    @extend %hideOnTablet;
+  }
+  &.hide-on-mobile {
+    @extend %hideOnMobile;
+  }
+}
+%contentSectionImageCaptionMobileDisplay {
+  top: unset !important;
+  bottom: 0;
+}
+
+%inputSearchField {
+  border: 1px solid $grey-dark-40;
+  padding: 11px 10px;
+  background-color: transparent;
+  color: $grey-dark-100;
+  font-family: $font-primary;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.3;
+  outline: none;
+  box-sizing: border-box;
+  transition: 0.6s;
+
+  @include respond-to-max(tablet) {
+    min-width: 100%;
+  }
+
+  &::placeholder {
+    color: $grey-dark-40;
   }
 }

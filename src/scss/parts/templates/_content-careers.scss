@@ -1,0 +1,23 @@
+.page-template-careers {
+    .content-section {
+        .content-section-image-size {
+            @include respond-to(tablet) {
+                padding-bottom: 62%;
+            }
+        }
+        .content-wrapper {
+            .content {
+                @include respond-to(tablet) {
+                    ul, p {
+                        margin: 5px auto 5px 0;
+                    }
+                }
+            }
+        }
+
+
+        @include respond-to(mobile) {
+            padding-bottom: 0;
+        }
+    }
+}

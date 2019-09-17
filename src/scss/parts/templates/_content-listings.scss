@@ -8,6 +8,7 @@
         .caption-overlay {
             font-size: 1.1em;
             flex-direction: column;
+            text-align: center;
             
             @include respond-to(tablet) {
                 font-size: 1.2em;
@@ -18,12 +19,21 @@
             }
         }
 
-        .city, .state {
-            display: inline-block;
+        .title {
+            font-size: 22px;
+        }
+        
+        .location {
+            font-size: 18px;
+            
+            .city, .state {
+                display: inline-block;
+            }
+
         }
 
         .cta {
-            font-size: 0.85em;
+            font-size: 17px;
             text-decoration: underline;
 
             margin-top: 20px;

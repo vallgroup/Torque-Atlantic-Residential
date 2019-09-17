@@ -30,10 +30,24 @@
         }
       }
     }
+
+    .image-caption {
+      @extend %contentSectionImageCaptionMobileDisplay;
+    }
   }
 
   .content-wrapper {
     @extend %text_block_next_to_image;
+
+    &.hide-on-desktop {
+      @extend %hideOnDesktop;
+    }
+    &.hide-on-tablet {
+      @extend %hideOnTablet;
+    }
+    &.hide-on-mobile {
+      @extend %hideOnMobile;
+    }
 
     h3 {
       margin: 0;
@@ -44,7 +58,7 @@
       margin-bottom: 10px;
 
       line-height: 1.5;
-    
+
       ul {
         margin-left: -22px;
 
@@ -63,9 +77,16 @@
     }
   }
 
+  .image-caption {
+    @extend %contentSectionImageCaption;
+  }
+
   &.align-left {
     .content-wrapper {
       left: 0;
+    }
+    .image-caption {
+      @extend %contentSectionImageCaptionAlignLeft;
     }
   }
 

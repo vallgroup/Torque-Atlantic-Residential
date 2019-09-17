@@ -46,6 +46,7 @@
         a {
           display: inline-block;
           width: 100%;
+          transform: translateY(-25%)
 
           img {
             width: 100%;
@@ -58,12 +59,14 @@
         height: 165px;
       }
 
+      &.hide-on-desktop {
+        @extend %hideOnDesktop;
+      }
       &.hide-on-tablet {
         @extend %hideOnTablet;
       }
-
-      &.hide-on-desktop {
-        @extend %hideOnDesktop;
+      &.hide-on-mobile {
+        @extend %hideOnMobile;
       }
     }
 
@@ -104,6 +107,9 @@
 
         &.hide-on-tablet {
           @extend %hideOnTablet;
+        }
+        &.hide-on-mobile {
+          @extend %hideOnMobile;
         }
 
       }

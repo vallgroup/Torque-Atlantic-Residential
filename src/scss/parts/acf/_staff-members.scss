@@ -118,7 +118,7 @@
       }
 
       h4 {
-        font-size: 30px;
+        font-size: 22px;
         font-weight: 400;
         color: $white;
 
@@ -139,7 +139,7 @@
       }
 
       .staff-roles {
-        font-size: 22px;
+        font-size: 18px;
         font-weight: 400;
         color: $white;
 
@@ -171,6 +171,10 @@
         @include respond-to-max(tablet) {
           font-size: 14px !important;
         }
+      }
+
+      p {
+        font-size: 16px;
       }
     }
   }

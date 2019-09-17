@@ -1,6 +1,6 @@
 .content-section-three {
   position: relative;
-
+  overflow-x: hidden; 
   padding: 25px 0 0;
 
   @include respond-to-max(tablet) {
@@ -21,12 +21,26 @@
       .content-section-image {
         @extend %imageInner;
       }
+
+      .image-caption {
+        @extend %contentSectionImageCaptionMobileDisplay;
+      }
     }
   
     .content-wrapper {
       @extend %text_block_next_to_image;
 
       background: $white;
+      
+      &.hide-on-desktop {
+        @extend %hideOnDesktop;
+      }
+      &.hide-on-tablet {
+        @extend %hideOnTablet;
+      }
+      &.hide-on-mobile {
+        @extend %hideOnMobile;
+      }
 
       .bg-quotation-mark-top {
         @extend %useBackgroundQuotationMarks_Top_GreenPale;
@@ -56,6 +70,16 @@
       text-align: left;
       margin-left: 7vw;
     }
+      
+    &.hide-on-desktop {
+      @extend %hideOnDesktop;
+    }
+    &.hide-on-tablet {
+      @extend %hideOnTablet;
+    }
+    &.hide-on-mobile {
+      @extend %hideOnMobile;
+    }
 
     .content {
       font-size: 1.5em;
@@ -70,16 +94,22 @@
     }
   }
 
+  .image-caption {
+    @extend %contentSectionImageCaption;
+  }
+
   &.align-left {
     .content-wrapper {
       left: 0;
     }
     .cta-wrapper {
-
       @include respond-to(tablet) {
         text-align: left;
         margin-left: 50%;
       }
+    }
+    .image-caption {
+      @extend %contentSectionImageCaptionAlignLeft;
     }
   }
 
