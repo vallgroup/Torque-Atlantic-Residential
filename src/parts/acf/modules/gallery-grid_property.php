@@ -123,7 +123,7 @@ foreach( $gallery_images as $image ) {
   $height = intval($row_end) - intval($row_start);
   
   // Get ACF data
-  $src = $image['sizes']['large'];
+  $src = $image['sizes']['property_gallery'];
 
   ?>
 
@@ -166,7 +166,7 @@ foreach( $gallery_images as $image ) {
   // if we've hit the maximum number of grid sections
   if ( $grid_section_index >= $grid_sections_count ) {
     // reset the grid section index, as we've filled out all the sections and need to start over again!
-    $grid_section_index = 1; // Skip the first row, as it is designed to fit the title section therefore not required!
+    $grid_section_index = 0; // Skip the first row, as it is designed to fit the title section therefore not required!
     $gallery_image_index = 0;
   }
 
