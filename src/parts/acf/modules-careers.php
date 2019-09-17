@@ -12,6 +12,8 @@ if ( have_rows( $modules ) ):
 
         $align = get_sub_field( 'align' );
         $image = get_sub_field('image');
+        $image_url = $image['url'];
+        $image_caption = $image['caption'];
         $image_background_size = get_sub_field('image_background_size');
         $heading = get_sub_field( 'heading' );
         $content = get_sub_field( 'content' );
