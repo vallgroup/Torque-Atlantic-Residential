@@ -63,7 +63,7 @@
   }
 
   @include respond-to(desktop) {
-    padding-bottom: 38%;
+    padding-bottom: 42%;
   }
 }
 
@@ -120,6 +120,28 @@
   }
 }
 
+%useWindowGraphicCentre {
+  background-image: url("../statics/images/svg/AR-Logo-Window.svg");
+  background-size: contain;
+  background-position-x: center;
+  background-position-y: center;
+  background-repeat: no-repeat;
+}
+%useWindowGraphicLeft {
+  background-image: url("../statics/images/svg/AR-Logo-Window.svg");
+  background-size: contain;
+  background-position-x: left;
+  background-position-y: center;
+  background-repeat: no-repeat;
+}
+%useWindowGraphicRight {
+  background-image: url("../statics/images/svg/AR-Logo-Window.svg");
+  background-size: contain;
+  background-position-x: right;
+  background-position-y: center;
+  background-repeat: no-repeat;
+}
+
 %useBackgroundGraphicLeft {
   background-image: url("../statics/images/svg/cta-background-left.svg");
   background-size: contain;
@@ -127,7 +149,6 @@
   background-position-y: bottom;
   background-repeat: no-repeat;
 }
-
 %useBackgroundGraphicRight {
   background-image: url("../statics/images/svg/cta-background-right.svg");
   background-size: contain;

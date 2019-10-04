@@ -10,6 +10,7 @@ $image = get_field('hero_image');
 $slideshow = get_field('hero_image_slideshow');
 $video = get_field('hero_video_src');
 
+$overlay_graphic= get_field('hero_overlay_graphic');
 $overlay_title= get_field('hero_overlay_title');
 $overlay_subtitle= get_field('hero_overlay_subtitle');
 
@@ -41,6 +42,10 @@ if (($type === 'image' && $image) || ($type === 'image_slideshow' && $slideshow)
 
   <?php if ( ($overlay_title || $overlay_subtitle) && $alignment != "none") { ?>
     <div class="hero-overlay" >
+      <?php if ($overlay_graphic) { ?>
+        <div class="window-graphic <?php echo $alignment; ?>"></div>
+      <?php } ?>
+
       <?php if ($overlay_title) { ?>
         <h1><?php echo $overlay_title; ?></h1>
       <?php } ?>
