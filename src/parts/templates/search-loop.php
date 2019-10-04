@@ -11,7 +11,7 @@
   </div>
   <div class="search-result-image-wrapper hide-on-tablet hide-on-mobile">
     <a href=<?php echo the_permalink(); ?>>
-      <?php echo the_post_thumbnail( 'medium' ); ?>
+      <?php echo the_post_thumbnail( 'large_thumbnail' ); ?>
     </a>
   </div>
   <div class="search-result-content-wrapper">
