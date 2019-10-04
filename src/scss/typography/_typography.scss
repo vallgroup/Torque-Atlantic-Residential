@@ -77,10 +77,12 @@ button {
   text-align: center;
   text-transform: uppercase;
 
+  position: relative;
+
   background-color: transparent;
   color: $green-pale-100;
 
-  transition: all 0.3s ease;
+  transition: all 0.5s ease-in-out;
 
   @include respond-to(tablet) {
     padding: 8px 50px;
@@ -103,29 +105,24 @@ button {
   }
 
   &:after {
-    // NOTE: Required to add background to this element, based on where it is used:
+    // NOTE: You're required to add background to this element, based on the background colour of where it is used:
     // For example: background: $green-pale-100;
     content: '';
     width: 5px;
     margin-right: -5px;
-    height: 14px;
+    height: 42%;
     display: inline-block;
-    right: -33px;
-    top: 1.5px;
-    position: relative;
+    right: 2px;
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
     opacity: 1;
-    transition: 0.2s;
-
-    @include respond-to(tablet) {
-      height: 20px;
-      top: 5px;
-      right: -48px;
-    }
+    transition: all 0.3s ease-in-out;
   }
 
   &:hover:after {
     height: 0;
-    top: -20px;
+    top: 0;
     opacity: 0;
   }
 }
