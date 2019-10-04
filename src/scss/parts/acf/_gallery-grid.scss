@@ -12,7 +12,7 @@
       padding-top: 54.6%;
       overflow: hidden;
 
-
+      
       @include respond-to-max(tablet) {
         margin-bottom: 20px
       }
@@ -69,6 +69,11 @@
         }
       }
 
+      /* one item */
+      &.grid-width-12:first-child:nth-last-child(1) {
+        margin-bottom: 0 !important;
+      }
+
       &:hover {
         .caption-overlay {
           opacity: 1;
@@ -92,7 +97,7 @@
         flex-wrap: wrap;
 
         .grid-image {
-          margin: 1vw;
+          margin: 0 1vw;
           width: auto;
           height: 400px;
 
@@ -135,7 +140,7 @@
         margin-right: 25px;
         
         @include respond-to-max(tablet) {
-          margin-bottom: 25px;
+          // margin-bottom: 25px;
         }
         
         @for $i from 0 through 11 {
