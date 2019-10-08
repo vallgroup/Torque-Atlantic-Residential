@@ -283,7 +283,7 @@ class Atlantic_Residential_Job_Application_CPT
 
 		// Email headers
 		$mail_headers = array(
-			'From: Interra Careers <' . $notification_email . '>',
+			'From: Atlantic Residential Careers <' . $notification_email . '>',
 			'Reply-To: ' . $form_name . ' <' . $form_email . '>',
 			'Content-Type: text/html; charset=UTF-8;'
 		);
