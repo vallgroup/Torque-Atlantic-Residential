@@ -91,6 +91,7 @@ if ( have_rows( $modules ) ):
       case 'video' :
 
         $video = get_sub_field('video_src');
+        $poster_image = get_sub_field('poster_image');
 
         include locate_template('/parts/acf/modules/video.php');
 
@@ -107,12 +108,6 @@ if ( have_rows( $modules ) ):
       case 'staff_members' :
 
         include locate_template('/parts/acf/modules/staff-members.php');
-
-        break;
-
-      case 'mailchimp_form' :
-
-        include locate_template('/parts/acf/modules/mailchimp-form.php');
 
         break;
 
