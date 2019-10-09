@@ -1,10 +1,8 @@
 <?php
-
 $content = apply_filters('the_content', get_the_content());
 $key_details = get_field( 'key_details' );
 $cta = get_field( 'cta' );
 $gallery_images = get_field( 'property_gallery' );
-
 ?>
 
 <div class="listing-content-wrapper">
