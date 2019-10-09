@@ -107,7 +107,11 @@
       }
 
       input[type="file"] {
-        display: none;
+        // needs to be displayed, for validation purposes... hence opacity: 0
+        position: absolute;
+        left: 0;
+        top: 26px;
+        opacity: 0;
       }
 
       label.standin-upload-btn {

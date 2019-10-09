@@ -65,7 +65,7 @@
     <div class="input-wrapper">
       <div class="file-picker-container">
         <label for="tq-resume" >Resume Upload</label>
-        <input type="file" accept=".pdf" value="" name="tq-resume" id="tq-resume"/>
+        <input type="file" accept=".pdf" value="" name="tq-resume" id="tq-resume" required/>
         <div class="file-input-text placeholder">File name</div>
         <label for="tq-resume" class="filename standin-upload-btn">Select</label>
       </div>
