@@ -232,6 +232,7 @@ class Atlantic_Residential_Job_Application_CPT
 				update_field('field_5d48deaaecd5d', isset($application_data['tq-s8-terms-one']) ? $application_data['tq-s8-terms-one'] : '', $application_id);
 				update_field('field_5d48df197f894', isset($application_data['tq-s8-terms-two']) ? $application_data['tq-s8-terms-two'] : '', $application_id);
 				update_field('field_5d48df577fa9c', isset($application_data['tq-s8-terms-three']) ? $application_data['tq-s8-terms-three'] : '', $application_id);
+				update_field('field_5da09bcc9028c', isset($application_data['tq-s8-terms-four']) ? $application_data['tq-s8-terms-four'] : '', $application_id);
 				update_field('field_5d48df6e7fa9d', isset($application_data['tq-s8-digital-signature']) ? $application_data['tq-s8-digital-signature'] : '', $application_id);
 				update_field('field_5d48df847fa9e', isset($application_data['tq-s8-digital-signature-date']) ? $application_data['tq-s8-digital-signature-date'] : '', $application_id);
 

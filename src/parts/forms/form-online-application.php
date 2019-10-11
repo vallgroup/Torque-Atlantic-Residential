@@ -35,7 +35,8 @@ if (isset($_POST['tq-online-application-form'])) {
     if (
       !isset($_POST['tq-s8-terms-one'])   ||
       !isset($_POST['tq-s8-terms-two'])   ||
-      !isset($_POST['tq-s8-terms-three'])
+      !isset($_POST['tq-s8-terms-three']) ||
+      !isset($_POST['tq-s8-terms-four'])
     ) {
       throw new Exception('All Pre-Employment Certification fields are required. Please check these fields and re-submit the form.');
     }

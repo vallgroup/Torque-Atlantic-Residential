@@ -7,7 +7,7 @@
             "label": "Agreement One",
             "name": "s8_agreement_one",
             "type": "text",
-            "instructions": "Atlantic Residential is an Equal Opportunity Employer. Applicants for all openings are welcome and will be considered without regard to race, color, religion, national origin, sex, age, sexual orientation, physical or mental disability, or any other basis protected by state, federal or local law. It is the intent of the association to comply with all applicable federal, state and local legislation concerning equal opportunity in employment. Proof of citizenship or authorization for employment in the USA is required before final selection. Atlantic Residential is committed to protecting the health and safety of our employees. I also understand that this application is only valid for the position applied for at present and that Atlantic Residential is not obligated to retain or consider this application for future openings.",
+            "instructions": "Atlantic Residential is an Equal Opportunity Employer. Applicants for all openings are welcome and will be considered without regard to race, color, religion, national origin, sex, age, sexual orientation, physical or mental disability, or any other basis protected by state, federal or local law. It is the intent of Atlantic Residential to comply with all applicable federal, state and local legislation concerning equal opportunity in employment. I also understand that this application is only valid for the position applied for at present and that Atlantic Residential is not obligated to retain or consider this application for future openings.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -26,7 +26,7 @@
             "label": "Agreement Two",
             "name": "s8_agreement_two",
             "type": "text",
-            "instructions": "I agree to submit to legally permissible drug and\/or alcohol testing and a background check upon request by Atlantic Residential. I recognize that the results of these tests may be used to determine my employment or continued employment. I understand and expressly agree that if employed, storage areas provided for me (locker, desk, computer, etc.) are open to investigation by Atlantic Residential without prior notice to me.",
+            "instructions": "I certify that the facts set forth in this Application for Employment are true and complete to the best of my knowledge. I understand that if I am employed, false statements, omissions or misrepresentations may result in my dismissal. I authorize the Employer to make an investigation of any of the facts set forth in this application and release the Employer from any liability. The employer may contact any listed references on this application.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -45,7 +45,26 @@
             "label": "Agreement Three",
             "name": "s8_agreement_three",
             "type": "text",
-            "instructions": "If I am employed by Atlantic Residential, I understand my employment is ‘at-will’ and can be terminated, with or without cause and with or without notice, at any time at the option of Atlantic Residential or myself. I understand that, other than the President of Atlantic Residential, no manager, supervisor or representative of Atlantic Residential has authority to enter into any agreement for employment for any specific period of time, or to make any agreement contrary to the foregoing. Only the President of Atlantic Residential has the authority to make any agreement contrary to the foregoing and then only in writing. I further expressly agree that, with respect to the ‘at-will’ employment relationship, this constitutes the full, complete and final expression of the parties’ intent concerning the nature of any employment relationship between myself and Atlantic Residential.",
+            "instructions": "I agree to submit to legally permissible drug and/or alcohol testing and a background check upon request by Atlantic Residential. I recognize that the results of these tests may be used to determine my employment or continued employment. I understand and expressly agree that if employed, storage areas provided for me (locker, desk, computer, etc.) are open to investigation by Atlantic Residential without prior notice to me.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5da09bcc9028c",
+            "label": "Agreement Four",
+            "name": "s8_agreement_four",
+            "type": "text",
+            "instructions": "I understand that neither the completion of this application nor any other part of my consideration for employment establishes any obligation for Atlantic Residential to hire me. If I am hired, I acknowledge and understand that the company is an “at will” employer. Therefore, any employee (regular, temporary, or other type of category employee) may resign at any time, just as the employer may terminate the employment relationship with any employee at any time, with or without cause, with or without notice to the other party.  I understand that no representative of Atlantic Residential has the authority to make any assurance to the contrary.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
