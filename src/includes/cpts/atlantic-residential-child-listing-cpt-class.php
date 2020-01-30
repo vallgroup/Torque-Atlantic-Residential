@@ -52,7 +52,7 @@ class Atlantic_Residential_Listing_CPT {
 		}
 
 		add_action( 'init', array( $this, 'add_listing_taxonomies' ) );
-		add_action('acf/init', array( $this, 'add_acf_metaboxes' ) );
+		// add_action('acf/init', array( $this, 'add_acf_metaboxes' ) );
 		add_action( 'restrict_manage_posts', array( $this, 'filter_listings_by_taxonomies' ) , 10, 2);
 	}
 

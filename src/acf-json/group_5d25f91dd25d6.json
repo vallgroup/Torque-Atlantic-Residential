@@ -77,8 +77,51 @@
             "new_lines": "br"
         },
         {
+            "key": "field_5e31eae579baf",
+            "label": "Content",
+            "name": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 0,
+            "endpoint": 0
+        },
+        {
+            "key": "field_5e330588aa5f0",
+            "label": "Properties for Grid Gallery",
+            "name": "properties_for_grid_gallery",
+            "type": "relationship",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "torque_listing"
+            ],
+            "taxonomy": [],
+            "filters": [
+                "search",
+                "taxonomy"
+            ],
+            "elements": "",
+            "min": "",
+            "max": "",
+            "return_format": "object"
+        },
+        {
             "key": "field_5d5c3979b330a",
-            "label": "Info",
+            "label": "Info Banner",
             "name": "",
             "type": "accordion",
             "instructions": "",
@@ -331,5 +374,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1566325765
+    "modified": 1580416920
 }

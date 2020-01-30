@@ -49,24 +49,6 @@ $grid_sections = array(
   ),
   array(
     'num_rows'        => '2',
-    'num_items'       => 2,
-    'items'           => array(
-      array(
-        'column_start'  => '0',
-        'column_end'    => '4',
-        'row_start'     => '0',
-        'row_end'       => '2',
-      ),
-      array(
-        'column_start'  => '4',
-        'column_end'    => '12',
-        'row_start'     => '0',
-        'row_end'       => '2',
-      ),
-    ),
-  ),
-  array(
-    'num_rows'        => '2',
     'num_items'       => 4,
     'items'           => array(
       array(
@@ -91,24 +73,6 @@ $grid_sections = array(
         'column_start'  => '4',
         'column_end'    => '12',
         'row_start'     => '1',
-        'row_end'       => '2',
-      ),
-    ),
-  ),
-  array(
-    'num_rows'        => '2',
-    'num_items'       => 2,
-    'items'           => array(
-      array(
-        'column_start'  => '0',
-        'column_end'    => '8',
-        'row_start'     => '0',
-        'row_end'       => '2',
-      ),
-      array(
-        'column_start'  => '8',
-        'column_end'    => '12',
-        'row_start'     => '0',
         'row_end'       => '2',
       ),
     ),
@@ -146,39 +110,27 @@ $grid_sections = array(
 );
 
 // Count grid sections. Used to loop back to the first grid section if we reach the maximum number of grid sections.
-$grid_sections_count = count($grid_sections);
+$grid_sections_count = count( $grid_sections );
 
-// Retreive the properties/posts, based on the page slug (communities or developments, at this stage)
-global $post;
-$post_slug = $post->post_name;
-$args = array(
-  'post_type' 		=> 'torque_listing',
-  'post_status'		=> 'publish',
-  'tax_query'     => array(
-      array (
-          'taxonomy' => 'atlantic_listing_property_type',
-          'field' => 'slug',
-          'terms' => $post_slug,
-      )
-  ),
-  'posts_per_page' => '-1',
-);
-$properties = new WP_Query( $args );
-
-// Count total number of properties in DB
-$total_num_properties = $properties->found_posts;
+// Count total number of properties to display
+$total_num_properties = count( $properties );
 
 
 // Loop through each post, and display in corresponding grid item (based on rows and items defined above)
-if ( $properties->have_posts() ) {
+// if ( $properties->have_posts() ) {
+if ( $total_num_properties > 0 ) {
   
   // Set initial vars
   $grid_section_index = 0;
   $property_section_index = 0;
   $total_properties_rendered = 0;
 
-  while ( $properties->have_posts() ) {
-    $properties->the_post();
+  foreach ( $properties as $property ) {
+
+    // Setup global post var
+    global $post;
+    $post = get_post( $property->ID, OBJECT );
+    setup_postdata( $post );
 
     // Check if we're starting a new row. 
     if ( $property_section_index == 0 ) {
@@ -255,6 +207,9 @@ if ( $properties->have_posts() ) {
       $grid_section_index = 1; // Skip the first row, as it is designed to fit the title section therefore not required!
       $property_section_index = 0;
     }
+
+    /* Restore original Post Data */
+    wp_reset_postdata();
 
   }
 }

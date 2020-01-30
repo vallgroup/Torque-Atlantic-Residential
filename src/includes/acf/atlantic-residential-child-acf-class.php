@@ -2,16 +2,14 @@
 
 require_once(get_template_directory() . '/includes/acf/torque-acf-search-class.php');
 
-class Atlantic_Residential_ACF
-{
+class Atlantic_Residential_ACF {
 
-  public function __construct()
-  {
-    add_action('admin_init', array($this, 'acf_admin_init'), 99);
-    add_action('acf/init', array($this, 'acf_init'));
+  public function __construct() {
+    add_action('admin_init', array( $this, 'acf_admin_init' ), 99 );
+    add_action('acf/init', array( $this, 'register_acf_fields' ) );
 
     // hide acf in admin - client doesnt need to see this
-    add_filter('acf/settings/show_admin', '__return_false');
+    // add_filter('acf/settings/show_admin', '__return_false');
 
     // add acf fields to wp search
     if (class_exists('Torque_ACF_Search')) {
@@ -19,14 +17,12 @@ class Atlantic_Residential_ACF
     }
   }
 
-  public function acf_admin_init()
-  {
+  public function acf_admin_init() {
     // hide options page
     // remove_menu_page('acf-options');
   }
 
-  public function add_fields_to_search($fields)
-  {
+  public function add_fields_to_search( $fields ) {
     // $fields[] = 'custom_field_name';
     $fields[] = 'city';
     $fields[] = 'state';
@@ -34,10 +30,18 @@ class Atlantic_Residential_ACF
     return $fields;
   }
 
-  public function acf_init()
-  {
+  public function register_acf_fields() {
     /**
-     * 20190812: CURRENTLY IMPLEMENTED USING THE JSON DEFINITIONS (/acf-json/)
-     */
+     * UPDATED: 20200130
+     * 
+     * NOTE 1: For some reason the ACF definitions aren't loading when placed here, as a part of the 'acf/init' action callback.
+     *  So instead, for the moment, the definitions are currently located in the '/acf-json/' folder, found in the child theme root
+     *  directory, and have been removed from the DB.
+     *  See ACF documentation on local JSON for clarification: https://www.advancedcustomfields.com/resources/local-json/
+     * 
+     * NOTE 2: The ACF defintions are working from the Atlantic_Residential_Roles class, therefore I have left them in-place.
+     * 
+     * - Al Notara
+    */ 
   }
 }

@@ -10,17 +10,19 @@ class Atlantic_Residential_Roles {
 
   public function __construct() {
     add_action('init', array($this, 'add_broker'));
-	add_action('init', array($this, 'add_manager'));
+		add_action('init', array($this, 'add_manager'));
 
-	// Added option to remove roles, as not sure if these two roles are required yet...
-    /* add_action('init', array($this, 'remove_broker'));
-	add_action('init', array($this, 'remove_manager')); */
+		// Added option to remove roles, as not sure if these two roles are required yet...
+		/* 
+		add_action('init', array($this, 'remove_broker'));
+		add_action('init', array($this, 'remove_manager')); 
+		*/
 
-    add_action('acf/init', array( $this, 'add_custom_role_metaboxes' ) );
-	add_action('acf/init', array($this, 'add_job_titles_acf'));
-		
-	// setup job title choices select based on job title ACF
-	add_filter('acf/load_field/key=field_5cc096378bc25', array($this, 'setup_job_title_choices'));
+		add_action('acf/init', array( $this, 'add_custom_role_metaboxes'));
+		add_action('acf/init', array($this, 'add_job_titles_acf'));
+			
+		// setup job title choices select based on job title ACF
+		add_filter('acf/load_field/key=field_5cc096378bc25', array($this, 'setup_job_title_choices'));
 
     // vcard support
     add_filter('upload_mimes', function ($mime_types){
@@ -29,7 +31,7 @@ class Atlantic_Residential_Roles {
       return $mime_types;
 		}, 1, 1);
 
-	$this::$SORTED_USERS_BY_JOB_TITLE = $this->get_sorted_user_array();
+		$this::$SORTED_USERS_BY_JOB_TITLE = $this->get_sorted_user_array();
   }
 
   public function add_broker() {

@@ -4,43 +4,50 @@
         margin-top: -300px;
     }
 
-    .grid-image {
-        .caption-overlay {
-            font-size: 1.1em;
-            flex-direction: column;
-            text-align: center;
+    // NB: main Gallery Grid styling can be found in /src/scss/parts/acf/_gallery-grid.scss
+    // The following is specific to the listings/properties archive page only...
+    .gallery-module {
+        margin-left: 25px;
+        margin-right: 25px;
+
+        .grid-image {
+            .caption-overlay {
+                font-size: 1.1em;
+                flex-direction: column;
+                text-align: center;
+                
+                @include respond-to(tablet) {
+                    font-size: 1.2em;
+                }
+
+                @include respond-to(desktop) {
+                    font-size: 1.4em;
+                }
+            }
+
+            .title {
+                font-size: 22px;
+            }
             
-            @include respond-to(tablet) {
-                font-size: 1.2em;
+            .location {
+                font-size: 18px;
+                
+                .city, .state {
+                    display: inline-block;
+                }
+
             }
 
-            @include respond-to(desktop) {
-                font-size: 1.4em;
-            }
-        }
+            .cta {
+                font-size: 17px;
+                text-decoration: underline;
 
-        .title {
-            font-size: 22px;
-        }
-        
-        .location {
-            font-size: 18px;
-            
-            .city, .state {
-                display: inline-block;
-            }
+                margin-top: 20px;
+                color: $green-pale-100;
 
-        }
-
-        .cta {
-            font-size: 17px;
-            text-decoration: underline;
-
-            margin-top: 20px;
-            color: $green-pale-100;
-
-            @include respond-to-max(desktop) {
-                display: none;
+                @include respond-to-max(desktop) {
+                    display: none;
+                }
             }
         }
     }

@@ -245,11 +245,43 @@
             "placeholder": ""
         },
         {
+            "key": "field_5d97945f96ca6",
+            "label": "Overlay Graphic",
+            "name": "hero_overlay_graphic",
+            "type": "true_false",
+            "instructions": "Add the Atlantic Resi 'window' graphic to hero banner?",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5c954a9886085",
+                        "operator": "!=",
+                        "value": "none"
+                    },
+                    {
+                        "field": "field_5c568c9903dfjx",
+                        "operator": "!=",
+                        "value": "none"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
             "key": "field_5c954bb12e42b",
             "label": "Overlay Title",
             "name": "hero_overlay_title",
             "type": "text",
-            "instructions": "use em tags to emphasise certain words",
+            "instructions": "Use <b>em<\/b> tags to put emphasis on certain words",
             "required": 0,
             "conditional_logic": [
                 [
@@ -355,5 +387,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1565647012
+    "modified": 1580416916
 }

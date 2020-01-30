@@ -59,7 +59,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "return_format": "url",
+                            "return_format": "array",
                             "preview_size": "thumbnail",
                             "library": "all",
                             "min_width": "",
@@ -364,6 +364,30 @@
                     "display": "block",
                     "sub_fields": [
                         {
+                            "key": "field_mmj2d20disfc",
+                            "label": "Image",
+                            "name": "image",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "preview_size": "thumbnail",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        },
+                        {
                             "key": "field_xo23jf349csd",
                             "label": "Align Text",
                             "name": "align",
@@ -418,30 +442,6 @@
                             "placeholder": ""
                         },
                         {
-                            "key": "field_mmj2d20disfc",
-                            "label": "Image",
-                            "name": "image",
-                            "type": "image",
-                            "instructions": "",
-                            "required": 1,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "return_format": "url",
-                            "preview_size": "thumbnail",
-                            "library": "all",
-                            "min_width": "",
-                            "min_height": "",
-                            "min_size": "",
-                            "max_width": "",
-                            "max_height": "",
-                            "max_size": "",
-                            "mime_types": ""
-                        },
-                        {
                             "key": "field_5kjh23xsaf",
                             "label": "Quote",
                             "name": "quote",
@@ -493,6 +493,35 @@
                                 "id": ""
                             },
                             "return_format": "array"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_5d9cf367bc591": {
+                    "key": "layout_5d9cf367bc591",
+                    "name": "content_section_four",
+                    "label": "Content Section (WYSIWYG)",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5d9cf3a5bc592",
+                            "label": "Rich Text",
+                            "name": "rich_text",
+                            "type": "wysiwyg",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "tabs": "all",
+                            "toolbar": "full",
+                            "media_upload": 1,
+                            "delay": 0
                         }
                     ],
                     "min": "",
@@ -802,6 +831,30 @@
                             "min_size": "",
                             "max_size": 50,
                             "mime_types": ""
+                        },
+                        {
+                            "key": "field_5d9d093e5b760",
+                            "label": "Poster Image",
+                            "name": "poster_image",
+                            "type": "image",
+                            "instructions": "Add an image which will server as the clickable 'play' button and image which appears before the video has been interacted with.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "url",
+                            "preview_size": "medium",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": ""
                         }
                     ],
                     "min": "",
@@ -845,66 +898,6 @@
                     "label": "Staff Members",
                     "display": "block",
                     "sub_fields": [],
-                    "min": "",
-                    "max": ""
-                },
-                "5c9d3f4702arg": {
-                    "key": "5c9d3f4702arg",
-                    "name": "mailchimp_form",
-                    "label": "MailChimp Form",
-                    "display": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_5c951939e2222",
-                            "label": "Title",
-                            "name": "mailchimp_title",
-                            "type": "text",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "post_type": [],
-                            "taxonomy": [],
-                            "allow_null": 0,
-                            "multiple": 0,
-                            "return_format": "",
-                            "ui": 1,
-                            "default_value": "",
-                            "maxlength": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": ""
-                        },
-                        {
-                            "key": "field_5c951939e2332",
-                            "label": "description",
-                            "name": "mailchimp_desc",
-                            "type": "textarea",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "post_type": [],
-                            "taxonomy": [],
-                            "allow_null": 0,
-                            "multiple": 0,
-                            "return_format": "",
-                            "ui": 1,
-                            "default_value": "",
-                            "new_lines": "",
-                            "maxlength": "",
-                            "placeholder": "",
-                            "rows": ""
-                        }
-                    ],
                     "min": "",
                     "max": ""
                 }
@@ -953,5 +946,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1565894921
+    "modified": 1580416785
 }
