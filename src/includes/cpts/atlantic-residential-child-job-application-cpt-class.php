@@ -246,8 +246,13 @@ class Atlantic_Residential_Job_Application_CPT
 		update_field('field_5ca515302f6b2', $media_id, $application_id);
 	}
 
-	public static function send_admin_notification(string $application_stage, string $application_id, string $notification_email, array $application_data)
-	{
+	public static function send_admin_notification(
+		string $application_stage, 
+		string $application_id, 
+		string $media_id = null, 
+		string $notification_email,
+		array $application_data
+	) {
 
 		// Email subject
 		$mail_subject = 'Job Application | Stage ' . $application_stage . ' | ' . get_bloginfo('name');
@@ -272,8 +277,12 @@ class Atlantic_Residential_Job_Application_CPT
 		$mail_content .= '<li><strong>Zip Code: </strong>' . $form_zipcode . '</li>';
 		$mail_content .= $form_job != '' ? '<li><strong>Job Title: </strong>' . $form_job . '</li>' : '';
 		$mail_content .= $form_intro != '' ? '<li><strong>Intro: </strong>' . $form_intro . '</li>' : '';
-		$mail_content .= $application_stage == '1' ? '<li><strong>Resume: </strong>' : '<li><strong>View Full Application: </strong>';
-		$mail_content .= '<a href="' . get_site_url() . '/wp-admin/post.php?post=' . $application_id . '&action=edit">' . get_site_url() . '/wp-admin/post.php?post=' . $application_id . '&action=edit</a></li>';
+		$mail_content .= $application_stage == '1'
+			? '<li><strong>Resume: </strong>' 
+			: '<li><strong>View Full Application: </strong>';
+		$mail_content .= $application_stage == '1' 
+			? '<a href="' . wp_get_attachment_url( (int) $media_id ) . '">'  . wp_get_attachment_url( (int) $media_id ) . '</a></li>'
+			: '<a href="' . get_site_url() . '/wp-admin/post.php?post=' . $application_id . '&action=edit">' . get_site_url() . '/wp-admin/post.php?post=' . $application_id . '&action=edit</a></li>';
 		$mail_content .= '</ul><p>Note: to repond to the job applicant directly you can reply to this email.</p>';
 
 		// Email body content

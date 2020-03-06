@@ -61,7 +61,7 @@ if (isset($_POST['tq-careers-form'])) {
     );
 
     // send admin email notification
-    $email_result = Atlantic_Residential_Job_Application_CPT::send_admin_notification( $_POST['tq-form-stage'], $application_id, $admin_email, $_POST );
+    $email_result = Atlantic_Residential_Job_Application_CPT::send_admin_notification( $_POST['tq-form-stage'], (string) $application_id, $media_id, $admin_email, $_POST );
 
     // Check email was sent correctly...
     if ( ! $email_result ) {

@@ -62,25 +62,13 @@ if (isset($_POST['tq-online-application-form'])) {
       throw new Exception();
     }
 
-    // lets upload the resume pdf
-    // require_once( ABSPATH . 'wp-admin/includes/image.php' );
-  	// require_once( ABSPATH . 'wp-admin/includes/file.php' );
-  	// require_once( ABSPATH . 'wp-admin/includes/media.php' );
-    // $media_id = media_handle_upload( 'tq-resume', $application_id );
-
-    // if ( ! $media_id || is_wp_error($media_id) ) {
-    //   throw new Exception('Failed uploading resume. ');
-    // }
-
-    // Atlantic_Residential_Job_Application_CPT::attach_resume($media_id, $application_id);
-
     $message = array(
       'success' => true,
       'message' => 'Thank you for your Online Application. Your Application ID is '.$application_id . '. We\'ll be in touch shortly.'
     );
 
     // send admin email notification
-    $email_result = Atlantic_Residential_Job_Application_CPT::send_admin_notification( $_POST['tq-form-stage'], $application_id, $admin_email, $_POST );
+    $email_result = Atlantic_Residential_Job_Application_CPT::send_admin_notification( $_POST['tq-form-stage'], $application_id, null, $admin_email, $_POST );
 
     // Check email was sent correctly...
     if ( ! $email_result ) {
