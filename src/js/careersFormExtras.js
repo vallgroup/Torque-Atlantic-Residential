@@ -17,6 +17,14 @@
                 $('.file-input-text').html(filename).removeClass('placeholder');
             }
         });
+
+        // when submitted successfully, hide the form...
+        const formSubmitted = window.location.href.indexOf("#careers-form") > -1;
+        const formMessageExists = $('.form-message').length > 0;
+        const formSuccess = !$('.form-message').hasClass('error');
+        if (formSubmitted && formMessageExists && formSuccess) {
+            $('form#careers-form-main').addClass('hide-form');
+        }
     });
 })(jQuery);
   

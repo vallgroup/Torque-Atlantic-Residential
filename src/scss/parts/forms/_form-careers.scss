@@ -34,6 +34,10 @@
     margin: 0 auto;
     max-width: 780px;
 
+    &.hide-form {
+      display: none !important;
+    }
+
     .input-wrapper {
       display: inline-block;
 

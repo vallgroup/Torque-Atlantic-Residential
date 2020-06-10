@@ -9,7 +9,7 @@
     </div>
   <?php } ?>
 
-  <form method="post" action="#careers-form" enctype="multipart/form-data">
+  <form id="careers-form-main" method="post" action="#careers-form" enctype="multipart/form-data">
 
     <?php echo wp_nonce_field( 'submit_careers_form' ); ?>
 
