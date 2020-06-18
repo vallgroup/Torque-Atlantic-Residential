@@ -8,7 +8,7 @@
     </div>
   <?php } ?>
 
-  <form method="post" action="#online-application-form" enctype="multipart/form-data">
+  <form id="online-application-form-main" method="post" action="#online-application-form" enctype="multipart/form-data">
 
     <?php echo wp_nonce_field( 'submit_online_application_form' ); ?>
 

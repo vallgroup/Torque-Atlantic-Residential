@@ -18,12 +18,26 @@
             }
         });
 
-        // when submitted successfully, hide the form...
-        const formSubmitted = window.location.href.indexOf("#careers-form") > -1;
-        const formMessageExists = $('.form-message').length > 0;
-        const formSuccess = !$('.form-message').hasClass('error');
-        if (formSubmitted && formMessageExists && formSuccess) {
+        /**
+         * Manage Careers Forms (Stage 1 & 2)
+         * When submitted successfully, hide the form...
+         */
+        // stage 1
+        const s1FormSubmitted = window.location.href.indexOf("#careers-form") > -1;
+        const s1FormMessageExists = $('.form-message').length > 0;
+        const s1FormSuccess = !$('.form-message').hasClass('error');
+        if (s1FormSubmitted && s1FormMessageExists && s1FormSuccess) {
             $('form#careers-form-main').addClass('hide-form');
+        }
+        // stage 2
+        const s2FormSubmitted = window.location.href.indexOf("#online-application-form") > -1;
+        const s2FormMessageExists = $('.form-message').length > 0;
+        const s2FormSuccess = !$('.form-message').hasClass('error');
+        console.log('s2FormSubmitted', s2FormSubmitted)
+        console.log('s2FormMessageExists', s2FormMessageExists)
+        console.log('s2FormSuccess', s2FormSuccess)
+        if (s2FormSubmitted && s2FormMessageExists && s2FormSuccess) {
+            $('form#online-application-form-main').addClass('hide-form');
         }
     });
 })(jQuery);

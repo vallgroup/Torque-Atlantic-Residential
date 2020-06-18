@@ -59,6 +59,10 @@
     max-width: 100%;
     width: 100%;
 
+    &.hide-form {
+      display: none !important;
+    }
+
     .online-application-sections {
       width: 100%;
 
