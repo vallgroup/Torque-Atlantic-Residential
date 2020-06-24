@@ -1,11 +1,30 @@
 ($ => {
     $(document).ready(() => {
+
+        /**
+         * Single Career Page
+         */
+        const isSingleCareer = window.location.href.indexOf("/career/") > -1;
+        if (isSingleCareer) {
+            // pre-fill the job field in the form with the page title
+            const jobTitle = $('.career-title-wrapper h2').text();
+            $('#careers-form input#tq-job').val(jobTitle);
+            // on 'apply' click, scroll to form and focus on first field
+            $('.career-content-details .apply-now').click(function(){
+                $([document.documentElement, document.body]).animate({
+                    scrollTop: $("#careers-form").offset().top
+                });
+                $('#careers-form input#tq-name').focus();
+            });
+        }
+
         // Copy the Job Title to the corresponding field, when the available position is clicked...
         $('.careers-list-simple-wrapper ul.loop-career li a').click(function(){
             $('#careers-form input#tq-name').focus();
             $('#careers-form input#tq-job').val($(this).text());
         });
 
+        // update filename placeholder when file changes
         $('input[type="file"]#tq-resume').bind('change', function() {
             var fullPath = $(this).val();
             if (fullPath) {
@@ -33,12 +52,10 @@
         const s2FormSubmitted = window.location.href.indexOf("#online-application-form") > -1;
         const s2FormMessageExists = $('.form-message').length > 0;
         const s2FormSuccess = !$('.form-message').hasClass('error');
-        console.log('s2FormSubmitted', s2FormSubmitted)
-        console.log('s2FormMessageExists', s2FormMessageExists)
-        console.log('s2FormSuccess', s2FormSuccess)
         if (s2FormSubmitted && s2FormMessageExists && s2FormSuccess) {
             $('form#online-application-form-main').addClass('hide-form');
         }
+        
     });
 })(jQuery);
   

@@ -1,0 +1,23 @@
+.career-content-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+
+  .career-content-details {
+    padding: 0 $bodyPadding1;
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+
+    .the-content {
+      text-align: center;
+
+      .apply-now {
+        margin-top: 3vw;
+      }
+    }
+  }
+}
+
+.career-form-module-wrapper {
+  margin: 5vw auto;
+}
