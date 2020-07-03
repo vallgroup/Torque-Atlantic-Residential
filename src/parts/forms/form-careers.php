@@ -43,7 +43,6 @@ if (isset($_POST['tq-careers-form'])) {
     }
 
     // lets upload the resume pdf
-
     require_once( ABSPATH . 'wp-admin/includes/image.php' );
   	require_once( ABSPATH . 'wp-admin/includes/file.php' );
   	require_once( ABSPATH . 'wp-admin/includes/media.php' );
@@ -53,7 +52,7 @@ if (isset($_POST['tq-careers-form'])) {
       throw new Exception('Thank you for your application, however, unfortunately, your resume failed to upload. Please email it to us directly via: <a href="mailto:' . $admin_email .'">' . $admin_email . '</a>. Sorry for any inconvenience this causes.');
     }
 
-    Atlantic_Residential_Job_Application_CPT::attach_resume($media_id, $application_id);
+    Atlantic_Residential_Job_Application_CPT::link_resume_to_application( $media_id, $application_id );
 
     $message = array(
       'success' => true,

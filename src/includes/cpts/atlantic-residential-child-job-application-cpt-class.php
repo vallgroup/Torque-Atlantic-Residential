@@ -1,8 +1,22 @@
 <?php
+// include FPDF library
+// require_once( get_stylesheet_directory() . '/libraries/fpdf182/fpdf.php' );
+require_once( get_stylesheet_directory() . '/libraries/fpdf182/html2pdf/html2pdf.php' );
 
 class Atlantic_Residential_Job_Application_CPT
 {
 	public static $JOB_APP_PROPERTY_TYPE_TAX_SLUG = 'atlantic_job_app_stage';
+	public static $UNWANTED_FIELDS = [ 'g-recaptcha-response', '_wpnonce', '_wp_http_referer', 'tq-online-application-form', 'tq-careers-form', 'form-stage' ];
+	public static $SECTION_TITLES = [
+		'Personal Information ',
+		'Desired Employment',
+		'Education and Training',
+		'Employment History',
+		'Second Most Recent Employment',
+		'Third Most Recent Employment',
+		'References',
+		'Pre-Employment Certification',
+	];
 
 	public function __construct()
 	{
@@ -87,7 +101,7 @@ class Atlantic_Residential_Job_Application_CPT
 
 		switch ($application_stage) {
 
-				// Stage 1 Job Application
+			// Stage 1 Job Application
 			case "1":
 
 				$name = $application_data['tq-name'];
@@ -121,7 +135,7 @@ class Atlantic_Residential_Job_Application_CPT
 				return $application_id;
 				break; // Defensive programming...
 
-				// Stage 2 Job Application
+			// Stage 2 Job Application
 			case "2":
 
 				$application = array(
@@ -241,9 +255,162 @@ class Atlantic_Residential_Job_Application_CPT
 		}
 	}
 
-	public static function attach_resume($media_id, $application_id)
-	{
-		update_field('field_5ca515302f6b2', $media_id, $application_id);
+	/**
+	 * Associated the auto-generated PDF of application, to the application CPT by ID
+	 * Returns the url of the generated PDF, or false if it failed.
+	 */
+	protected static function build_application_pdf(
+		string $application_stage,
+		array $application_data
+	) {
+		// get the WP upload DIR
+		$wp_upload_dir = wp_upload_dir();
+		// set the destination URL
+		$dest_dir = trailingslashit ( $wp_upload_dir['path'] );
+		// set the filename
+		$filename = time() . '-s' . $application_stage . '-';
+		$form_title = 'Form Submission'; // fallback
+		if ( '1' === $application_stage ) {
+			$filename .= sanitize_title( $application_data['tq-name'] );
+			$form_title = 'Careers';
+		} elseif ( '2' === $application_stage ) {
+			$filename .= sanitize_title( $application_data['tq-s1-name-first'] . ' ' . $application_data['tq-s1-name-last'] );
+			$form_title = 'Online Application';
+		}
+		$filename .= '.pdf';
+		// set the PDF URL
+		$file_path = $dest_dir . $filename;
+
+		// output PDF contents
+		$pdf = new PDF_HTML();
+		$pdf->SetFont( 'Arial', '', 12 );
+		$pdf->AddPage();
+		
+		/**
+		 * NOTE: Image not working locally, as you must have the directive allow_url_open activated
+		 * https://www.php.net/manual/fr/filesystem.configuration.php#ini.allow-url-fopen
+		 */
+		/* // output site logo
+		require_once( get_template_directory() . '/includes/customizer/customizer-tabs/tabs/torque-customizer-tab-site-identity-class.php' );
+		$tab_settings = Torque_Customizer_Tab_Site_Identity::get_settings();
+		$logo_src = get_theme_mod( $tab_settings['logo_setting'] );
+		if ( '' !== $logo_src ) {
+			// $pdf->Image( $logo_src );
+			$pdf->WriteHTML( '<img src="' . $logo_src . '" width="120" height="auto" /></b><br>' );
+		} */
+		
+		// output form title
+		$pdf->WriteHTML( '<b>'.$form_title.' Form | ' . get_bloginfo( 'name' ) . '</b><br>' );
+
+		// first section
+		$curr_section = 's0';
+
+		foreach ( $application_data as $key => $value ) {
+
+			// if stage 2 form, output section titles
+			if ( '2' === $application_stage ) {
+				// build section title
+				$title = self::build_pdf_section_title( $curr_section, $key );
+	
+				// output section title to PDF
+				if ( false !== $title ) {
+					$curr_section = 's' . ( (int) str_replace( 's', '', $curr_section ) + 1 );
+					$pdf->WriteHTML( '<br>' . $title . '<br><br>' );
+				}
+			} else {
+				$pdf->WriteHTML( '<br><br>' );
+			}
+
+			// build line item for PDF
+			$html = self::build_pdf_line_item( $key, $value, $curr_section );
+
+			// output line item to PDF
+			if ( false !== $html ) {
+				// write html
+				$pdf->WriteHTML( $html );
+				// check if we need a new page, or new line
+				if ( $pdf->GetY() >= $pdf->GetPageHeight() ) {
+					$pdf->AddPage();
+				} else {
+					// $pdf->Ln();
+					// $pdf->WriteHTML( '<br>' );
+				}
+			}
+		}
+
+		$pdf->Output( 'F', $file_path, true );
+
+		// create attachment in WP
+		$attachment = array(
+			'guid' => trailingslashit ($wp_upload_dir['url']) . basename( $file_path ),
+			'post_mime_type' => 'application/pdf',
+			'post_title' => preg_replace( '/\.[^.]+$/', '', basename( $filename ) ),
+			'post_content' => '',
+			'post_status' => 'inherit'
+		);
+		// ID of media attachment
+		$media_id = wp_insert_attachment( $attachment, $file_path );
+		// URL of media attachment
+		$pdf_url = wp_get_attachment_url( (int) $media_id );
+		
+		return $pdf_url;
+	}
+
+	/**
+	 * Build a section title for the PDF, based on current section slug and line item key
+	 */
+	protected static function build_pdf_section_title(
+		$curr_section,
+		$key
+	) {
+		$title = false;
+		// weed out fields we don't want...
+		if ( ! preg_match( '/'.implode( '|', self::$UNWANTED_FIELDS ) . '/', $key ) ) {
+
+			$exploded_key = explode('-', $key, 3); // limit to 3, assuming 'tq-s1-field-key'
+			$new_section = !empty( $exploded_key ) ? $exploded_key[1] : false;
+
+			if (
+				false !== $new_section
+				&& $new_section !== $curr_section
+			) {
+				$section_number = (int) str_replace( 's', '', $new_section ) - 1;
+				$title = self::$SECTION_TITLES[ $section_number ];
+			}
+
+		}
+		return $title;
+	}
+
+	/**
+	 * Build a line item for the PDF, based on a key/value pair
+	 */
+	protected static function build_pdf_line_item(
+		$key,
+		$value,
+		$curr_section
+	) {
+		$html = false;
+		// weed out fields we don't want...
+		if ( ! preg_match( '/'.implode( '|', self::$UNWANTED_FIELDS ) . '/', $key ) ) {
+			$title = str_replace( 'tq-', '', $key ); // remove 'tq-' slug
+			$title = str_replace( $curr_section . '-', ' ', $title ); // remove section slug
+			$title = str_replace( '-', ' ', $title ); // remove additional '-'
+
+			// edge cases
+			if ( $title == 'terms one' ) {
+				$title = 'Equal Opportunity Employer';
+			} elseif ( $title == 'terms two' ) {
+				$title = ' Application for Employment';
+			} elseif ( $title == 'terms three' ) {
+				$title = 'Drug and/or Alcohol Testing';
+			} elseif ( $title == 'terms four' ) {
+				$title = 'Consideration for Employment';
+			}
+
+			$html = '- <strong>' . ucwords( $title ) . ':</strong> ' . $value . '<br>';
+		}
+		return $html;
 	}
 
 	public static function send_admin_notification(
@@ -253,6 +420,11 @@ class Atlantic_Residential_Job_Application_CPT
 		string $notification_email,
 		array $application_data
 	) {
+
+		// build and save PDF
+		$application_pdf = self::build_application_pdf( $application_stage, $application_data );
+		// link to application CPT
+		self::link_pdf_to_application( $application_pdf, $application_id, $application_stage );
 
 		// Email subject
 		$mail_subject = 'Job Application | Stage ' . $application_stage . ' | ' . get_bloginfo('name');
@@ -278,11 +450,9 @@ class Atlantic_Residential_Job_Application_CPT
 		$mail_content .= $form_job != '' ? '<li><strong>Job Title: </strong>' . $form_job . '</li>' : '';
 		$mail_content .= $form_intro != '' ? '<li><strong>Intro: </strong>' . $form_intro . '</li>' : '';
 		$mail_content .= $application_stage == '1'
-			? '<li><strong>Resume: </strong>' 
-			: '<li><strong>View Full Application: </strong>';
-		$mail_content .= $application_stage == '1' 
-			? '<a href="' . wp_get_attachment_url( (int) $media_id ) . '">'  . wp_get_attachment_url( (int) $media_id ) . '</a></li>'
-			: '<a href="' . get_site_url() . '/wp-admin/post.php?post=' . $application_id . '&action=edit">' . get_site_url() . '/wp-admin/post.php?post=' . $application_id . '&action=edit</a></li>';
+			? '<li><strong>Resume: </strong><a href="' . wp_get_attachment_url( (int) $media_id ) . '">'  . wp_get_attachment_url( (int) $media_id ) . '</a></li>' 
+			: '';
+		$mail_content .= '<li><strong>Application PDF: </strong><a href="' . $application_pdf . '">' . $application_pdf . '</a></li>';
 		$mail_content .= '</ul><p>Note: to repond to the job applicant directly you can reply to this email.</p>';
 
 		// Email body content
@@ -298,10 +468,40 @@ class Atlantic_Residential_Job_Application_CPT
 			'Content-Type: text/html; charset=UTF-8;'
 		);
 
+		// Create PDF of 
+
 		// Attempt to send the email notification
-		$mail_result = wp_mail($mail_to, $mail_subject, $mail_body, $mail_headers);
+		$mail_result = wp_mail( $mail_to, $mail_subject, $mail_body, $mail_headers );
 
 		return $mail_result;
+	}
+
+	/**
+	 * Associate the user-submitted resume, with post ID, to the application CPT by ID
+	 */
+	public static function link_resume_to_application(
+		$media_id,
+		$application_id
+	) {
+		// ACF field, located in /acf-json/group_5ca514ef6a1ae.json
+		update_field('field_5ca515302f6b2', $media_id, $application_id);
+	}
+
+	/**
+	 * Associate the auto-generated PDF to the application CPT by ID
+	 */
+	protected static function link_pdf_to_application(
+		$pdf_url,
+		$application_id,
+		$application_stage
+	) {
+		if ( '1' === $application_stage ) {
+			// ACF field, located in /acf-json/group_5ca514ef6a1ae.json
+			update_field( 'field_5ca51530jkjs822', $pdf_url, $application_id );
+		} elseif ( '2' === $application_stage ) {
+			// ACF field, located in /acf-json/group_5ef305c28797f.json
+			update_field( 'field_5ef305ca2de61', $pdf_url, $application_id );
+		}
 	}
 
 	public function html_email_content_type()

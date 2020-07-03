@@ -46,14 +46,14 @@
         const s1FormMessageExists = $('.form-message').length > 0;
         const s1FormSuccess = !$('.form-message').hasClass('error');
         if (s1FormSubmitted && s1FormMessageExists && s1FormSuccess) {
-            $('form#careers-form-main').addClass('hide-form');
+            // $('form#careers-form-main').addClass('hide-form');
         }
         // stage 2
         const s2FormSubmitted = window.location.href.indexOf("#online-application-form") > -1;
         const s2FormMessageExists = $('.form-message').length > 0;
         const s2FormSuccess = !$('.form-message').hasClass('error');
         if (s2FormSubmitted && s2FormMessageExists && s2FormSuccess) {
-            $('form#online-application-form-main').addClass('hide-form');
+            // $('form#online-application-form-main').addClass('hide-form');
         }
         
     });
